@@ -1,0 +1,170 @@
+[
+    {
+        "timestamp": "2025-06-17 11:29:27",
+        "reference_text": "Hello, how are you today? I hope you are having a wonderful time learning Python.",
+        "user_spoken_text": "hello how are you today I hope you are having a wonderful time learning python",
+        "accuracy_ratio": 98,
+        "accuracy_partial_ratio": 97,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 11:33:17",
+        "reference_text": "Hello, I am Lin, how can I help you ?",
+        "user_spoken_text": "hello I am Lynn how can I help you",
+        "accuracy_ratio": 90,
+        "accuracy_partial_ratio": 91,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 11:34:30",
+        "reference_text": "She sells seashells by the seashore.",
+        "user_spoken_text": "she says she shaves by the seashore",
+        "accuracy_ratio": 82,
+        "accuracy_partial_ratio": 83,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
+    },
+    {
+        "timestamp": "2025-06-17 11:44:18",
+        "reference_text": "Peter Piper picked a peck of pickled peppers.",
+        "user_spoken_text": "Pizza Peppa Pig a peck of pickled peppers",
+        "accuracy_ratio": 77,
+        "accuracy_partial_ratio": 80,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
+    },
+    {
+        "timestamp": "2025-06-17 18:25:12",
+        "reference_text": "The quick brown fox jumps over the lazy dog.",
+        "user_spoken_text": "the word brown fox jumps over the lazy dog",
+        "accuracy_ratio": 88,
+        "accuracy_partial_ratio": 88,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
+    },
+    {
+        "timestamp": "2025-06-17 18:25:50",
+        "reference_text": "The quick brown fox jumps over the lazy dog.",
+        "user_spoken_text": "the white brown fox jumps over the lazy dog",
+        "accuracy_ratio": 90,
+        "accuracy_partial_ratio": 91,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 18:27:17",
+        "reference_text": "Could you please repeat that? I didn't quite catch it.",
+        "user_spoken_text": "can you please repeat that I didn't find cash",
+        "accuracy_ratio": 79,
+        "accuracy_partial_ratio": 84,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
+    },
+    {
+        "timestamp": "2025-06-17 18:35:45",
+        "reference_text": "lonly lonly, I guess I'm lonly",
+        "user_spoken_text": "lonely lonely I guess I'm lonely",
+        "accuracy_ratio": 94,
+        "accuracy_partial_ratio": 90,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 18:36:20",
+        "reference_text": "lonely loenly, I guess I'm lonely",
+        "user_spoken_text": "lonely lonely I guess I'm lonely",
+        "accuracy_ratio": 95,
+        "accuracy_partial_ratio": 94,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 18:40:57",
+        "reference_text": "Practice makes perfect.",
+        "user_spoken_text": "what is makes perfect",
+        "accuracy_ratio": 77,
+        "accuracy_partial_ratio": 81,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
+    },
+    {
+        "timestamp": "2025-06-17 18:41:57",
+        "reference_text": "Hello, how are you today? I hope you are having a wonderful time learning Python.",
+        "user_spoken_text": "how are you today I hope you are having a wonderful time learning python",
+        "accuracy_ratio": 94,
+        "accuracy_partial_ratio": 99,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 18:46:29",
+        "reference_text": "Could you please repeat that? I didn't quite catch it.",
+        "user_spoken_text": "could you please repeat that I didn't quite catch it",
+        "accuracy_ratio": 98,
+        "accuracy_partial_ratio": 98,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 18:56:49",
+        "reference_text": "Hello, how are you today? I hope you are having a wonderful time learning Python.",
+        "user_spoken_text": "hello how are you today I hope you are having a wonderful time learning python",
+        "accuracy_ratio": 98,
+        "accuracy_partial_ratio": 97,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 18:59:37",
+        "reference_text": "Hello, how are you today? I hope you are having a wonderful time learning Python.",
+        "user_spoken_text": "hello how are you today I hope you are having a wonderful time learning python",
+        "accuracy_ratio": 98,
+        "accuracy_partial_ratio": 97,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 19:00:56",
+        "reference_text": "Hello, how are you today? I hope you are having a wonderful time learning Python.",
+        "user_spoken_text": "hello how are you today I hope you're having a wonderful time learning python",
+        "accuracy_ratio": 96,
+        "accuracy_partial_ratio": 95,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 19:13:26",
+        "reference_text": "Hello, how are you today? I hope you are having a wonderful time learning Python.",
+        "user_spoken_text": "hello how are you today I hope you are having a wonderful time learning patterns",
+        "accuracy_ratio": 93,
+        "accuracy_partial_ratio": 94,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-17 19:18:35",
+        "reference_text": "Practice makes perfect.",
+        "user_spoken_text": "what is my perfect",
+        "accuracy_ratio": 63,
+        "accuracy_partial_ratio": 67,
+        "feedback": "Cần cải thiện. Hãy cố gắng luyện tập thêm."
+    },
+    {
+        "timestamp": "2025-06-17 19:39:17",
+        "reference_text": "Hello, how are you today? I hope you are having a wonderful time learning Python.",
+        "user_spoken_text": "hello how are you today I hope you're having a wonderful time in my contacts",
+        "accuracy_ratio": 85,
+        "accuracy_partial_ratio": 86,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
+    },
+    {
+        "timestamp": "2025-06-17 19:54:49",
+        "reference_text": "Hello, how are you today? I hope you are having a wonderful time learning Python.",
+        "user_spoken_text": "hello how are you today I hope you're having a wonderful time and depart",
+        "accuracy_ratio": 86,
+        "accuracy_partial_ratio": 89,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
+    },
+    {
+        "timestamp": "2025-06-17 21:09:46",
+        "reference_text": "Practice makes perfect.",
+        "user_spoken_text": "purchase makes perfect",
+        "accuracy_ratio": 80,
+        "accuracy_partial_ratio": 82,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
+    },
+    {
+        "timestamp": "2025-06-18 18:50:57",
+        "reference_text": "Practice makes perfect.",
+        "user_spoken_text": "practice makes perfect",
+        "accuracy_ratio": 98,
+        "accuracy_partial_ratio": 100,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    }
+]
