@@ -15,7 +15,7 @@ import pygame.mixer
 import json
 from datetime import datetime
 
-
+# Day la mot thay doi
 class PronunciationApp:
     def __init__(self, master):
         self.master = master
