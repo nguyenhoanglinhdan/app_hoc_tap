@@ -11,78 +11,73 @@ from fuzzywuzzy import fuzz
 
 from gtts import gTTS
 import pygame.mixer
+import time
+import tempfile
 
 import json
 from datetime import datetime
 
-# Day la mot thay doi
+
 class PronunciationApp:
-    def __init__(self, master):
-        self.master = master
-        master.title("Ứng dụng Luyện Phát âm Tiếng Anh - Elsa Style")
-        # THAY ĐỔI TẠI ĐÂY: Tăng chiều cao của cửa sổ
-        master.geometry("900x900") # Tăng từ 780 lên 900
-        master.resizable(False, False)
-        master.config(bg='#e6f2ff')  # Màu nền cho cửa sổ chính
+    def __init__(self, cua_so):
+        self.cua_so = cua_so
+        cua_so.title("Ứng dụng Luyện Phát âm Tiếng Anh")
+        cua_so.geometry("900x900")
+        cua_so.resizable(False, False)   # dùng để ngăn người dùng k kéo cửa sổ dài hay rộng hơn.
+        cua_so.config(background = '#e6f2ff')   # màu nền cho cửa sổ
 
         pygame.mixer.init()
 
-        # --- Cấu hình Style (Phong cách) cho Tkinter ---
+        # Cấu hình Style cho Tkinter
         self.style = ttk.Style()
         self.style.theme_use('clam')
 
-        # Bảng màu lấy cảm hứng từ Elsa Speak (Định nghĩa là thuộc tính của lớp)
-        self.color_primary = '#4CAF50'  # Xanh lá cây (Record)
-        self.color_secondary = '#6A1B9A'  # Tím đậm (nút chính, tiêu đề)
-        self.color_accent_blue = '#2196F3'  # Xanh dương (một số nút, highlight)
-        self.color_accent_pink = '#E91E63'  # Hồng (có thể dùng cho phản hồi tiêu cực)
-        self.color_neutral_bg = '#f0f2f5'  # Nền cho các khung
-        self.color_neutral_light = '#ffffff'  # Nền cho các ô input, text
-        self.color_text_dark = '#333333'  # Chữ tối
-        self.color_text_light = '#ffffff'  # Chữ sáng
-        self.color_border = '#bbdefb'  # Màu viền nhẹ nhàng
+        self.color_button_ghi_am = '#4CAF50'
+        self.color_button_cap_nhat_vb_va_tieu_de = '#6A1B9A'
+        self.color_button_phat_am_va_highlight = '#2196F3'
+        self.color_phan_ung_tieu_cuc = '#E91E63'
+        self.color_neutral_bg = '#f0f2f5'
+        self.color_neutral_light = '#ffffff'
+        self.color_text_dark = '#333333'
+        self.color_text_light = '#ffffff'
+        self.color_border = '#bbdefb'
 
-        # Font chữ (Định nghĩa là thuộc tính của lớp)
         self.font_header = ('Arial', 24, 'bold')
         self.font_instruction_text = ('Arial', 18, 'bold')
         self.font_section_title = ('Arial', 14, 'bold')
         self.font_body = ('Arial', 12)
         self.font_input = ('Arial', 13)
         self.font_button = ('Arial', 12, 'bold')
-        self.font_feedback = ('Arial', 15) # Font cho kết quả phản hồi
+        self.font_feedback = ('Arial', 15)
 
-        # Cấu hình chung cho các widget
         self.style.configure('TLabel', font=self.font_body, background='#e6f2ff', foreground=self.color_text_dark)
         self.style.configure('TButton', font=self.font_button, padding=(15, 10), borderwidth=0, focusthickness=0,
                              focuscolor='none', relief='flat')
         self.style.configure('TCombobox', font=self.font_input, fieldbackground=self.color_neutral_light,
-                             background='#e6f2ff', bordercolor=self.color_border, arrowcolor=self.color_secondary)
+                             background='#e6f2ff', bordercolor=self.color_border, arrowcolor=self.color_button_cap_nhat_vb_va_tieu_de)
         self.style.configure('TFrame', background='#e6f2ff')
         self.style.configure('TLabelframe', font=self.font_section_title, background=self.color_neutral_bg,
                              foreground=self.color_text_dark, borderwidth=1, relief='flat',
                              bordercolor=self.color_border, highlightbackground=self.color_border)
-        self.style.configure('TLabelframe.Label', background=self.color_neutral_bg, foreground=self.color_secondary,
+        self.style.configure('TLabelframe.Label', background=self.color_neutral_bg, foreground=self.color_button_cap_nhat_vb_va_tieu_de,
                              font=self.font_section_title)
 
-        # Cấu hình màu sắc riêng cho các nút
         self.style.map('Green.TButton',
-                       background=[('!disabled', self.color_primary), ('active', '#388E3C')],
+                       background=[('!disabled', self.color_button_ghi_am), ('active', '#388E3C')],
                        foreground=[('!disabled', self.color_text_light), ('disabled', '#cccccc')])
         self.style.map('Red.TButton',
-                       background=[('!disabled', self.color_accent_pink), ('active', '#C2185B')],
+                       background=[('!disabled', self.color_phan_ung_tieu_cuc), ('active', '#C2185B')],
                        foreground=[('!disabled', self.color_text_light), ('disabled', '#cccccc')])
         self.style.map('Orange.TButton',
-                       background=[('!disabled', self.color_accent_blue), ('active', '#1976D2')],
+                       background=[('!disabled', self.color_button_phat_am_va_highlight), ('active', '#1976D2')],
                        foreground=[('!disabled', self.color_text_light), ('disabled', '#cccccc')])
         self.style.map('Blue.TButton',
-                       background=[('!disabled', self.color_secondary), ('active', '#4527A0')],
+                       background=[('!disabled', self.color_button_cap_nhat_vb_va_tieu_de), ('active', '#4527A0')],
                        foreground=[('!disabled', self.color_text_light), ('disabled', '#cccccc')])
 
-        # Style cho nhãn kết quả phản hồi (sẽ không dùng style này trực tiếp trên tk.Message)
-        # self.style.configure('Result.TLabel', font=self.font_feedback, wraplength=780, justify='center', foreground=self.color_text_dark)
+        self.style.configure('Result.TLabel', font=self.font_feedback, wraplength=780, justify='center',
+                             foreground=self.color_text_dark)
 
-
-        # --- Các biến trạng thái và dữ liệu (không đổi) ---
         self.is_recording = False
         self.audio_frames = []
         self.samplerate = 44100
@@ -102,25 +97,23 @@ class PronunciationApp:
             messagebox.showwarning("Cảnh báo",
                                    "Không tìm thấy câu mẫu hoặc tệp 'sentences.json' rỗng. Vui lòng thêm câu vào tệp.")
 
-        # --- Tạo các thành phần GUI với Grid Layout ---
-        main_frame = ttk.Frame(master, padding="25 25 25 25")
+        main_frame = ttk.Frame(cua_so, padding="25 25 25 25")
         main_frame.pack(fill=tk.BOTH, expand=True)
         main_frame.grid_columnconfigure(0, weight=1)
-        # Các hàng cần co giãn để lấp đầy không gian mới
         main_frame.grid_rowconfigure(0, weight=0)
         main_frame.grid_rowconfigure(1, weight=0)
         main_frame.grid_rowconfigure(2, weight=0)
         main_frame.grid_rowconfigure(3, weight=0)
-        main_frame.grid_rowconfigure(4, weight=1) # Hàng kết quả, cho phép co giãn nhiều hơn
+        main_frame.grid_rowconfigure(4, weight=1)
         main_frame.grid_rowconfigure(5, weight=0)
 
         ttk.Label(main_frame, text="Ứng dụng Luyện Phát âm Tiếng Anh", font=self.font_header,
-                  foreground=self.color_secondary, background='#e6f2ff').grid(row=0, column=0, pady=(0, 10),
+                  foreground=self.color_button_cap_nhat_vb_va_tieu_de, background='#e6f2f5').grid(row=0, column=0, pady=(0, 10),
                                                                               sticky="nsew")
 
         self.label_instruction = ttk.Label(main_frame, text="Nhấn 'Ghi Âm' để bắt đầu luyện tập!",
                                            font=self.font_instruction_text, foreground=self.color_text_dark,
-                                           background='#e6f2ff')
+                                           background='#e6f2f5')
         self.label_instruction.grid(row=1, column=0, pady=(0, 20), sticky="nsew")
 
         self.frame_text_management = ttk.Labelframe(main_frame, text="Chọn hoặc Tùy chỉnh Văn bản Luyện Tập",
@@ -176,7 +169,7 @@ class PronunciationApp:
         self.btn_play_standard.grid(row=0, column=2, padx=10, pady=5, sticky="ew")
 
         self.label_feedback = ttk.Label(main_frame, text="KẾT QUẢ PHÂN TÍCH:", font=self.font_section_title,
-                                        foreground=self.color_secondary, background='#e6f2f5')
+                                        foreground=self.color_button_cap_nhat_vb_va_tieu_de, background='#e6f2f5')
         self.label_feedback.grid(row=4, column=0, pady=(15, 5), sticky="n")
 
         self.result_text_var = tk.StringVar()
@@ -244,7 +237,7 @@ class PronunciationApp:
             text=f"ĐANG GHI ÂM... Vui lòng đọc to và rõ ràng: \"{self.reference_text.get()}\"",
             font=self.font_instruction_text)
         self.result_text_var.set("...")
-        self.master.update_idletasks() # Đảm bảo cập nhật ngay lập tức
+        self.cua_so.update_idletasks()  # Đảm bảo cập nhật ngay lập tức
 
         self.stream = sd.InputStream(samplerate=self.samplerate, channels=self.channels, callback=self.audio_callback)
         self.stream.start()
@@ -268,7 +261,7 @@ class PronunciationApp:
         self.btn_record.config(state=tk.NORMAL)
         self.btn_stop.config(state=tk.DISABLED)
         self.label_instruction.config(text="Ghi âm hoàn tất. Đang xử lý...", font=self.font_instruction_text)
-        self.master.update_idletasks() # Đảm bảo cập nhật ngay lập tức
+        self.cua_so.update_idletasks()  # Đảm bảo cập nhật ngay lập tức
 
         messagebox.showinfo("Thông báo", "Ghi âm đã dừng. Đang phân tích phát âm của bạn...")
 
@@ -281,8 +274,7 @@ class PronunciationApp:
             self.result_text_var.set("Không có âm thanh nào được ghi.")
             messagebox.showwarning("Cảnh báo", "Không có âm thanh nào được ghi. Vui lòng thử lại.")
             self.label_instruction.config(text="Nhấn 'Ghi Âm' để tiếp tục luyện tập!", font=self.font_instruction_text)
-        self.master.update_idletasks() # Cập nhật lại trạng thái cuối cùng
-
+        self.cua_so.update_idletasks()  # Cập nhật lại trạng thái cuối cùng
 
     def play_standard_audio(self):
         current_text = self.reference_text.get()
@@ -290,39 +282,57 @@ class PronunciationApp:
             messagebox.showwarning("Cảnh báo", "Không có văn bản nào để phát âm!")
             return
 
+        temp_mp3_path = None  # Khởi tạo biến temp_mp3_path ở đầu scope try
         try:
             self.label_instruction.config(text="Đang phát âm chuẩn... Vui lòng chờ.", font=self.font_instruction_text)
-            self.master.update_idletasks()
+            self.cua_so.update_idletasks()
 
             tts = gTTS(text=current_text, lang='en', slow=False)
-            tts.save(self.standard_audio_filename)
 
-            pygame.mixer.music.load(self.standard_audio_filename)
+            # Tạo tệp tạm thời. NamedTemporaryFile tự động cung cấp tên tệp duy nhất.
+            # Đảm bảo tệp được đóng ngay lập tức sau khi ghi bằng cách sử dụng `with`
+            with tempfile.NamedTemporaryFile(suffix='.mp3', delete=False) as temp_mp3_file:
+                tts.write_to_fp(temp_mp3_file)  # Ghi dữ liệu vào đối tượng file
+                temp_mp3_path = temp_mp3_file.name  # Lấy đường dẫn của tệp tạm thời
+
+            # Đợi một chút để đảm bảo tệp được đóng hoàn toàn bởi hệ điều hành sau khi ghi
+            time.sleep(0.1)
+
+            pygame.mixer.music.load(temp_mp3_path)
             pygame.mixer.music.play()
 
             while pygame.mixer.music.get_busy():
-                self.master.update()
+                self.cua_so.update()
+                time.sleep(0.01)
 
             messagebox.showinfo("Phát Âm Chuẩn", "Đã phát âm chuẩn xong.")
             self.label_instruction.config(text="Nhấn 'Ghi Âm' để tiếp tục luyện tập!", font=self.font_instruction_text)
 
-        except Exception as e:
-            messagebox.showerror("Lỗi phát âm",
-                                 f"Không thể phát âm chuẩn: {e}\nĐảm bảo bạn có kết nối internet và thư viện 'gTTS', 'pygame' đã cài đặt đúng cách.")
+        except Exception as e:  # Bắt Exception chung thay vì SpeedNotAvailableError cụ thể
+            messagebox.showerror("Lỗi Phát Âm Chuẩn",
+                                 f"Không thể tạo/phát âm thanh cho câu này. Vui lòng kiểm tra:\n1. Kết nối Internet của bạn.\n2. Câu văn có quá dài hoặc phức tạp.\n3. Tệp âm thanh không bị khóa bởi chương trình khác.\n\nLỗi chi tiết: {e}")
             self.label_instruction.config(text="Nhấn 'Ghi Âm' để tiếp tục luyện tập!", font=self.font_instruction_text)
         finally:
-            if os.path.exists(self.standard_audio_filename):
-                os.remove(self.standard_audio_filename)
+            # Luôn đảm bảo giải phóng pygame.mixer và xóa tệp tạm thời
+            pygame.mixer.music.stop()
+            pygame.mixer.music.unload()
+            if temp_mp3_path is not None and os.path.exists(
+                    temp_mp3_path):  # Kiểm tra temp_mp3_path đã được gán và tồn tại
+                try:
+                    os.remove(temp_mp3_path)
+                except OSError as e:
+                    print(f"Cảnh báo: Không thể xóa tệp tạm thời {temp_mp3_path}: {e}")
+                    messagebox.showwarning("Cảnh báo", f"Không thể xóa tệp tạm thời: {e}\nVui lòng xóa thủ công sau.")
 
     def analyze_pronunciation(self):
         self.result_text_var.set("Đang phân tích phát âm của bạn... Vui lòng chờ.")
-        self.master.update_idletasks() # Cập nhật giao diện ngay lập tức
+        self.cua_so.update_idletasks()
 
         if not os.path.exists(self.audio_filename):
             self.result_text_var.set("Lỗi: Không tìm thấy tệp ghi âm để phân tích.")
             messagebox.showerror("Lỗi", "Không tìm thấy tệp ghi âm. Vui lòng ghi âm trước.")
             self.label_instruction.config(text="Nhấn 'Ghi Âm' để tiếp tục luyện tập!", font=self.font_instruction_text)
-            self.master.update_idletasks() # Cập nhật ngay lập tức
+            self.cua_so.update_idletasks()
             return
 
         recognizer = sr.Recognizer()
@@ -337,7 +347,7 @@ class PronunciationApp:
             messagebox.showerror("Lỗi xử lý âm thanh",
                                  f"Không thể xử lý tệp âm thanh: {e}\nBạn đã cài đặt và cấu hình FFmpeg đúng cách chưa?")
             self.label_instruction.config(text="Nhấn 'Ghi Âm' để tiếp tục luyện tập!", font=self.font_instruction_text)
-            self.master.update_idletasks() # Cập nhật ngay lập tức
+            self.cua_so.update_idletasks()
             return
 
         try:
@@ -354,7 +364,7 @@ class PronunciationApp:
             color_feedback = self.color_text_dark
             if ratio >= 90:
                 feedback = "Tuyệt vời! Phát âm của bạn rất chính xác."
-                color_feedback = self.color_primary
+                color_feedback = self.color_button_ghi_am
             elif ratio >= 70:
                 feedback = "Tốt! Phát âm của bạn khá rõ ràng."
                 color_feedback = '#FFC107'
@@ -372,9 +382,8 @@ class PronunciationApp:
                               f"Phản hồi: {feedback}")
 
             self.result_text_var.set(result_message)
-            # Cập nhật foreground cho tk.Message
             self.result_display.config(fg=color_feedback)
-            self.master.update_idletasks() # Đảm bảo cập nhật hiển thị
+            self.cua_so.update_idletasks()
 
             self.save_history({
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -387,20 +396,20 @@ class PronunciationApp:
 
         except sr.UnknownValueError:
             self.result_text_var.set(
-                "Kết quả: KHÔNG THỂ NHẬN DẠNG GIỌNG NÓI của bạn.\nVui lòng nói rõ hơn hoặc thử lại. (UnknownValueError)")
-            self.result_display.config(fg=self.color_accent_pink) # Cập nhật foreground
+                "Kết quả: KHÔNG THỂ NHẬN DẠNG GIỌC NÓI của bạn.\nVui lòng nói rõ hơn hoặc thử lại. (UnknownValueError)")
+            self.result_display.config(fg=self.color_accent_pink)
         except sr.RequestError as e:
             self.result_text_var.set(
                 f"Kết quả: LỖI KẾT NỐI đến dịch vụ nhận dạng giọng nói;\nKiểm tra internet của bạn. (RequestError: {e})")
-            self.result_display.config(fg=self.color_accent_pink) # Cập nhật foreground
+            self.result_display.config(fg=self.color_accent_pink)
         except Exception as e:
             self.result_text_var.set(f"Kết quả: ĐÃ XẢY RA LỖI không mong muốn:\n{e}")
-            self.result_display.config(fg=self.color_accent_pink) # Cập nhật foreground
+            self.result_display.config(fg=self.color_accent_pink)
         finally:
             if os.path.exists(temp_audio_file):
                 os.remove(temp_audio_file)
             self.label_instruction.config(text="Nhấn 'Ghi Âm' để tiếp tục luyện tập!", font=self.font_instruction_text)
-            self.master.update_idletasks() # Cập nhật trạng thái cuối cùng
+            self.cua_so.update_idletasks()
 
     def load_history(self):
         if not os.path.exists(self.history_file):
@@ -425,16 +434,16 @@ class PronunciationApp:
             messagebox.showerror("Lỗi lưu lịch sử", f"Không thể lưu lịch sử: {e}")
 
     def show_history_window(self):
-        history_window = tk.Toplevel(self.master)
+        history_window = tk.Toplevel(self.cua_so)
         history_window.title("Lịch Sử Luyện Tập")
         history_window.geometry("850x650")
-        history_window.transient(self.master)
+        history_window.transient(self.cua_so)
         history_window.grab_set()
         history_window.focus_set()
         history_window.config(bg='#e6f2ff')
 
         history_label = ttk.Label(history_window, text="LỊCH SỬ CÁC PHIÊN LUYỆN TẬP", font=self.font_instruction_text,
-                                  foreground=self.color_secondary, background='#e6f2ff')
+                                  foreground=self.color_button_cap_nhat_vb_va_tieu_de, background='#e6f2f5')
         history_label.pack(pady=15)
 
         history_text_area = scrolledtext.ScrolledText(history_window, wrap=tk.WORD, width=95, height=28,
@@ -458,14 +467,14 @@ class PronunciationApp:
                 history_text_area.insert(tk.END, f"Phản hồi: {entry.get('feedback', 'N/A')}\n")
                 history_text_area.insert(tk.END, "---------------------------------------------------\n\n")
 
-        history_text_area.tag_configure('header', font=('Arial', 11, 'bold'), foreground=self.color_secondary)
+        history_text_area.tag_configure('header', font=('Arial', 11, 'bold'), foreground=self.color_button_cap_nhat_vb_va_tieu_de)
         history_text_area.config(state=tk.DISABLED)
 
         history_window.protocol("WM_DELETE_WINDOW", lambda: self.on_history_window_close(history_window))
 
     def on_history_window_close(self, history_window):
         history_window.destroy()
-        self.master.grab_release()
+        self.cua_so.grab_release()
 
 
 # --- Khởi chạy ứng dụng ---
