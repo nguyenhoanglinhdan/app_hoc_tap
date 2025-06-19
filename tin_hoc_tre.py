@@ -36,11 +36,11 @@ class PronunciationApp:
         self.color_button_cap_nhat_vb_va_tieu_de = '#6A1B9A'
         self.color_button_phat_am_va_highlight = '#2196F3'
         self.color_phan_ung_tieu_cuc = '#E91E63'
-        self.color_neutral_bg = '#f0f2f5'
-        self.color_neutral_light = '#ffffff'
+        self.color_nen_khung = '#f0f2f5'
+        self.color_nen_cho_o_input_va_text = '#ffffff' # màu nền cho các ô input và text
         self.color_text_dark = '#333333'
         self.color_text_light = '#ffffff'
-        self.color_border = '#bbdefb'
+        self.color_border = '#bbdefb'  # đường viền
 
         self.font_header = ('Arial', 24, 'bold')
         self.font_instruction_text = ('Arial', 18, 'bold')
@@ -53,13 +53,13 @@ class PronunciationApp:
         self.style.configure('TLabel', font=self.font_body, background='#e6f2ff', foreground=self.color_text_dark)
         self.style.configure('TButton', font=self.font_button, padding=(15, 10), borderwidth=0, focusthickness=0,
                              focuscolor='none', relief='flat')
-        self.style.configure('TCombobox', font=self.font_input, fieldbackground=self.color_neutral_light,
+        self.style.configure('TCombobox', font=self.font_input, fieldbackground=self.color_nen_cho_o_input_va_text,
                              background='#e6f2ff', bordercolor=self.color_border, arrowcolor=self.color_button_cap_nhat_vb_va_tieu_de)
         self.style.configure('TFrame', background='#e6f2ff')
-        self.style.configure('TLabelframe', font=self.font_section_title, background=self.color_neutral_bg,
+        self.style.configure('TLabelframe', font=self.font_section_title, background=self.color_nen_khung,
                              foreground=self.color_text_dark, borderwidth=1, relief='flat',
                              bordercolor=self.color_border, highlightbackground=self.color_border)
-        self.style.configure('TLabelframe.Label', background=self.color_neutral_bg, foreground=self.color_button_cap_nhat_vb_va_tieu_de,
+        self.style.configure('TLabelframe.Label', background=self.color_nen_khung, foreground=self.color_button_cap_nhat_vb_va_tieu_de,
                              font=self.font_section_title)
 
         self.style.map('Green.TButton',
@@ -141,7 +141,7 @@ class PronunciationApp:
         self.text_editor = scrolledtext.ScrolledText(self.frame_text_management, wrap=tk.WORD, height=4,
                                                      font=self.font_input, relief='solid', borderwidth=1,
                                                      highlightbackground=self.color_border,
-                                                     highlightcolor=self.color_border, bg=self.color_neutral_light,
+                                                     highlightcolor=self.color_border, bg=self.color_nen_cho_o_input_va_text,
                                                      fg=self.color_text_dark)
         self.text_editor.insert(tk.END, self.reference_text.get())
         self.text_editor.grid(row=3, column=0, pady=(0, 5), sticky="nsew")
@@ -373,7 +373,7 @@ class PronunciationApp:
                 color_feedback = '#fd7e14'
             else:
                 feedback = "Cần rất nhiều luyện tập. Đừng nản lòng!"
-                color_feedback = self.color_accent_pink
+                color_feedback = self.color_phan_ung_tieu_cuc
 
             result_message = (f"Bạn đã nói:\n\"{user_spoken_text}\"\n\n"
                               f"Văn bản chuẩn:\n\"{current_reference_text}\"\n\n"
@@ -397,14 +397,14 @@ class PronunciationApp:
         except sr.UnknownValueError:
             self.result_text_var.set(
                 "Kết quả: KHÔNG THỂ NHẬN DẠNG GIỌC NÓI của bạn.\nVui lòng nói rõ hơn hoặc thử lại. (UnknownValueError)")
-            self.result_display.config(fg=self.color_accent_pink)
+            self.result_display.config(fg=self.color_phan_ung_tieu_cuc)
         except sr.RequestError as e:
             self.result_text_var.set(
                 f"Kết quả: LỖI KẾT NỐI đến dịch vụ nhận dạng giọng nói;\nKiểm tra internet của bạn. (RequestError: {e})")
-            self.result_display.config(fg=self.color_accent_pink)
+            self.result_display.config(fg=self.color_phan_ung_tieu_cuc)
         except Exception as e:
             self.result_text_var.set(f"Kết quả: ĐÃ XẢY RA LỖI không mong muốn:\n{e}")
-            self.result_display.config(fg=self.color_accent_pink)
+            self.result_display.config(fg=self.color_phan_ung_tieu_cuc)
         finally:
             if os.path.exists(temp_audio_file):
                 os.remove(temp_audio_file)
@@ -449,7 +449,7 @@ class PronunciationApp:
         history_text_area = scrolledtext.ScrolledText(history_window, wrap=tk.WORD, width=95, height=28,
                                                       font=self.font_body, relief='solid', borderwidth=1,
                                                       highlightbackground=self.color_border,
-                                                      highlightcolor=self.color_border, bg=self.color_neutral_light,
+                                                      highlightcolor=self.color_border, bg=self.color_nen_cho_o_input_va_text,
                                                       fg=self.color_text_dark)
         history_text_area.pack(pady=10, padx=10, fill=tk.BOTH, expand=True)
 
