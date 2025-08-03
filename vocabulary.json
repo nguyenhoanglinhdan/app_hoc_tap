@@ -1,0 +1,1590 @@
+{
+    "grades": [
+        {
+            "grade": 1,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "In the school playground",
+                    "words": [
+                        {"word": "Ball", "meaning": "trái bóng"},
+                        {"word": "Bike", "meaning": "xe đạp"},
+                        {"word": "Book", "meaning": "cuốn sách"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "In the dining room",
+                    "words": [
+                        {"word": "cake", "meaning": "Cái bánh"},
+                        {"word": "car", "meaning": "Xe ô tô ( đồ chơi )"},
+                        {"word": "cat", "meaning": "Con mèo"},
+                        {"word": "cup", "meaning": "Cái tách / cái cốc"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "At the street market",
+                    "words": [
+                        {"word": "Apple", "meaning": "Quả táo"},
+                        {"word": "Bag", "meaning": "Cái túi"},
+                        {"word": "Can", "meaning": "Cái lon"},
+                        {"word": "Hat", "meaning": "Cái mũ"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "In the bedroom",
+                    "words": [
+                        {"word": "Desk", "meaning": "Cái bàn"},
+                        {"word": "Dog", "meaning": "Con chó"},
+                        {"word": "Door", "meaning": "Cái cửa"},
+                        {"word": "Duck", "meaning": "Con vịt"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "At the fish and chip shop",
+                    "words": [
+                        {"word": "Chicken", "meaning": "Con gà"},
+                        {"word": "Chips", "meaning": "Khoai tây chiên"},
+                        {"word": "Fish", "meaning": "Con cá"},
+                        {"word": "Milk", "meaning": "Sữa"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "In the classroom",
+                    "words": [
+                        {"word": "Bell", "meaning": "Cái chuông"},
+                        {"word": "Pen", "meaning": "bút mực"},
+                        {"word": "Pencil", "meaning": "Bút chì"},
+                        {"word": "Red", "meaning": "Màu đỏ"}
+                    ]
+                },
+                {
+                    "unit_number": 7,
+                    "unit_name": "In the garden",
+                    "words": [
+                        {"word": "Garden", "meaning": "Khu vườn"},
+                        {"word": "Gate", "meaning": "Cái cổng"},
+                        {"word": "Girl", "meaning": "Con gái"},
+                        {"word": "Goat", "meaning": "Con dê"}
+                    ]
+                },
+                {
+                    "unit_number": 8,
+                    "unit_name": "In the park",
+                    "words": [
+                        {"word": "Hair", "meaning": "Mái tóc"},
+                        {"word": "Hand", "meaning": "Cái tay"},
+                        {"word": "Head", "meaning": "Cái đầu"},
+                        {"word": "Horse", "meaning": "Con ngựa"}
+                    ]
+                },
+                {
+                    "unit_number": 9,
+                    "unit_name": "In the shop",
+                    "words": [
+                        {"word": "Clock", "meaning": "Đồng hồ"},
+                        {"word": "Locks", "meaning": "Ổ khoá"},
+                        {"word": "Mops", "meaning": "Cây lau nhà"},
+                        {"word": "Pots", "meaning": "Cái nồi, cái chảo"}
+                    ]
+                },
+                {
+                    "unit_number": 10,
+                    "unit_name": "At the zoo",
+                    "words": [
+                        {"word": "Mango", "meaning": "Trái xoài"},
+                        {"word": "Monkey", "meaning": "Con khỉ"},
+                        {"word": "Mother", "meaning": "Mẹ"},
+                        {"word": "Mouse", "meaning": "Con chuột"}
+                    ]
+                },
+                {
+                    "unit_number": 11,
+                    "unit_name": "At the bus stop",
+                    "words": [
+                        {"word": "Bus", "meaning": "Xe buýt"},
+                        {"word": "Run", "meaning": "Chạy"},
+                        {"word": "Sun", "meaning": "Mặt Trời"},
+                        {"word": "Truck", "meaning": "Xe tải"}
+                    ]
+                },
+                {
+                    "unit_number": 12,
+                    "unit_name": "At the lake",
+                    "words": [
+                        {"word": "Lake", "meaning": "Cái hồ"},
+                        {"word": "Leaf", "meaning": "Lá"},
+                        {"word": "Lemon", "meaning": "Quả chanh"}
+                    ]
+                },
+                {
+                    "unit_number": 13,
+                    "unit_name": "In the school canteen",
+                    "words": [
+                        {"word": "Banana", "meaning": "Chuối"},
+                        {"word": "Noodle", "meaning": "Mì"},
+                        {"word": "Nut", "meaning": "Hạt, đậu"}
+                    ]
+                },
+                {
+                    "unit_number": 14,
+                    "unit_name": "In the toy shop",
+                    "words": [
+                        {"word": "Teddy bear", "meaning": "Gấu bông"},
+                        {"word": "Tiger", "meaning": "Con hổ"},
+                        {"word": "Top", "meaning": "Đồ chơi con quay"},
+                        {"word": "turtle", "meaning": "con rùa"}
+                    ]
+                },
+                {
+                    "unit_number": 15,
+                    "unit_name": "At the football match",
+                    "words": [
+                        {"word": "Face", "meaning": "Gương mặt"},
+                        {"word": "Father", "meaning": "Bố"},
+                        {"word": "Foot", "meaning": "Bàn chân"},
+                        {"word": "Football", "meaning": "Bóng đá"}
+                    ]
+                },
+                {
+                    "unit_number": 16,
+                    "unit_name": "At home",
+                    "words": [
+                        {"word": "Wash", "meaning": "Lau, rửa"},
+                        {"word": "Water", "meaning": "Nước"},
+                        {"word": "Window", "meaning": "Cửa sổ"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 2,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "At my birthday party",
+                    "words": [
+                        {"word": "Pasta", "meaning": "Mì Ý"},
+                        {"word": "Popcorn", "meaning": "Bắp rang"},
+                        {"word": "Pizza", "meaning": "Bánh pizza"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "In the backyard",
+                    "words": [
+                        {"word": "Kite", "meaning": "Diều"},
+                        {"word": "Bike", "meaning": "Xe đạp"},
+                        {"word": "Kitten", "meaning": "Mèo con"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "At the seaside",
+                    "words": [
+                        {"word": "Sail", "meaning": "Cánh buồm"},
+                        {"word": "Sand", "meaning": "Cát"},
+                        {"word": "Sea", "meaning": "Biển"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "In the countryside",
+                    "words": [
+                        {"word": "Rainbow", "meaning": "Cầu vồng"},
+                        {"word": "River", "meaning": "Con sông"},
+                        {"word": "Road", "meaning": "Con đường"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "In the classroom",
+                    "words": [
+                        {"word": "Question", "meaning": "Câu hỏi"},
+                        {"word": "Square", "meaning": "Hình vuông"},
+                        {"word": "Quiz", "meaning": "Bài kiểm tra"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "On the farm",
+                    "words": [
+                        {"word": "Box", "meaning": "Cái hộp"},
+                        {"word": "Fox", "meaning": "Con cáo"},
+                        {"word": "Ox", "meaning": "Bò đực"}
+                    ]
+                },
+                {
+                    "unit_number": 7,
+                    "unit_name": "In the kitchen",
+                    "words": [
+                        {"word": "Jelly", "meaning": "thạch rau câu / trái cây"},
+                        {"word": "Juice", "meaning": "Nước ép"},
+                        {"word": "Jam", "meaning": "Mứt"}
+                    ]
+                },
+                {
+                    "unit_number": 8,
+                    "unit_name": "In the village",
+                    "words": [
+                        {"word": "Village", "meaning": "Ngôi làng"},
+                        {"word": "Van", "meaning": "Xe tải nhỏ"},
+                        {"word": "Volleyball", "meaning": "Bóng chuyền"}
+                    ]
+                },
+                {
+                    "unit_number": 9,
+                    "unit_name": "In the grocery store",
+                    "words": [
+                        {"word": "Yogurt", "meaning": "Sữa chua"},
+                        {"word": "Yam", "meaning": "Khoai mỡ"},
+                        {"word": "yo-yos", "meaning": "yo-yo ( đồ chơi )"}
+                    ]
+                },
+                {
+                    "unit_number": 10,
+                    "unit_name": "At the zoo",
+                    "words": [
+                        {"word": "Zoo", "meaning": "Sở thú"},
+                        {"word": "Zebu", "meaning": "Bò u"},
+                        {"word": "Zebra", "meaning": "Con ngựa vằn"}
+                    ]
+                },
+                {
+                    "unit_number": 11,
+                    "unit_name": "In the playground",
+                    "words": [
+                        {"word": "Sliding", "meaning": "Đang trượt"},
+                        {"word": "Riding", "meaning": "Đang cưỡi / đi"},
+                        {"word": "Driving", "meaning": "Đang lái"}
+                    ]
+                },
+                {
+                    "unit_number": 12,
+                    "unit_name": "At the café",
+                    "words": [
+                        {"word": "Grapes", "meaning": "Nho"},
+                        {"word": "Cake", "meaning": "Cái bánh"},
+                        {"word": "Table", "meaning": "Cái bàn"}
+                    ]
+                },
+                {
+                    "unit_number": 13,
+                    "unit_name": "In the maths class",
+                    "words": [
+                        {"word": "Eleven", "meaning": "Mười một"},
+                        {"word": "Thirteen", "meaning": "Mười ba"},
+                        {"word": "Fourteen", "meaning": "Mười bốn"},
+                        {"word": "Fifteen", "meaning": "Mười lăm"}
+                    ]
+                },
+                {
+                    "unit_number": 14,
+                    "unit_name": "At home",
+                    "words": [
+                        {"word": "Sister", "meaning": "Chị gái"},
+                        {"word": "Grandmother", "meaning": "Bà"},
+                        {"word": "Brother", "meaning": "Anh trai"}
+                    ]
+                },
+                {
+                    "unit_number": 15,
+                    "unit_name": "In the clothes shop",
+                    "words": [
+                        {"word": "Shirts", "meaning": "Những cái áo sơ mi"},
+                        {"word": "Shorts", "meaning": "Những cái quần short"},
+                        {"word": "Shoes", "meaning": "Những đôi giày"}
+                    ]
+                },
+                {
+                    "unit_number": 16,
+                    "unit_name": "At the campsite",
+                    "words": [
+                        {"word": "Tent", "meaning": "Cái lều"},
+                        {"word": "Teapot", "meaning": "Ấm trà"},
+                        {"word": "Blanket", "meaning": "Cái mền"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 3,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "Hello",
+                    "words": [
+                        {"word": "Bye", "meaning": "Tạm biệt"},
+                        {"word": "Fine", "meaning": "ổn"},
+                        {"word": "Goodbye", "meaning": "Tạm biệt"},
+                        {"word": "Hello", "meaning": "Xin chào"},
+                        {"word": "Hi", "meaning": "Xin chào"},
+                        {"word": "How", "meaning": "Thế nào ?"},
+                        {"word": "I", "meaning": "Tôi"},
+                        {"word": "You", "meaning": "Bạn"},
+                        {"word": "Thank you", "meaning": "Cảm ơn"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Our names",
+                    "words": [
+                        {"word": "How", "meaning": "Thế nào ?"},
+                        {"word": "My", "meaning": "Của tôi"},
+                        {"word": "Name", "meaning": "Tên"},
+                        {"word": "What", "meaning": "Cái gì ?"},
+                        {"word": "Your", "meaning": "Của bạn"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "Our friends",
+                    "words": [
+                        {"word": "Friend", "meaning": "Bạn"},
+                        {"word": "It", "meaning": "Nó"},
+                        {"word": "Mr", "meaning": "(Dùng cho đàn ông)"},
+                        {"word": "Ms", "meaning": "(Dùng cho phụ nữ)"},
+                        {"word": "No", "meaning": "Không"},
+                        {"word": "Teacher", "meaning": "Giáo viên"},
+                        {"word": "That", "meaning": "Kia là"},
+                        {"word": "This", "meaning": "Đây là"},
+                        {"word": "Yes", "meaning": "Có"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "Our bodies",
+                    "words": [
+                        {"word": "Ear", "meaning": "Tai"},
+                        {"word": "Eye", "meaning": "Mắt"},
+                        {"word": "Face", "meaning": "Gương mặt"},
+                        {"word": "Hair", "meaning": "Mái tóc"},
+                        {"word": "Hand", "meaning": "Bàn tay"},
+                        {"word": "Mouth", "meaning": "Miệng"},
+                        {"word": "Nose", "meaning": "Mũi"},
+                        {"word": "Open", "meaning": "Mở ra"},
+                        {"word": "Touch", "meaning": "Chạm"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "My hobbies",
+                    "words": [
+                        {"word": "Cooking", "meaning": "Nấu ăn"},
+                        {"word": "Dancing", "meaning": "Nhảy múa"},
+                        {"word": "Drawing", "meaning": "Vẽ tranh (bằng bút chì)"},
+                        {"word": "Painting", "meaning": "Vẽ tranh (bằng màu)"},
+                        {"word": "Running", "meaning": "Chạy"},
+                        {"word": "Singing", "meaning": "Ca hát"},
+                        {"word": "Swimming", "meaning": "Bơi lội"},
+                        {"word": "Walking", "meaning": "Đi bộ"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "Our school",
+                    "words": [
+                        {"word": "Art room", "meaning": "Phòng mĩ thuật"},
+                        {"word": "classroom", "meaning": "Phòng học"},
+                        {"word": "Computer room", "meaning": "Phòng tin học"},
+                        {"word": "Gym", "meaning": "phòng tập thể dục"},
+                        {"word": "Library", "meaning": "Thư viện"},
+                        {"word": "Music room", "meaning": "Phòng âm nhạc"},
+                        {"word": "Playground", "meaning": "Sân chơi"},
+                        {"word": "School", "meaning": "Trường học"}
+                    ]
+                },
+                {
+                    "unit_number": 7,
+                    "unit_name": "Classroom instructions",
+                    "words": [
+                        {"word": "Close", "meaning": "Đóng lại"},
+                        {"word": "Come in", "meaning": "Vào trong"},
+                        {"word": "Go out", "meaning": "Ra ngoài"},
+                        {"word": "Sit down", "meaning": "Ngồi xuống"},
+                        {"word": "Speak", "meaning": "Nói"},
+                        {"word": "Stand up", "meaning": "Đứng dậy"}
+                    ]
+                },
+                {
+                    "unit_number": 8,
+                    "unit_name": "My school things",
+                    "words": [
+                        {"word": "Book", "meaning": "Cuốn sách"},
+                        {"word": "Eraser", "meaning": "Cục tẩy"},
+                        {"word": "Notebook", "meaning": "Vở"},
+                        {"word": "Pen", "meaning": "Bút mực"},
+                        {"word": "Pencil", "meaning": "Bút chì"},
+                        {"word": "Pencil case", "meaning": "Hộp bút"},
+                        {"word": "Ruler", "meaning": "Cây thước"},
+                        {"word": "School bag", "meaning": "Cặp sách"}
+                    ]
+                },
+                {
+                    "unit_number": 9,
+                    "unit_name": "Colours",
+                    "words": [
+                        {"word": "Black", "meaning": "Màu đen"},
+                        {"word": "Blue", "meaning": "Màu xanh dương"},
+                        {"word": "Brown", "meaning": "Màu nâu"},
+                        {"word": "Colour", "meaning": "Màu sắc"},
+                        {"word": "Green", "meaning": "Màu xanh lá"},
+                        {"word": "Orange", "meaning": "Màu cam"},
+                        {"word": "Red", "meaning": "Màu đỏ"},
+                        {"word": "They", "meaning": "Họ"},
+                        {"word": "White", "meaning": "Màu trắng"},
+                        {"word": "Yellow", "meaning": "Màu vàng"}
+                    ]
+                },
+                {
+                    "unit_number": 10,
+                    "unit_name": "Break time activities",
+                    "words": [
+                        {"word": "Break time", "meaning": "Giờ giải lao"},
+                        {"word": "Chat", "meaning": "Trò chuyện"},
+                        {"word": "Do word puzzles", "meaning": "Chơi giải đố chữ"},
+                        {"word": "Play", "meaning": "Chơi"},
+                        {"word": "Badminton", "meaning": "Cầu lông"},
+                        {"word": "Basketball", "meaning": "Bóng rổ"},
+                        {"word": "Chess", "meaning": "Cờ vua"},
+                        {"word": "Football", "meaning": "Bóng đá"},
+                        {"word": "Volleyball", "meaning": "Bóng chuyền"},
+                        {"word": "Skateboard", "meaning": "Ván trượt"}
+                    ]
+                },
+                {
+                    "unit_number": 11,
+                    "unit_name": "My family",
+                    "words": [
+                        {"word": "Brother", "meaning": "Anh / em trai"},
+                        {"word": "Father", "meaning": "Bố"},
+                        {"word": "Mother", "meaning": "Mẹ"},
+                        {"word": "Sister", "meaning": "Chị / em gái"},
+                        {"word": "Sure", "meaning": "Đương nhiên / chắc chắn"}
+                    ]
+                },
+                {
+                    "unit_number": 12,
+                    "unit_name": "Jobs",
+                    "words": [
+                        {"word": "Cook", "meaning": "Đầu bếp"},
+                        {"word": "Doctor", "meaning": "Bác sĩ"},
+                        {"word": "Driver", "meaning": "Tài xế"},
+                        {"word": "Farmer", "meaning": "Nông dân"},
+                        {"word": "Job", "meaning": "Nghề nghiệp"},
+                        {"word": "Nurse", "meaning": "Y tá"},
+                        {"word": "Singer", "meaning": "Ca sĩ"},
+                        {"word": "Teacher", "meaning": "Giáo viên"},
+                        {"word": "Worker", "meaning": "Công nhân"}
+                    ]
+                },
+                {
+                    "unit_number": 13,
+                    "unit_name": "My house",
+                    "words": [
+                        {"word": "Bathroom", "meaning": "Phòng tắm"},
+                        {"word": "Bedroom", "meaning": "Phòng ngủ"},
+                        {"word": "Chair", "meaning": "Cái ghế"},
+                        {"word": "House", "meaning": "Ngôi nhà"},
+                        {"word": "Kitchen", "meaning": "Nhà bếp"},
+                        {"word": "Lamp", "meaning": "Cái đèn"},
+                        {"word": "Living room", "meaning": "Phòng khách"},
+                        {"word": "Table", "meaning": "Cái bàn"},
+                        {"word": "Here", "meaning": "Đây"},
+                        {"word": "There", "meaning": "Ở đó"},
+                        {"word": "In", "meaning": "Trong"},
+                        {"word": "On", "meaning": "Trên"}
+                    ]
+                },
+                {
+                    "unit_number": 14,
+                    "unit_name": "My bedroom",
+                    "words": [
+                        {"word": "Bed", "meaning": "Giường ngủ"},
+                        {"word": "Big", "meaning": "To"},
+                        {"word": "Desk", "meaning": "Cái bàn"},
+                        {"word": "Door", "meaning": "Cánh cửa"},
+                        {"word": "Small", "meaning": "Nhỏ"},
+                        {"word": "Window", "meaning": "Cửa sổ"}
+                    ]
+                },
+                {
+                    "unit_number": 15,
+                    "unit_name": "At the dining table",
+                    "words": [
+                        {"word": "Bean", "meaning": "Đậu"},
+                        {"word": "Bread", "meaning": "Bánh mì"},
+                        {"word": "Chicken", "meaning": "Gà"},
+                        {"word": "Egg", "meaning": "Trứng"},
+                        {"word": "Fish", "meaning": "Cá"},
+                        {"word": "Juice", "meaning": "Nước ép"}
+                    ]
+                },
+                {
+                    "unit_number": 16,
+                    "unit_name": "My pets",
+                    "words": [
+                        {"word": "Bird", "meaning": "Con chim"},
+                        {"word": "Cat", "meaning": "Con mèo"},
+                        {"word": "Dog", "meaning": "Con chó"},
+                        {"word": "Goldfish", "meaning": "Cá vàng"},
+                        {"word": "Parrot", "meaning": "Con vẹt"},
+                        {"word": "Rabbit", "meaning": "Con thỏ"},
+                        {"word": "Many", "meaning": "Nhiều"},
+                        {"word": "Some", "meaning": "Một vài"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 2,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "At my birthday party",
+                    "words": [
+                        {"word": "Pasta", "meaning": "Mì Ý"},
+                        {"word": "Popcorn", "meaning": "Bắp rang"},
+                        {"word": "Pizza", "meaning": "Bánh pizza"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "In the backyard",
+                    "words": [
+                        {"word": "Kite", "meaning": "Diều"},
+                        {"word": "Bike", "meaning": "Xe đạp"},
+                        {"word": "Kitten", "meaning": "Mèo con"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "At the seaside",
+                    "words": [
+                        {"word": "Sail", "meaning": "Cánh buồm"},
+                        {"word": "Sand", "meaning": "Cát"},
+                        {"word": "Sea", "meaning": "Biển"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "In the countryside",
+                    "words": [
+                        {"word": "Rainbow", "meaning": "Cầu vồng"},
+                        {"word": "River", "meaning": "Con sông"},
+                        {"word": "Road", "meaning": "Con đường"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "In the classroom",
+                    "words": [
+                        {"word": "Question", "meaning": "Câu hỏi"},
+                        {"word": "Square", "meaning": "Hình vuông"},
+                        {"word": "Quiz", "meaning": "Bài kiểm tra"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "On the farm",
+                    "words": [
+                        {"word": "Box", "meaning": "Cái hộp"},
+                        {"word": "Fox", "meaning": "Con cáo"},
+                        {"word": "Ox", "meaning": "Bò đực"}
+                    ]
+                },
+                {
+                    "unit_number": 7,
+                    "unit_name": "In the kitchen",
+                    "words": [
+                        {"word": "Jelly", "meaning": "thạch rau câu / trái cây"},
+                        {"word": "Juice", "meaning": "Nước ép"},
+                        {"word": "Jam", "meaning": "Mứt"}
+                    ]
+                },
+                {
+                    "unit_number": 8,
+                    "unit_name": "In the village",
+                    "words": [
+                        {"word": "Village", "meaning": "Ngôi làng"},
+                        {"word": "Van", "meaning": "Xe tải nhỏ"},
+                        {"word": "Volleyball", "meaning": "Bóng chuyền"}
+                    ]
+                },
+                {
+                    "unit_number": 9,
+                    "unit_name": "In the grocery store",
+                    "words": [
+                        {"word": "Yogurt", "meaning": "Sữa chua"},
+                        {"word": "Yam", "meaning": "Khoai mỡ"},
+                        {"word": "yo-yos", "meaning": "yo-yo ( đồ chơi )"}
+                    ]
+                },
+                {
+                    "unit_number": 10,
+                    "unit_name": "At the zoo",
+                    "words": [
+                        {"word": "Zoo", "meaning": "Sở thú"},
+                        {"word": "Zebu", "meaning": "Bò u"},
+                        {"word": "Zebra", "meaning": "Con ngựa vằn"}
+                    ]
+                },
+                {
+                    "unit_number": 11,
+                    "unit_name": "In the playground",
+                    "words": [
+                        {"word": "Sliding", "meaning": "Đang trượt"},
+                        {"word": "Riding", "meaning": "Đang cưỡi / đi"},
+                        {"word": "Driving", "meaning": "Đang lái"}
+                    ]
+                },
+                {
+                    "unit_number": 12,
+                    "unit_name": "At the café",
+                    "words": [
+                        {"word": "Grapes", "meaning": "Nho"},
+                        {"word": "Cake", "meaning": "Cái bánh"},
+                        {"word": "Table", "meaning": "Cái bàn"}
+                    ]
+                },
+                {
+                    "unit_number": 13,
+                    "unit_name": "In the maths class",
+                    "words": [
+                        {"word": "Eleven", "meaning": "Mười một"},
+                        {"word": "Thirteen", "meaning": "Mười ba"},
+                        {"word": "Fourteen", "meaning": "Mười bốn"},
+                        {"word": "Fifteen", "meaning": "Mười lăm"}
+                    ]
+                },
+                {
+                    "unit_number": 14,
+                    "unit_name": "At home",
+                    "words": [
+                        {"word": "Sister", "meaning": "Chị gái"},
+                        {"word": "Grandmother", "meaning": "Bà"},
+                        {"word": "Brother", "meaning": "Anh trai"}
+                    ]
+                },
+                {
+                    "unit_number": 15,
+                    "unit_name": "In the clothes shop",
+                    "words": [
+                        {"word": "Shirts", "meaning": "Những cái áo sơ mi"},
+                        {"word": "Shorts", "meaning": "Những cái quần short"},
+                        {"word": "Shoes", "meaning": "Những đôi giày"}
+                    ]
+                },
+                {
+                    "unit_number": 16,
+                    "unit_name": "At the campsite",
+                    "words": [
+                        {"word": "Tent", "meaning": "Cái lều"},
+                        {"word": "Teapot", "meaning": "Ấm trà"},
+                        {"word": "Blanket", "meaning": "Cái mền"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 3,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "Hello",
+                    "words": [
+                        {"word": "Bye", "meaning": "Tạm biệt"},
+                        {"word": "Fine", "meaning": "ổn"},
+                        {"word": "Goodbye", "meaning": "Tạm biệt"},
+                        {"word": "Hello", "meaning": "Xin chào"},
+                        {"word": "Hi", "meaning": "Xin chào"},
+                        {"word": "How", "meaning": "Thế nào ?"},
+                        {"word": "I", "meaning": "Tôi"},
+                        {"word": "You", "meaning": "Bạn"},
+                        {"word": "Thank you", "meaning": "Cảm ơn"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Our names",
+                    "words": [
+                        {"word": "How", "meaning": "Thế nào ?"},
+                        {"word": "My", "meaning": "Của tôi"},
+                        {"word": "Name", "meaning": "Tên"},
+                        {"word": "What", "meaning": "Cái gì ?"},
+                        {"word": "Your", "meaning": "Của bạn"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "Our friends",
+                    "words": [
+                        {"word": "Friend", "meaning": "Bạn"},
+                        {"word": "It", "meaning": "Nó"},
+                        {"word": "Mr", "meaning": "(Dùng cho đàn ông)"},
+                        {"word": "Ms", "meaning": "(Dùng cho phụ nữ)"},
+                        {"word": "No", "meaning": "Không"},
+                        {"word": "Teacher", "meaning": "Giáo viên"},
+                        {"word": "That", "meaning": "Kia là"},
+                        {"word": "This", "meaning": "Đây là"},
+                        {"word": "Yes", "meaning": "Có"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "Our bodies",
+                    "words": [
+                        {"word": "Ear", "meaning": "Tai"},
+                        {"word": "Eye", "meaning": "Mắt"},
+                        {"word": "Face", "meaning": "Gương mặt"},
+                        {"word": "Hair", "meaning": "Mái tóc"},
+                        {"word": "Hand", "meaning": "Bàn tay"},
+                        {"word": "Mouth", "meaning": "Miệng"},
+                        {"word": "Nose", "meaning": "Mũi"},
+                        {"word": "Open", "meaning": "Mở ra"},
+                        {"word": "Touch", "meaning": "Chạm"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "My hobbies",
+                    "words": [
+                        {"word": "Cooking", "meaning": "Nấu ăn"},
+                        {"word": "Dancing", "meaning": "Nhảy múa"},
+                        {"word": "Drawing", "meaning": "Vẽ tranh (bằng bút chì)"},
+                        {"word": "Painting", "meaning": "Vẽ tranh (bằng màu)"},
+                        {"word": "Running", "meaning": "Chạy"},
+                        {"word": "Singing", "meaning": "Ca hát"},
+                        {"word": "Swimming", "meaning": "Bơi lội"},
+                        {"word": "Walking", "meaning": "Đi bộ"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "Our school",
+                    "words": [
+                        {"word": "Art room", "meaning": "Phòng mĩ thuật"},
+                        {"word": "classroom", "meaning": "Phòng học"},
+                        {"word": "Computer room", "meaning": "Phòng tin học"},
+                        {"word": "Gym", "meaning": "phòng tập thể dục"},
+                        {"word": "Library", "meaning": "Thư viện"},
+                        {"word": "Music room", "meaning": "Phòng âm nhạc"},
+                        {"word": "Playground", "meaning": "Sân chơi"},
+                        {"word": "School", "meaning": "Trường học"}
+                    ]
+                },
+                {
+                    "unit_number": 7,
+                    "unit_name": "Classroom instructions",
+                    "words": [
+                        {"word": "Close", "meaning": "Đóng lại"},
+                        {"word": "Come in", "meaning": "Vào trong"},
+                        {"word": "Go out", "meaning": "Ra ngoài"},
+                        {"word": "Sit down", "meaning": "Ngồi xuống"},
+                        {"word": "Speak", "meaning": "Nói"},
+                        {"word": "Stand up", "meaning": "Đứng dậy"}
+                    ]
+                },
+                {
+                    "unit_number": 8,
+                    "unit_name": "My school things",
+                    "words": [
+                        {"word": "Book", "meaning": "Cuốn sách"},
+                        {"word": "Eraser", "meaning": "Cục tẩy"},
+                        {"word": "Notebook", "meaning": "Vở"},
+                        {"word": "Pen", "meaning": "Bút mực"},
+                        {"word": "Pencil", "meaning": "Bút chì"},
+                        {"word": "Pencil case", "meaning": "Hộp bút"},
+                        {"word": "Ruler", "meaning": "Cây thước"},
+                        {"word": "School bag", "meaning": "Cặp sách"}
+                    ]
+                },
+                {
+                    "unit_number": 9,
+                    "unit_name": "Colours",
+                    "words": [
+                        {"word": "Black", "meaning": "Màu đen"},
+                        {"word": "Blue", "meaning": "Màu xanh dương"},
+                        {"word": "Brown", "meaning": "Màu nâu"},
+                        {"word": "Colour", "meaning": "Màu sắc"},
+                        {"word": "Green", "meaning": "Màu xanh lá"},
+                        {"word": "Orange", "meaning": "Màu cam"},
+                        {"word": "Red", "meaning": "Màu đỏ"},
+                        {"word": "They", "meaning": "Họ"},
+                        {"word": "White", "meaning": "Màu trắng"},
+                        {"word": "Yellow", "meaning": "Màu vàng"}
+                    ]
+                },
+                {
+                    "unit_number": 10,
+                    "unit_name": "Break time activities",
+                    "words": [
+                        {"word": "Break time", "meaning": "Giờ giải lao"},
+                        {"word": "Chat", "meaning": "Trò chuyện"},
+                        {"word": "Do word puzzles", "meaning": "Chơi giải đố chữ"},
+                        {"word": "Play", "meaning": "Chơi"},
+                        {"word": "Badminton", "meaning": "Cầu lông"},
+                        {"word": "Basketball", "meaning": "Bóng rổ"},
+                        {"word": "Chess", "meaning": "Cờ vua"},
+                        {"word": "Football", "meaning": "Bóng đá"},
+                        {"word": "Volleyball", "meaning": "Bóng chuyền"},
+                        {"word": "Skateboard", "meaning": "Ván trượt"}
+                    ]
+                },
+                {
+                    "unit_number": 11,
+                    "unit_name": "My family",
+                    "words": [
+                        {"word": "Brother", "meaning": "Anh / em trai"},
+                        {"word": "Father", "meaning": "Bố"},
+                        {"word": "Mother", "meaning": "Mẹ"},
+                        {"word": "Sister", "meaning": "Chị / em gái"},
+                        {"word": "Sure", "meaning": "Đương nhiên / chắc chắn"}
+                    ]
+                },
+                {
+                    "unit_number": 12,
+                    "unit_name": "Jobs",
+                    "words": [
+                        {"word": "Cook", "meaning": "Đầu bếp"},
+                        {"word": "Doctor", "meaning": "Bác sĩ"},
+                        {"word": "Driver", "meaning": "Tài xế"},
+                        {"word": "Farmer", "meaning": "Nông dân"},
+                        {"word": "Job", "meaning": "Nghề nghiệp"},
+                        {"word": "Nurse", "meaning": "Y tá"},
+                        {"word": "Singer", "meaning": "Ca sĩ"},
+                        {"word": "Teacher", "meaning": "Giáo viên"},
+                        {"word": "Worker", "meaning": "Công nhân"}
+                    ]
+                },
+                {
+                    "unit_number": 13,
+                    "unit_name": "My house",
+                    "words": [
+                        {"word": "Bathroom", "meaning": "Phòng tắm"},
+                        {"word": "Bedroom", "meaning": "Phòng ngủ"},
+                        {"word": "Chair", "meaning": "Cái ghế"},
+                        {"word": "House", "meaning": "Ngôi nhà"},
+                        {"word": "Kitchen", "meaning": "Nhà bếp"},
+                        {"word": "Lamp", "meaning": "Cái đèn"},
+                        {"word": "Living room", "meaning": "Phòng khách"},
+                        {"word": "Table", "meaning": "Cái bàn"},
+                        {"word": "Here", "meaning": "Đây"},
+                        {"word": "There", "meaning": "Ở đó"},
+                        {"word": "In", "meaning": "Trong"},
+                        {"word": "On", "meaning": "Trên"}
+                    ]
+                },
+                {
+                    "unit_number": 14,
+                    "unit_name": "My bedroom",
+                    "words": [
+                        {"word": "Bed", "meaning": "Giường ngủ"},
+                        {"word": "Big", "meaning": "To"},
+                        {"word": "Desk", "meaning": "Cái bàn"},
+                        {"word": "Door", "meaning": "Cánh cửa"},
+                        {"word": "Small", "meaning": "Nhỏ"},
+                        {"word": "Window", "meaning": "Cửa sổ"}
+                    ]
+                },
+                {
+                    "unit_number": 15,
+                    "unit_name": "At the dining table",
+                    "words": [
+                        {"word": "Bean", "meaning": "Đậu"},
+                        {"word": "Bread", "meaning": "Bánh mì"},
+                        {"word": "Chicken", "meaning": "Gà"},
+                        {"word": "Egg", "meaning": "Trứng"},
+                        {"word": "Fish", "meaning": "Cá"},
+                        {"word": "Juice", "meaning": "Nước ép"}
+                    ]
+                },
+                {
+                    "unit_number": 16,
+                    "unit_name": "My pets",
+                    "words": [
+                        {"word": "Bird", "meaning": "Con chim"},
+                        {"word": "Cat", "meaning": "Con mèo"},
+                        {"word": "Dog", "meaning": "Con chó"},
+                        {"word": "Goldfish", "meaning": "Cá vàng"},
+                        {"word": "Parrot", "meaning": "Con vẹt"},
+                        {"word": "Rabbit", "meaning": "Con thỏ"},
+                        {"word": "Many", "meaning": "Nhiều"},
+                        {"word": "Some", "meaning": "Một vài"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 4,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "My friends",
+                    "words": [
+                        {"word": "America", "meaning": "Mỹ"},
+                        {"word": "Australia", "meaning": "Úc"},
+                        {"word": "Britain", "meaning": "Anh"},
+                        {"word": "Japan", "meaning": "Nhật Bản"},
+                        {"word": "Malaysia", "meaning": "Malaysia"},
+                        {"word": "Singapore", "meaning": "Singapore"},
+                        {"word": "Thailand", "meaning": "Thái Lan"},
+                        {"word": "Viet Nam", "meaning": "Việt Nam"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Time and daily routines",
+                    "words": [
+                        {"word": "At", "meaning": "Vào / tại"},
+                        {"word": "Fifteen", "meaning": "năm mươi"},
+                        {"word": "Forty-five", "meaning": "bốn mươi lăm"},
+                        {"word": "o'clock", "meaning": "giờ"},
+                        {"word": "Thirty", "meaning": "ba mươi"},
+                        {"word": "Get up", "meaning": "Thức dậy"},
+                        {"word": "Go to bed", "meaning": "Đi ngủ"},
+                        {"word": "Go to school", "meaning": "Đi học"},
+                        {"word": "Have breakfast", "meaning": "Ăn sáng"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "My week",
+                    "words": [
+                        {"word": "Monday", "meaning": "Thứ hai"},
+                        {"word": "Tuesday", "meaning": "Thứ ba"},
+                        {"word": "Wednesday", "meaning": "Thứ tư"},
+                        {"word": "Thursday", "meaning": "Thứ năm"},
+                        {"word": "Friday", "meaning": "Thứ sáu"},
+                        {"word": "Saturday", "meaning": "Thứ bảy"},
+                        {"word": "Do housework", "meaning": "Làm việc nhà"},
+                        {"word": "Listen to music", "meaning": "Nghe nhạc"},
+                        {"word": "Study at school", "meaning": "Học ở trường"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "My birthday party",
+                    "words": [
+                        {"word": "January", "meaning": "Tháng một"},
+                        {"word": "February", "meaning": "Tháng hai"},
+                        {"word": "March", "meaning": "Tháng ba"},
+                        {"word": "April", "meaning": "Tháng tư"},
+                        {"word": "Birthday", "meaning": "Sinh nhật"},
+                        {"word": "Chips", "meaning": "Khoai tây chiên"},
+                        {"word": "Grapes", "meaning": "Nho"},
+                        {"word": "Jam", "meaning": "Mứt"},
+                        {"word": "Juice", "meaning": "Juice"},
+                        {"word": "Lemonade", "meaning": "Nước chanh"},
+                        {"word": "Party", "meaning": "Bữa tiệc"},
+                        {"word": "Water", "meaning": "Nước"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Things we can do",
+                    "words": [
+                        {"word": "Can", "meaning": "Có thể"},
+                        {"word": "Cook", "meaning": "Nấu ăn"},
+                        {"word": "Draw", "meaning": "Vẽ"},
+                        {"word": "Play the guitar", "meaning": "Chơi dàn guitar"},
+                        {"word": "Play the piano", "meaning": "Chơi đàn piano"},
+                        {"word": "Ride a bike", "meaning": "Đi xe đạp"},
+                        {"word": "Ride a horse", "meaning": "Cưỡi ngựa"},
+                        {"word": "Roller skate", "meaning": "Trượt pa-tin"},
+                        {"word": "Swim", "meaning": "Bơi"},
+                        {"word": "But", "meaning": "Nhưng"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "Our school facilities",
+                    "words": [
+                        {"word": "City", "meaning": "Thành phố"},
+                        {"word": "Mountain", "meaning": "Ngọn núi"},
+                        {"word": "Town", "meaning": "Thị trấn"},
+                        {"word": "Village", "meaning": "Ngôi làng"},
+                        {"word": "Building", "meaning": "Toà nhà"},
+                        {"word": "Computer", "meaning": "Máy tính"},
+                        {"word": "Garden", "meaning": "Khu vườn"},
+                        {"word": "Playground", "meaning": "Sân chơi"},
+                        {"word": "Room", "meaning": "Căn phòng"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 5,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "My neighborhood",
+                    "words": [
+                        {"word": "Supermarket", "meaning": "Siêu thị"},
+                        {"word": "Post office", "meaning": "Bưu điện"},
+                        {"word": "Library", "meaning": "Thư viện"},
+                        {"word": "Pharmacy", "meaning": "Hiệu thuốc"},
+                        {"word": "Museum", "meaning": "Bảo tàng"},
+                        {"word": "Zoo", "meaning": "Sở thú"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Festivals and holidays",
+                    "words": [
+                        {"word": "Christmas", "meaning": "Lễ Giáng Sinh"},
+                        {"word": "Tet holiday", "meaning": "Tết (Việt Nam)"},
+                        {"word": "Halloween", "meaning": "Lễ hội Halloween"},
+                        {"word": "Birthday", "meaning": "Sinh nhật"},
+                        {"word": "New Year", "meaning": "Năm mới"},
+                        {"word": "Festival", "meaning": "Lễ hội"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "My future job",
+                    "words": [
+                        {"word": "Engineer", "meaning": "Kỹ sư"},
+                        {"word": "Doctor", "meaning": "Bác sĩ"},
+                        {"word": "Teacher", "meaning": "Giáo viên"},
+                        {"word": "Astronaut", "meaning": "Phi hành gia"},
+                        {"word": "Artist", "meaning": "Nghệ sĩ"},
+                        {"word": "Scientist", "meaning": "Nhà khoa học"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "World landmarks",
+                    "words": [
+                        {"word": "Eiffel Tower", "meaning": "Tháp Eiffel"},
+                        {"word": "Big Ben", "meaning": "Tháp Big Ben"},
+                        {"word": "Statue of Liberty", "meaning": "Tượng Nữ thần Tự do"},
+                        {"word": "Great Wall", "meaning": "Vạn Lý Trường Thành"},
+                        {"word": "Pyramids", "meaning": "Kim tự tháp"},
+                        {"word": "Colosseum", "meaning": "Đấu trường La Mã"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Natural wonders",
+                    "words": [
+                        {"word": "Waterfall", "meaning": "Thác nước"},
+                        {"word": "Desert", "meaning": "Sa mạc"},
+                        {"word": "Ocean", "meaning": "Đại dương"},
+                        {"word": "Cave", "meaning": "Hang động"},
+                        {"word": "Volcano", "meaning": "Núi lửa"},
+                        {"word": "Canyon", "meaning": "Hẻm núi"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 6,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "My new school",
+                    "words": [
+                        {"word": "Uniform", "meaning": "Đồng phục"},
+                        {"word": "Backpack", "meaning": "Ba lô"},
+                        {"word": "Classroom", "meaning": "Phòng học"},
+                        {"word": "Library", "meaning": "Thư viện"},
+                        {"word": "Cafeteria", "meaning": "Nhà ăn"},
+                        {"word": "Sports ground", "meaning": "Sân thể thao"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "My home",
+                    "words": [
+                        {"word": "Living room", "meaning": "Phòng khách"},
+                        {"word": "Bedroom", "meaning": "Phòng ngủ"},
+                        {"word": "Kitchen", "meaning": "Nhà bếp"},
+                        {"word": "Bathroom", "meaning": "Phòng tắm"},
+                        {"word": "Garden", "meaning": "Khu vườn"},
+                        {"word": "Apartment", "meaning": "Căn hộ"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "My friends",
+                    "words": [
+                        {"word": "Kind", "meaning": "Tử tế"},
+                        {"word": "Funny", "meaning": "Vui tính"},
+                        {"word": "Clever", "meaning": "Thông minh"},
+                        {"word": "Shy", "meaning": "Nhút nhát"},
+                        {"word": "Friendly", "meaning": "Thân thiện"},
+                        {"word": "Generous", "meaning": "Hào phóng"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "School subjects",
+                    "words": [
+                        {"word": "Literature", "meaning": "Văn học"},
+                        {"word": "History", "meaning": "Lịch sử"},
+                        {"word": "Geography", "meaning": "Địa lý"},
+                        {"word": "Physics", "meaning": "Vật lý"},
+                        {"word": "Chemistry", "meaning": "Hóa học"},
+                        {"word": "Biology", "meaning": "Sinh học"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Music and arts",
+                    "words": [
+                        {"word": "Painting", "meaning": "Tranh vẽ"},
+                        {"word": "Sculpture", "meaning": "Điêu khắc"},
+                        {"word": "Photography", "meaning": "Nhiếp ảnh"},
+                        {"word": "Concert", "meaning": "Buổi hòa nhạc"},
+                        {"word": "Museum", "meaning": "Bảo tàng"},
+                        {"word": "Gallery", "meaning": "Phòng trưng bày"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 7,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "My hobbies",
+                    "words": [
+                        {"word": "Collecting stamps", "meaning": "Sưu tập tem"},
+                        {"word": "Playing chess", "meaning": "Chơi cờ"},
+                        {"word": "Gardening", "meaning": "Làm vườn"},
+                        {"word": "Drawing", "meaning": "Vẽ"},
+                        {"word": "Photography", "meaning": "Nhiếp ảnh"},
+                        {"word": "Cooking", "meaning": "Nấu ăn"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Health",
+                    "words": [
+                        {"word": "Headache", "meaning": "Đau đầu"},
+                        {"word": "Stomachache", "meaning": "Đau bụng"},
+                        {"word": "Fever", "meaning": "Sốt"},
+                        {"word": "Cough", "meaning": "Ho"},
+                        {"word": "Sore throat", "meaning": "Đau họng"},
+                        {"word": "Flu", "meaning": "Cúm"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "Communities",
+                    "words": [
+                        {"word": "Local", "meaning": "Địa phương"},
+                        {"word": "Global", "meaning": "Toàn cầu"},
+                        {"word": "Community", "meaning": "Cộng đồng"},
+                        {"word": "Culture", "meaning": "Văn hóa"},
+                        {"word": "Customs", "meaning": "Phong tục"},
+                        {"word": "Traditions", "meaning": "Truyền thống"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "Environmental protection",
+                    "words": [
+                        {"word": "Pollution", "meaning": "Ô nhiễm"},
+                        {"word": "Recycle", "meaning": "Tái chế"},
+                        {"word": "Environment", "meaning": "Môi trường"},
+                        {"word": "Global warming", "meaning": "Nóng lên toàn cầu"},
+                        {"word": "Climate change", "meaning": "Biến đổi khí hậu"},
+                        {"word": "Renewable energy", "meaning": "Năng lượng tái tạo"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Teenage issues",
+                    "words": [
+                        {"word": "Peer pressure", "meaning": "Áp lực từ bạn bè"},
+                        {"word": "Bullying", "meaning": "Bắt nạt"},
+                        {"word": "Cyberbullying", "meaning": "Bắt nạt qua mạng"},
+                        {"word": "Self-esteem", "meaning": "Lòng tự trọng"},
+                        {"word": "Mental health", "meaning": "Sức khỏe tinh thần"},
+                        {"word": "Stress", "meaning": "Căng thẳng"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 8,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "Leisure activities",
+                    "words": [
+                        {"word": "Hang out", "meaning": "Đi chơi (với bạn bè)"},
+                        {"word": "Go cycling", "meaning": "Đi xe đạp"},
+                        {"word": "Do DIY", "meaning": "Tự làm đồ thủ công (DIY)"},
+                        {"word": "Go sightseeing", "meaning": "Đi tham quan"},
+                        {"word": "Volunteer", "meaning": "Làm tình nguyện"},
+                        {"word": "Organize", "meaning": "Tổ chức"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Tourism",
+                    "words": [
+                        {"word": "Tourist", "meaning": "Khách du lịch"},
+                        {"word": "Destination", "meaning": "Điểm đến"},
+                        {"word": "Attraction", "meaning": "Điểm tham quan"},
+                        {"word": "Accommodation", "meaning": "Chỗ ở"},
+                        {"word": "Souvenir", "meaning": "Quà lưu niệm"},
+                        {"word": "Travel agency", "meaning": "Công ty du lịch"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "English speaking countries",
+                    "words": [
+                        {"word": "United Kingdom", "meaning": "Vương quốc Anh"},
+                        {"word": "United States", "meaning": "Hợp chủng quốc Hoa Kỳ"},
+                        {"word": "Canada", "meaning": "Canada"},
+                        {"word": "Australia", "meaning": "Úc"},
+                        {"word": "New Zealand", "meaning": "New Zealand"},
+                        {"word": "Ireland", "meaning": "Ireland"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "Natural disasters",
+                    "words": [
+                        {"word": "Earthquake", "meaning": "Động đất"},
+                        {"word": "Tsunami", "meaning": "Sóng thần"},
+                        {"word": "Flood", "meaning": "Lũ lụt"},
+                        {"word": "Drought", "meaning": "Hạn hán"},
+                        {"word": "Volcano", "meaning": "Núi lửa"},
+                        {"word": "Storm", "meaning": "Bão"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Science and technology",
+                    "words": [
+                        {"word": "Invention", "meaning": "Phát minh"},
+                        {"word": "Discovery", "meaning": "Khám phá"},
+                        {"word": "Innovation", "meaning": "Đổi mới"},
+                        {"word": "Artificial intelligence", "meaning": "Trí tuệ nhân tạo"},
+                        {"word": "Robotics", "meaning": "Người máy học"},
+                        {"word": "Biotechnology", "meaning": "Công nghệ sinh học"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 9,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "Local environment",
+                    "words": [
+                        {"word": "Pollution", "meaning": "Ô nhiễm"},
+                        {"word": "Deforestation", "meaning": "Phá rừng"},
+                        {"word": "Climate change", "meaning": "Biến đổi khí hậu"},
+                        {"word": "Global warming", "meaning": "Nóng lên toàn cầu"},
+                        {"word": "Recycle", "meaning": "Tái chế"},
+                        {"word": "Protect", "meaning": "Bảo vệ"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Life in the future",
+                    "words": [
+                        {"word": "Futuristic", "meaning": "Thuộc về tương lai"},
+                        {"word": "Smart home", "meaning": "Nhà thông minh"},
+                        {"word": "Robot assistant", "meaning": "Trợ lý rô bốt"},
+                        {"word": "Flying car", "meaning": "Ô tô bay"},
+                        {"word": "Space tourism", "meaning": "Du lịch vũ trụ"},
+                        {"word": "Virtual reality", "meaning": "Thực tế ảo"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "Preserving nature",
+                    "words": [
+                        {"word": "Biodiversity", "meaning": "Đa dạng sinh học"},
+                        {"word": "Ecosystem", "meaning": "Hệ sinh thái"},
+                        {"word": "Conservation", "meaning": "Bảo tồn"},
+                        {"word": "Extinct", "meaning": "Tuyệt chủng"},
+                        {"word": "Habitat", "meaning": "Môi trường sống"},
+                        {"word": "Species", "meaning": "Loài"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "Youth organizations",
+                    "words": [
+                        {"word": "Scout", "meaning": "Hướng đạo sinh"},
+                        {"word": "Club", "meaning": "Câu lạc bộ"},
+                        {"word": "Volunteer", "meaning": "Tình nguyện viên"},
+                        {"word": "Leadership", "meaning": "Khả năng lãnh đạo"},
+                        {"word": "Teamwork", "meaning": "Làm việc nhóm"},
+                        {"word": "Project", "meaning": "Dự án"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Social issues",
+                    "words": [
+                        {"word": "Poverty", "meaning": "Nghèo đói"},
+                        {"word": "Homelessness", "meaning": "Vô gia cư"},
+                        {"word": "Discrimination", "meaning": "Phân biệt đối xử"},
+                        {"word": "Education", "meaning": "Giáo dục"},
+                        {"word": "Healthcare", "meaning": "Chăm sóc sức khỏe"},
+                        {"word": "Crime", "meaning": "Tội phạm"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "Global communication",
+                    "words": [
+                        {"word": "Internet", "meaning": "Internet"},
+                        {"word": "Social media", "meaning": "Mạng xã hội"},
+                        {"word": "Communication", "meaning": "Giao tiếp"},
+                        {"word": "Digital native", "meaning": "Người sinh ra trong kỷ nguyên số"},
+                        {"word": "Online safety", "meaning": "An toàn trực tuyến"},
+                        {"word": "Information overload", "meaning": "Bội thực thông tin"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 10,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "Family life",
+                    "words": [
+                        {"word": "Generation gap", "meaning": "Khoảng cách thế hệ"},
+                        {"word": "Bonding", "meaning": "Gắn kết"},
+                        {"word": "Respect", "meaning": "Tôn trọng"},
+                        {"word": "Supportive", "meaning": "Hỗ trợ"},
+                        {"word": "Conflict", "meaning": "Mâu thuẫn"},
+                        {"word": "Values", "meaning": "Giá trị"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Language and culture",
+                    "words": [
+                        {"word": "Dialect", "meaning": "Tiếng địa phương"},
+                        {"word": "Accent", "meaning": "Giọng điệu"},
+                        {"word": "Tradition", "meaning": "Truyền thống"},
+                        {"word": "Custom", "meaning": "Phong tục"},
+                        {"word": "Heritage", "meaning": "Di sản"},
+                        {"word": "Globalization", "meaning": "Toàn cầu hóa"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "School life",
+                    "words": [
+                        {"word": "Curriculum", "meaning": "Chương trình học"},
+                        {"word": "Extracurricular activities", "meaning": "Hoạt động ngoại khóa"},
+                        {"word": "Peer pressure", "meaning": "Áp lực từ bạn bè"},
+                        {"word": "Bullying", "meaning": "Bắt nạt"},
+                        {"word": "Academic performance", "meaning": "Kết quả học tập"},
+                        {"word": "Enrollment", "meaning": "Tuyển sinh"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "The media",
+                    "words": [
+                        {"word": "Newspaper", "meaning": "Báo chí"},
+                        {"word": "Magazine", "meaning": "Tạp chí"},
+                        {"word": "Television", "meaning": "Truyền hình"},
+                        {"word": "Radio", "meaning": "Đài phát thanh"},
+                        {"word": "Internet", "meaning": "Internet"},
+                        {"word": "Advertisement", "meaning": "Quảng cáo"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Inventions",
+                    "words": [
+                        {"word": "Invention", "meaning": "Phát minh"},
+                        {"word": "Discovery", "meaning": "Khám phá"},
+                        {"word": "Innovation", "meaning": "Đổi mới"},
+                        {"word": "Gadget", "meaning": "Thiết bị điện tử nhỏ"},
+                        {"word": "Technology", "meaning": "Công nghệ"},
+                        {"word": "Breakthrough", "meaning": "Đột phá"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "Global warming",
+                    "words": [
+                        {"word": "Greenhouse effect", "meaning": "Hiệu ứng nhà kính"},
+                        {"word": "Carbon footprint", "meaning": "Lượng khí thải carbon"},
+                        {"word": "Climate change", "meaning": "Biến đổi khí hậu"},
+                        {"word": "Deforestation", "meaning": "Phá rừng"},
+                        {"word": "Recycle", "meaning": "Tái chế"},
+                        {"word": "Sustainable", "meaning": "Bền vững"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 11,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "Leisure time activities",
+                    "words": [
+                        {"word": "Community service", "meaning": "Dịch vụ cộng đồng"},
+                        {"word": "Extracurricular", "meaning": "Ngoại khóa"},
+                        {"word": "Well-being", "meaning": "Hạnh phúc, sức khỏe tốt"},
+                        {"word": "Stress relief", "meaning": "Giảm căng thẳng"},
+                        {"word": "Hanging out", "meaning": "Đi chơi"},
+                        {"word": "Pursue", "meaning": "Theo đuổi"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Health and healthy lifestyles",
+                    "words": [
+                        {"word": "Nutrition", "meaning": "Dinh dưỡng"},
+                        {"word": "Obesity", "meaning": "Béo phì"},
+                        {"word": "Mental health", "meaning": "Sức khỏe tinh thần"},
+                        {"word": "Giao diện", "meaning": "Giao diện"},
+                        {"word": "Physical activity", "meaning": "Hoạt động thể chất"},
+                        {"word": "Balanced diet", "meaning": "Chế độ ăn cân bằng"},
+                        {"word": "Awareness", "meaning": "Nhận thức"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "Global issues",
+                    "words": [
+                        {"word": "Poverty", "meaning": "Nghèo đói"},
+                        {"word": "Inequality", "meaning": "Bất bình đẳng"},
+                        {"word": "Hunger", "meaning": "Nạn đói"},
+                        {"word": "Disease", "meaning": "Bệnh tật"},
+                        {"word": "Human rights", "meaning": "Quyền con người"},
+                        {"word": "Sustainable development", "meaning": "Phát triển bền vững"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "Economic growth",
+                    "words": [
+                        {"word": "Economy", "meaning": "Nền kinh tế"},
+                        {"word": "Trade", "meaning": "Thương mại"},
+                        {"word": "Investment", "meaning": "Đầu tư"},
+                        {"word": "Inflation", "meaning": "Lạm phát"},
+                        {"word": "Employment", "meaning": "Việc làm"},
+                        {"word": "GDP", "meaning": "Tổng sản phẩm quốc nội"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Education for all",
+                    "words": [
+                        {"word": "Literacy", "meaning": "Khả năng đọc viết"},
+                        {"word": "Curriculum", "meaning": "Chương trình giảng dạy"},
+                        {"word": "Scholarship", "meaning": "Học bổng"},
+                        {"word": "Tuition fee", "meaning": "Học phí"},
+                        {"word": "Vocational training", "meaning": "Đào tạo nghề"},
+                        {"word": "Lifelong learning", "meaning": "Học tập suốt đời"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "The role of media",
+                    "words": [
+                        {"word": "Mass media", "meaning": "Phương tiện truyền thông đại chúng"},
+                        {"word": "Journalism", "meaning": "Báo chí"},
+                        {"word": "Reporter", "meaning": "Phóng viên"},
+                        {"word": "Bias", "meaning": "Thiên vị"},
+                        {"word": "Propaganda", "meaning": "Tuyên truyền"},
+                        {"word": "Ethics", "meaning": "Đạo đức"}
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": 12,
+            "units": [
+                {
+                    "unit_number": 1,
+                    "unit_name": "Home life",
+                    "words": [
+                        {"word": "Household chores", "meaning": "Việc nhà"},
+                        {"word": "Breadwinner", "meaning": "Trụ cột gia đình"},
+                        {"word": "Homemaker", "meaning": "Người nội trợ"},
+                        {"word": "Parenting", "meaning": "Việc nuôi dạy con cái"},
+                        {"word": "Responsibility", "meaning": "Trách nhiệm"},
+                        {"word": "Share", "meaning": "Chia sẻ"}
+                    ]
+                },
+                {
+                    "unit_number": 2,
+                    "unit_name": "Cultural identity",
+                    "words": [
+                        {"word": "Custom", "meaning": "Phong tục"},
+                        {"word": "Tradition", "meaning": "Truyền thống"},
+                        {"word": "Ritual", "meaning": "Nghi lễ"},
+                        {"word": "Heritage", "meaning": "Di sản"},
+                        {"word": "Assimilation", "meaning": "Đồng hóa"},
+                        {"word": "Diversity", "meaning": "Đa dạng"}
+                    ]
+                },
+                {
+                    "unit_number": 3,
+                    "unit_name": "The world of work",
+                    "words": [
+                        {"word": "Career", "meaning": "Sự nghiệp"},
+                        {"word": "Profession", "meaning": "Nghề nghiệp"},
+                        {"word": "Unemployment", "meaning": "Thất nghiệp"},
+                        {"word": "Job interview", "meaning": "Phỏng vấn xin việc"},
+                        {"word": "Skill set", "meaning": "Bộ kỹ năng"},
+                        {"word": "Work-life balance", "meaning": "Cân bằng cuộc sống công việc"}
+                    ]
+                },
+                {
+                    "unit_number": 4,
+                    "unit_name": "Recreation and entertainment",
+                    "words": [
+                        {"word": "Amusement park", "meaning": "Công viên giải trí"},
+                        {"word": "Concert", "meaning": "Buổi hòa nhạc"},
+                        {"word": "Movie theater", "meaning": "Rạp chiếu phim"},
+                        {"word": "Art gallery", "meaning": "Phòng trưng bày nghệ thuật"},
+                        {"word": "Sporting event", "meaning": "Sự kiện thể thao"},
+                        {"word": "Outdoor activities", "meaning": "Hoạt động ngoài trời"}
+                    ]
+                },
+                {
+                    "unit_number": 5,
+                    "unit_name": "Future jobs",
+                    "words": [
+                        {"word": "Artificial intelligence", "meaning": "Trí tuệ nhân tạo"},
+                        {"word": "Data scientist", "meaning": "Nhà khoa học dữ liệu"},
+                        {"word": "Cybersecurity", "meaning": "An ninh mạng"},
+                        {"word": "Blockchain", "meaning": "Công nghệ chuỗi khối"},
+                        {"word": "Renewable energy", "meaning": "Năng lượng tái tạo"},
+                        {"word": "Biotechnology", "meaning": "Công nghệ sinh học"}
+                    ]
+                },
+                {
+                    "unit_number": 6,
+                    "unit_name": "Independent living",
+                    "words": [
+                        {"word": "Budget", "meaning": "Ngân sách"},
+                        {"word": "Rent", "meaning": "Tiền thuê nhà"},
+                        {"word": "Utilities", "meaning": "Tiện ích (điện, nước)"},
+                        {"word": "Financial literacy", "meaning": "Kiến thức tài chính"},
+                        {"word": "Responsibility", "meaning": "Trách nhiệm"},
+                        {"word": "Decision-making", "meaning": "Ra quyết định"}
+                    ]
+                }
+            ]
+        }
+    ]
+}
