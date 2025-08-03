@@ -396,7 +396,7 @@ class PronunciationApp:
 
         except sr.UnknownValueError:
             self.result_text_var.set(
-                "Kết quả: KHÔNG THỂ NHẬN DẠNG GIỌC NÓI của bạn.\nVui lòng nói rõ hơn hoặc thử lại. (UnknownValueError)")
+                "Kết quả: KHÔNG THỂ NHẬN DẠNG GIỌNG NÓI của bạn.\nVui lòng nói rõ hơn hoặc thử lại. (UnknownValueError)")
             self.result_display.config(fg=self.color_phan_ung_tieu_cuc)
         except sr.RequestError as e:
             self.result_text_var.set(

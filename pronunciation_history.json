@@ -166,5 +166,37 @@
         "accuracy_ratio": 98,
         "accuracy_partial_ratio": 100,
         "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-27 20:38:33",
+        "reference_text": "Tomorrow is another day.",
+        "user_spoken_text": "tomorrow is another day",
+        "accuracy_ratio": 98,
+        "accuracy_partial_ratio": 100,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-27 20:39:50",
+        "reference_text": "If you can't beat 'em, join 'em.",
+        "user_spoken_text": "if you can pick them try them",
+        "accuracy_ratio": 56,
+        "accuracy_partial_ratio": 55,
+        "feedback": "Cần cải thiện. Hãy cố gắng luyện tập thêm."
+    },
+    {
+        "timestamp": "2025-06-27 20:42:07",
+        "reference_text": "What time is it right now?",
+        "user_spoken_text": "what time is it right now",
+        "accuracy_ratio": 98,
+        "accuracy_partial_ratio": 100,
+        "feedback": "Tuyệt vời! Phát âm của bạn rất chính xác."
+    },
+    {
+        "timestamp": "2025-06-27 20:46:04",
+        "reference_text": "If you can't beat 'em, join 'em.",
+        "user_spoken_text": "if you can't beat them join them",
+        "accuracy_ratio": 88,
+        "accuracy_partial_ratio": 88,
+        "feedback": "Tốt! Phát âm của bạn khá rõ ràng."
     }
 ]
