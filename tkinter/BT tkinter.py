@@ -33,7 +33,6 @@ class ToGiay(tk.Frame):
         self.nut_bam = ttk.Button(self, text='nút bấm', command=self.hanh_dong_bam_nut)
         self.nut_bam.grid(row=10, column=1, pady=10, sticky='e')
 
-    def hanh_dong_bam_nut(self):
         ten_sach = self.ten_sach.get()
         tac_gia = self.tac_gia.get()
         gia_tien = self.tac_gia.get()
