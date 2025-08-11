@@ -28,9 +28,9 @@ class PronunciationPage:
         self.audio_frames = []
         self.samplerate = 44100
         self.channels = 1
-        self.audio_filename = "user_pronunciation.wav"
-        self.history_file = "pronunciation_history.json"
-        self.sentences_file = "sentences.json"
+        self.audio_filename = "../user_pronunciation.wav"
+        self.history_file = "../pronunciation_history.json"
+        self.sentences_file = "../sentences.json"
 
         self.sample_sentences = self.load_sample_sentences()
 
@@ -497,7 +497,7 @@ class VocabularyPage:
         self.master_frame = master_frame
         self.controller = controller
 
-        self.vocabulary_file = "vocabulary.json"
+        self.vocabulary_file = "../vocabulary.json"
         self.vocabulary_list = self.load_vocabulary()
         self.current_word_index = 0
 

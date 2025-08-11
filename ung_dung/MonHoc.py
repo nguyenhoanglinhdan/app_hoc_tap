@@ -6,7 +6,7 @@ import os
 
 
 class man_hinh_them_mon_hoc(tk.Frame):
-    folder_path = "../du_lieu/mon_hoc"
+    folder_path = "du_lieu/mon_hoc"
     file_path = f"{folder_path}/mon_hoc.json"
 
     def __init__(self, root, cn_khoi_tao_man_hinh_chinh=None):

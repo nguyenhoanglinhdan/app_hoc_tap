@@ -1,7 +1,7 @@
 import tkinter as tk
 
-from them_tu_vung.thanh_phan.man_hinh_chinh import man_hinh_chinh
-from them_tu_vung.thanh_phan.man_hinh_them_tu_vung import man_hinh_them_tu_vung
+from ManHinhChinh import man_hinh_chinh
+from TuVung import man_hinh_them_tu_vung
 
 class chuong_trinh_chinh:
     def __init__(self, root):
