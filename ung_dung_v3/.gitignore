@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Tien do hoc tap la du lieu rieng cua tung nguoi, khong dua len git
+du_lieu/tien_do.json

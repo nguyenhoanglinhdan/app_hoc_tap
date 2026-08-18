@@ -1,0 +1,20 @@
+{
+  "Lop 2": {
+    "Toan": {
+      "xin Chào_Hello": {
+        "vietnamese": "xin Chào",
+        "english": "Hello",
+        "correct_count": 2,
+        "total_attempts": 2,
+        "last_attempt": null
+      },
+      "kiểm tra_Test": {
+        "vietnamese": "kiểm tra",
+        "english": "Test",
+        "correct_count": 1,
+        "total_attempts": 2,
+        "last_attempt": null
+      }
+    }
+  }
+}

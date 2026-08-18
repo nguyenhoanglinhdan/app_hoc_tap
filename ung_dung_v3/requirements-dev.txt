@@ -1,0 +1,3 @@
+# Phu thuoc de chay kiem thu
+-r requirements-am-thanh.txt
+pytest>=8.0

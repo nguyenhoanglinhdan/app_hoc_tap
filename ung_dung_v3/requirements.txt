@@ -1,0 +1,2 @@
+# Bat buoc de chay ung dung
+customtkinter>=6.0,<7.0

@@ -1,0 +1,157 @@
+{
+  "phien_ban": 1,
+  "cac_don_vi": [
+    {
+      "ma": "chao-hoi",
+      "ten": "Chào hỏi",
+      "mo_ta": "Những câu nói đầu tiên khi gặp người khác",
+      "mau": "xanh_la",
+      "bieu_tuong": "👋",
+      "tu_vung": [
+        { "en": "hello", "vi": "xin chào", "phien_am": "/həˈloʊ/" },
+        { "en": "goodbye", "vi": "tạm biệt", "phien_am": "/ˌɡʊdˈbaɪ/" },
+        { "en": "thank you", "vi": "cảm ơn", "phien_am": "/ˈθæŋk juː/" },
+        { "en": "sorry", "vi": "xin lỗi", "phien_am": "/ˈsɒri/" },
+        { "en": "please", "vi": "làm ơn", "phien_am": "/pliːz/" },
+        { "en": "yes", "vi": "vâng", "phien_am": "/jes/" },
+        { "en": "no", "vi": "không", "phien_am": "/noʊ/" },
+        { "en": "good morning", "vi": "chào buổi sáng", "phien_am": "/ɡʊd ˈmɔːrnɪŋ/" },
+        { "en": "good night", "vi": "chúc ngủ ngon", "phien_am": "/ɡʊd naɪt/" },
+        { "en": "nice to meet you", "vi": "rất vui được gặp bạn", "phien_am": "/naɪs tə miːt juː/" }
+      ]
+    },
+    {
+      "ma": "gia-dinh",
+      "ten": "Gia đình",
+      "mo_ta": "Gọi tên những người thân trong nhà",
+      "mau": "xanh_duong",
+      "bieu_tuong": "👨‍👩‍👧",
+      "tu_vung": [
+        { "en": "family", "vi": "gia đình", "phien_am": "/ˈfæməli/" },
+        { "en": "father", "vi": "bố", "phien_am": "/ˈfɑːðər/" },
+        { "en": "mother", "vi": "mẹ", "phien_am": "/ˈmʌðər/" },
+        { "en": "brother", "vi": "anh trai", "phien_am": "/ˈbrʌðər/" },
+        { "en": "sister", "vi": "chị gái", "phien_am": "/ˈsɪstər/" },
+        { "en": "grandfather", "vi": "ông", "phien_am": "/ˈɡrænfɑːðər/" },
+        { "en": "grandmother", "vi": "bà", "phien_am": "/ˈɡrænmʌðər/" },
+        { "en": "son", "vi": "con trai", "phien_am": "/sʌn/" },
+        { "en": "daughter", "vi": "con gái", "phien_am": "/ˈdɔːtər/" },
+        { "en": "friend", "vi": "bạn bè", "phien_am": "/frend/" }
+      ]
+    },
+    {
+      "ma": "dong-vat",
+      "ten": "Động vật",
+      "mo_ta": "Các con vật quen thuộc quanh ta",
+      "mau": "tim",
+      "bieu_tuong": "🐶",
+      "tu_vung": [
+        { "en": "dog", "vi": "con chó", "phien_am": "/dɔːɡ/" },
+        { "en": "cat", "vi": "con mèo", "phien_am": "/kæt/" },
+        { "en": "bird", "vi": "con chim", "phien_am": "/bɜːrd/" },
+        { "en": "fish", "vi": "con cá", "phien_am": "/fɪʃ/" },
+        { "en": "chicken", "vi": "con gà", "phien_am": "/ˈtʃɪkɪn/" },
+        { "en": "elephant", "vi": "con voi", "phien_am": "/ˈelɪfənt/" },
+        { "en": "tiger", "vi": "con hổ", "phien_am": "/ˈtaɪɡər/" },
+        { "en": "horse", "vi": "con ngựa", "phien_am": "/hɔːrs/" },
+        { "en": "rabbit", "vi": "con thỏ", "phien_am": "/ˈræbɪt/" },
+        { "en": "butterfly", "vi": "con bướm", "phien_am": "/ˈbʌtərflaɪ/" }
+      ]
+    },
+    {
+      "ma": "do-an",
+      "ten": "Đồ ăn",
+      "mo_ta": "Món ăn và thức uống hằng ngày",
+      "mau": "cam",
+      "bieu_tuong": "🍎",
+      "tu_vung": [
+        { "en": "rice", "vi": "cơm", "phien_am": "/raɪs/" },
+        { "en": "bread", "vi": "bánh mì", "phien_am": "/bred/" },
+        { "en": "water", "vi": "nước", "phien_am": "/ˈwɔːtər/" },
+        { "en": "milk", "vi": "sữa", "phien_am": "/mɪlk/" },
+        { "en": "apple", "vi": "quả táo", "phien_am": "/ˈæpl/" },
+        { "en": "banana", "vi": "quả chuối", "phien_am": "/bəˈnænə/" },
+        { "en": "egg", "vi": "quả trứng", "phien_am": "/eɡ/" },
+        { "en": "fish sauce", "vi": "nước mắm", "phien_am": "/fɪʃ sɔːs/" },
+        { "en": "noodles", "vi": "mì", "phien_am": "/ˈnuːdlz/" },
+        { "en": "vegetables", "vi": "rau củ", "phien_am": "/ˈvedʒtəblz/" }
+      ]
+    },
+    {
+      "ma": "mau-va-so",
+      "ten": "Màu sắc & Số",
+      "mo_ta": "Đếm số và gọi tên màu sắc",
+      "mau": "hong",
+      "bieu_tuong": "🎨",
+      "tu_vung": [
+        { "en": "red", "vi": "màu đỏ", "phien_am": "/red/" },
+        { "en": "blue", "vi": "màu xanh dương", "phien_am": "/bluː/" },
+        { "en": "green", "vi": "màu xanh lá", "phien_am": "/ɡriːn/" },
+        { "en": "yellow", "vi": "màu vàng", "phien_am": "/ˈjeloʊ/" },
+        { "en": "black", "vi": "màu đen", "phien_am": "/blæk/" },
+        { "en": "white", "vi": "màu trắng", "phien_am": "/waɪt/" },
+        { "en": "one", "vi": "số một", "phien_am": "/wʌn/" },
+        { "en": "two", "vi": "số hai", "phien_am": "/tuː/" },
+        { "en": "three", "vi": "số ba", "phien_am": "/θriː/" },
+        { "en": "ten", "vi": "số mười", "phien_am": "/ten/" }
+      ]
+    },
+    {
+      "ma": "truong-hoc",
+      "ten": "Trường học",
+      "mo_ta": "Đồ dùng và hoạt động ở lớp",
+      "mau": "vang",
+      "bieu_tuong": "🎒",
+      "tu_vung": [
+        { "en": "school", "vi": "trường học", "phien_am": "/skuːl/" },
+        { "en": "teacher", "vi": "giáo viên", "phien_am": "/ˈtiːtʃər/" },
+        { "en": "student", "vi": "học sinh", "phien_am": "/ˈstuːdnt/" },
+        { "en": "book", "vi": "quyển sách", "phien_am": "/bʊk/" },
+        { "en": "pen", "vi": "cái bút", "phien_am": "/pen/" },
+        { "en": "desk", "vi": "cái bàn", "phien_am": "/desk/" },
+        { "en": "chair", "vi": "cái ghế", "phien_am": "/tʃer/" },
+        { "en": "homework", "vi": "bài tập về nhà", "phien_am": "/ˈhoʊmwɜːrk/" },
+        { "en": "classroom", "vi": "lớp học", "phien_am": "/ˈklæsruːm/" },
+        { "en": "test", "vi": "bài kiểm tra", "phien_am": "/test/" }
+      ]
+    },
+    {
+      "ma": "dong-tu",
+      "ten": "Động từ hằng ngày",
+      "mo_ta": "Những hành động dùng nhiều nhất",
+      "mau": "xanh_la",
+      "bieu_tuong": "🏃",
+      "tu_vung": [
+        { "en": "to eat", "vi": "ăn", "phien_am": "/tə iːt/" },
+        { "en": "to drink", "vi": "uống", "phien_am": "/tə drɪŋk/" },
+        { "en": "to sleep", "vi": "ngủ", "phien_am": "/tə sliːp/" },
+        { "en": "to run", "vi": "chạy", "phien_am": "/tə rʌn/" },
+        { "en": "to read", "vi": "đọc", "phien_am": "/tə riːd/" },
+        { "en": "to write", "vi": "viết", "phien_am": "/tə raɪt/" },
+        { "en": "to speak", "vi": "nói", "phien_am": "/tə spiːk/" },
+        { "en": "to listen", "vi": "nghe", "phien_am": "/tə ˈlɪsn/" },
+        { "en": "to learn", "vi": "học", "phien_am": "/tə lɜːrn/" },
+        { "en": "to play", "vi": "chơi", "phien_am": "/tə pleɪ/" }
+      ]
+    },
+    {
+      "ma": "du-lich",
+      "ten": "Du lịch",
+      "mo_ta": "Từ vựng cần khi đi xa",
+      "mau": "xanh_duong",
+      "bieu_tuong": "✈️",
+      "tu_vung": [
+        { "en": "airport", "vi": "sân bay", "phien_am": "/ˈerpɔːrt/" },
+        { "en": "ticket", "vi": "vé", "phien_am": "/ˈtɪkɪt/" },
+        { "en": "hotel", "vi": "khách sạn", "phien_am": "/hoʊˈtel/" },
+        { "en": "map", "vi": "bản đồ", "phien_am": "/mæp/" },
+        { "en": "train", "vi": "tàu hoả", "phien_am": "/treɪn/" },
+        { "en": "car", "vi": "ô tô", "phien_am": "/kɑːr/" },
+        { "en": "beach", "vi": "bãi biển", "phien_am": "/biːtʃ/" },
+        { "en": "mountain", "vi": "ngọn núi", "phien_am": "/ˈmaʊntn/" },
+        { "en": "city", "vi": "thành phố", "phien_am": "/ˈsɪti/" },
+        { "en": "street", "vi": "đường phố", "phien_am": "/striːt/" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Tuy chon: bat tinh nang doc tu va cham phat am.
+# Thieu cac goi nay ung dung van chay, chi an cac nut lien quan toi am thanh.
+-r requirements.txt
+
+# Doc tu bang giong he thong (Windows dung SAPI, khong can mang)
+pyttsx3>=2.90
+
+# Thu am va cham phat am (buoc nhan dang giong noi can mang)
+sounddevice>=0.4
+soundfile>=0.12
+SpeechRecognition>=3.10
+rapidfuzz>=3.0
+numpy>=1.24
