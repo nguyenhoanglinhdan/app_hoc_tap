@@ -9,14 +9,17 @@ from typing import Callable, Final, Sequence
 import customtkinter as ctk
 
 from ..am_thanh import DichVuAmThanh
+from ..bai_tap import NoiDungPhien
 from ..kho_du_lieu import KhoDuLieu, LoiDuLieu
 from ..mo_hinh import BaiHoc, GiaoTrinh, TuVung
+from ..ngu_phap import ChuDiemNguPhap
 from .chu_de import KichThuoc, Mau, phong
 from .man_hinh_bai_hoc import ManHinhBaiHoc
 from .man_hinh_chinh import ManHinhChinh
 from .man_hinh_goc import ManHinh
 from .man_hinh_ho_so import ManHinhHoSo
 from .man_hinh_luyen_tap import ManHinhLuyenTap
+from .man_hinh_ngu_phap import ManHinhNguPhap
 from .man_hinh_soan_tu import ManHinhSoanTu
 from .man_hinh_tu_vung import ManHinhTuVung
 
@@ -27,14 +30,12 @@ _log = logging.getLogger(__name__)
 TEN_UNG_DUNG: Final[str] = "Học Tiếng Anh"
 _RONG_THANH_BEN: Final[int] = 216
 
-_MA_BAI_LUYEN_TAP: Final[str] = "__luyen_tap__"
-"""Mã của bài học tạm dùng cho buổi luyện tập, không thuộc lộ trình."""
-
 
 class Muc(Enum):
     """Các mục trên thanh điều hướng."""
 
     HOC = auto()
+    NGU_PHAP = auto()
     LUYEN_TAP = auto()
     TU_VUNG = auto()
     SOAN_TU = auto()
@@ -43,6 +44,7 @@ class Muc(Enum):
 
 _NHAN_MUC: Final[dict[Muc, tuple[str, str]]] = {
     Muc.HOC: ("🏠", "Học"),
+    Muc.NGU_PHAP: ("📐", "Ngữ pháp"),
     Muc.LUYEN_TAP: ("🎯", "Luyện tập"),
     Muc.TU_VUNG: ("📖", "Từ vựng"),
     Muc.SOAN_TU: ("📝", "Soạn từ"),
@@ -58,6 +60,7 @@ class UngDung(ctk.CTk):
 
         self._kho = kho
         self.giao_trinh = kho.tai_giao_trinh()
+        self.ngu_phap = kho.tai_ngu_phap()
         self.tien_do = kho.tai_tien_do()
         self.am_thanh = DichVuAmThanh()
 
@@ -139,6 +142,8 @@ class UngDung(ctk.CTk):
         match muc:
             case Muc.HOC:
                 self.mo_trang_chu()
+            case Muc.NGU_PHAP:
+                self.mo_ngu_phap()
             case Muc.LUYEN_TAP:
                 self.mo_luyen_tap()
             case Muc.TU_VUNG:
@@ -172,23 +177,33 @@ class UngDung(ctk.CTk):
         self._thay_man_hinh(lambda cha: ManHinhChinh(cha, self), Muc.HOC)
 
     def mo_bai_hoc(self, bai_hoc: BaiHoc) -> None:
-        self._thay_man_hinh(
-            lambda cha: ManHinhBaiHoc(cha, self, bai_hoc), self._muc_hien_tai
+        noi_dung = NoiDungPhien.tu_bai_hoc(
+            bai_hoc, self.giao_trinh.tat_ca_tu_vung, **self._tuy_chon_am_thanh()
         )
+        self._mo_phien(noi_dung, self._muc_hien_tai)
 
     def mo_buoi_luyen(self, cac_tu: Sequence[TuVung]) -> None:
-        """Mở một buổi luyện tập ghép từ nhiều đơn vị khác nhau.
+        """Mở buổi luyện tập gom từ nhiều đơn vị khác nhau."""
+        noi_dung = NoiDungPhien.luyen_tap(
+            cac_tu, self.giao_trinh.tat_ca_tu_vung, **self._tuy_chon_am_thanh()
+        )
+        self._mo_phien(noi_dung, Muc.LUYEN_TAP)
 
-        Bài học tạm này không nằm trong lộ trình nên khi xong chỉ cộng XP, không
-        đánh dấu chặng nào hoàn thành.
-        """
-        bai_tam = BaiHoc(
-            ma=_MA_BAI_LUYEN_TAP, ten="Luyện tập", tu_vung=tuple(cac_tu)
-        )
+    def mo_chu_diem_ngu_phap(self, chu_diem: ChuDiemNguPhap) -> None:
+        self._mo_phien(NoiDungPhien.tu_chu_diem(chu_diem), Muc.NGU_PHAP)
+
+    def _mo_phien(self, noi_dung: NoiDungPhien, muc: Muc) -> None:
         self._thay_man_hinh(
-            lambda cha: ManHinhBaiHoc(cha, self, bai_tam, la_luyen_tap=True),
-            Muc.LUYEN_TAP,
+            lambda cha: ManHinhBaiHoc(cha, self, noi_dung), muc
         )
+
+    def _tuy_chon_am_thanh(self) -> dict[str, bool]:
+        """Khả năng âm thanh hiện có, truyền xuống trình sinh câu hỏi."""
+        kha_nang = self.am_thanh.kha_nang
+        return {"co_loa": kha_nang.doc, "co_micro": kha_nang.thu_am}
+
+    def mo_ngu_phap(self) -> None:
+        self._thay_man_hinh(lambda cha: ManHinhNguPhap(cha, self), Muc.NGU_PHAP)
 
     def mo_luyen_tap(self) -> None:
         self._thay_man_hinh(lambda cha: ManHinhLuyenTap(cha, self), Muc.LUYEN_TAP)

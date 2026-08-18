@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 from .mo_hinh import SO_TU_MOI_BAI, DonVi, GiaoTrinh, MauDonVi, TuVung
+from .ngu_phap import BoNguPhap, CauNguPhap, ChuDiemNguPhap, DangNguPhap
 from .tien_do import TienDo
 
 __all__ = ["KhoDuLieu", "LoiDuLieu", "SO_TU_MOI_BAI"]
@@ -23,6 +24,7 @@ _log = logging.getLogger(__name__)
 
 TEN_TEP_GIAO_TRINH = "tu_vung.json"
 TEN_TEP_TIEN_DO = "tien_do.json"
+TEN_TEP_NGU_PHAP = "ngu_phap.json"
 
 
 class LoiDuLieu(RuntimeError):
@@ -42,6 +44,10 @@ class KhoDuLieu:
     @property
     def duong_dan_tien_do(self) -> Path:
         return self.thu_muc / TEN_TEP_TIEN_DO
+
+    @property
+    def duong_dan_ngu_phap(self) -> Path:
+        return self.thu_muc / TEN_TEP_NGU_PHAP
 
     # ------------------------------------------------------------------ #
     # Giáo trình
@@ -96,6 +102,70 @@ class KhoDuLieu:
             en=str(du_lieu["en"]).strip(),
             vi=str(du_lieu["vi"]).strip(),
             phien_am=str(du_lieu.get("phien_am", "")).strip(),
+        )
+
+    # ------------------------------------------------------------------ #
+    # Ngữ pháp
+    # ------------------------------------------------------------------ #
+
+    def tai_ngu_phap(self) -> BoNguPhap:
+        """Nạp nội dung ngữ pháp.
+
+        Khác với giáo trình từ vựng, phần ngữ pháp là tuỳ chọn: thiếu tệp hoặc
+        tệp hỏng chỉ khiến mục Ngữ pháp trống, không chặn ứng dụng khởi động.
+        """
+        duong_dan = self.duong_dan_ngu_phap
+        try:
+            du_lieu = json.loads(duong_dan.read_text(encoding="utf-8"))
+        except FileNotFoundError:
+            return BoNguPhap.rong()
+        except (OSError, json.JSONDecodeError):
+            _log.warning("Tệp ngữ pháp hỏng, bỏ qua phần ngữ pháp: %s", duong_dan)
+            return BoNguPhap.rong()
+
+        if not isinstance(du_lieu, Mapping):
+            _log.warning("Tệp ngữ pháp sai cấu trúc, bỏ qua: %s", duong_dan)
+            return BoNguPhap.rong()
+
+        cac_chu_diem = du_lieu.get("cac_chu_diem")
+        if not isinstance(cac_chu_diem, Sequence):
+            return BoNguPhap.rong()
+
+        try:
+            return BoNguPhap(
+                chu_diem=tuple(self._doc_chu_diem(cd) for cd in cac_chu_diem)
+            )
+        except (ValueError, TypeError, KeyError, AttributeError):
+            _log.exception("Nội dung ngữ pháp không hợp lệ, bỏ qua")
+            return BoNguPhap.rong()
+
+    def _doc_chu_diem(self, du_lieu: Mapping[str, Any]) -> ChuDiemNguPhap:
+        ma = str(du_lieu["ma"])
+        return ChuDiemNguPhap(
+            ma=ma,
+            ten=str(du_lieu["ten"]),
+            mo_ta=str(du_lieu.get("mo_ta", "")),
+            lop=int(du_lieu.get("lop", 6)),
+            mau=MauDonVi.tu_chuoi(str(du_lieu.get("mau", ""))),
+            bieu_tuong=str(du_lieu.get("bieu_tuong", "📐")),
+            cau_hoi=tuple(
+                self._doc_cau_ngu_phap(f"{ma}-{thu_tu}", cau)
+                for thu_tu, cau in enumerate(du_lieu["cau_hoi"], start=1)
+            ),
+        )
+
+    @staticmethod
+    def _doc_cau_ngu_phap(ma: str, du_lieu: Mapping[str, Any]) -> CauNguPhap:
+        return CauNguPhap(
+            ma=ma,
+            dang=DangNguPhap.tu_chuoi(str(du_lieu.get("dang", ""))),
+            de_bai=str(du_lieu.get("de_bai", "")).strip(),
+            cau=str(du_lieu.get("cau", "")).strip(),
+            dap_an=str(du_lieu["dap_an"]).strip(),
+            lua_chon=tuple(str(x) for x in du_lieu.get("lua_chon", ())),
+            cac_manh=tuple(str(x) for x in du_lieu.get("cac_manh", ())),
+            giai_thich=str(du_lieu.get("giai_thich", "")).strip(),
+            dich=str(du_lieu.get("dich", "")).strip(),
         )
 
     # ------------------------------------------------------------------ #

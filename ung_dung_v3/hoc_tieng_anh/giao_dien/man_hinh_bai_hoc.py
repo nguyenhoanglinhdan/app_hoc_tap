@@ -12,12 +12,13 @@ from ..bai_tap import (
     DAP_AN_GHEP_DUNG,
     DAP_AN_NOI_DUNG,
     CauHoi,
+    CheDoPhien,
     LoaiBaiTap,
+    NoiDungPhien,
     PhienHoc,
     TrangThaiPhien,
-    TrinhTaoCauHoi,
 )
-from ..mo_hinh import BaiHoc, TuVung
+from ..mo_hinh import TuVung
 from .chu_de import KichThuoc, Mau, phong
 from .man_hinh_goc import DieuHuong, ManHinh
 from .thanh_phan import (
@@ -49,29 +50,22 @@ class ManHinhBaiHoc(ManHinh):
         self,
         master: ctk.CTkBaseClass,
         ung_dung: DieuHuong,
-        bai_hoc: BaiHoc,
-        rng: Random | None = None,
-        *,
-        la_luyen_tap: bool = False,
+        noi_dung: NoiDungPhien,
     ) -> None:
-        self._bai_hoc = bai_hoc
-        self._la_luyen_tap = la_luyen_tap
+        self._noi_dung = noi_dung
         self._am_thanh = ung_dung.am_thanh
-
-        kha_nang = self._am_thanh.kha_nang
-        cau_hoi = TrinhTaoCauHoi(
-            ung_dung.giao_trinh.tat_ca_tu_vung,
-            rng or Random(),
-            co_loa=kha_nang.doc,
-            co_micro=kha_nang.thu_am,
-        ).tao(bai_hoc)
-        self._phien = PhienHoc(bai_hoc, cau_hoi)
+        self._phien = PhienHoc(noi_dung.cau_hoi)
 
         self._dap_an_chon: str | None = None
         self._the_theo_gia_tri: dict[str, TheLuaChon] = {}
         self._o_nhap: ctk.CTkEntry | None = None
         self._da_kiem_tra = False
+        self._da_tong_ket = False
         self._cho_ghep: TheLuaChon | None = None
+        self._vi_tri_da_chon: list[int] = []
+        self._nut_manh: dict[int, NutDuo] = {}
+        self._kho_manh: ctk.CTkFrame | None = None
+        self._o_ghep_cau: ctk.CTkLabel | None = None
         self._nut_mic: NutDuo | None = None
         self._nhan_mic: ctk.CTkLabel | None = None
         self._tu_dang_cho: TuVung | None = None
@@ -186,6 +180,10 @@ class ManHinhBaiHoc(ManHinh):
         self._tu_dang_cho = None
         self._nut_mic = None
         self._nhan_mic = None
+        self._vi_tri_da_chon = []
+        self._nut_manh = {}
+        self._kho_manh = None
+        self._o_ghep_cau = None
 
         for con in self._vung_cau_hoi.winfo_children():
             con.destroy()
@@ -220,6 +218,12 @@ class ManHinhBaiHoc(ManHinh):
                 self._dung_cau_nghe(cot, cau_hoi)
             case LoaiBaiTap.NOI_THEO:
                 self._dung_cau_noi(cot, cau_hoi)
+            case LoaiBaiTap.DIEN_CHO_TRONG:
+                self._dung_cau_dien(cot, cau_hoi)
+            case LoaiBaiTap.SAP_XEP_CAU:
+                self._dung_cau_sap_xep(cot, cau_hoi)
+            case LoaiBaiTap.CHON_DANG_DUNG:
+                self._dung_cau_chon_dang(cot, cau_hoi)
             case _:
                 self._dung_cau_trac_nghiem(cot, cau_hoi)
 
@@ -489,6 +493,160 @@ class ManHinhBaiHoc(ManHinh):
         self._kiem_tra_dap_an()
 
     # ------------------------------------------------------------------ #
+    # Bài ngữ pháp
+    # ------------------------------------------------------------------ #
+
+    def _the_cau_ngu_phap(self, cha: ctk.CTkFrame, noi_dung: str) -> None:
+        """Thẻ hiển thị câu đề bài của bài ngữ pháp."""
+        the = The(cha)
+        the.pack(fill="x", pady=(0, 20))
+
+        ctk.CTkLabel(
+            the,
+            text=noi_dung,
+            font=phong(21),
+            text_color=Mau.CHU,
+            wraplength=KichThuoc.RONG_NOI_DUNG - 60,
+            justify="left",
+        ).pack(anchor="w", padx=24, pady=22)
+
+    def _dung_cau_dien(self, cha: ctk.CTkFrame, cau_hoi: CauHoi) -> None:
+        """Câu có chỗ trống, người học tự gõ phần còn thiếu."""
+        self._the_cau_ngu_phap(cha, cau_hoi.cau_hoi)
+
+        o_nhap = ctk.CTkEntry(
+            cha,
+            height=58,
+            corner_radius=KichThuoc.BO_GOC,
+            border_width=2,
+            border_color=Mau.VIEN,
+            fg_color=Mau.NEN_THE,
+            text_color=Mau.CHU,
+            font=phong(19, dam=False),
+            placeholder_text="Điền vào chỗ trống...",
+            placeholder_text_color=Mau.CHU_MO,
+        )
+        o_nhap.pack(fill="x")
+        o_nhap.bind("<KeyRelease>", self._khi_go_phim)
+        o_nhap.after(50, o_nhap.focus_set)
+        self._o_nhap = o_nhap
+
+    def _dung_cau_chon_dang(self, cha: ctk.CTkFrame, cau_hoi: CauHoi) -> None:
+        """Câu ngữ pháp trắc nghiệm bốn phương án."""
+        self._the_cau_ngu_phap(cha, cau_hoi.cau_hoi)
+
+        luoi = ctk.CTkFrame(cha, fg_color="transparent")
+        luoi.pack(fill="x", pady=(6, 0))
+        luoi.grid_columnconfigure((0, 1), weight=1, uniform="lua_chon")
+
+        for thu_tu, gia_tri in enumerate(cau_hoi.lua_chon):
+            the = TheLuaChon(
+                luoi, text=gia_tri, command=self._chon_dap_an, so_thu_tu=thu_tu + 1
+            )
+            the.grid(row=thu_tu // 2, column=thu_tu % 2, sticky="ew", padx=6, pady=6)
+            self._the_theo_gia_tri[gia_tri] = the
+
+    def _dung_cau_sap_xep(self, cha: ctk.CTkFrame, cau_hoi: CauHoi) -> None:
+        """Bấm các mảnh chữ để ghép thành câu, bấm lại để bỏ ra."""
+        ctk.CTkLabel(
+            cha,
+            text=cau_hoi.cau_hoi,
+            font=phong(20),
+            text_color=Mau.CHU_PHU,
+            wraplength=KichThuoc.RONG_NOI_DUNG - 20,
+            justify="left",
+        ).pack(anchor="w", pady=(0, 14))
+
+        khung_ghep = ctk.CTkFrame(
+            cha,
+            fg_color=Mau.NEN_PHU,
+            corner_radius=KichThuoc.BO_GOC,
+            height=76,
+        )
+        khung_ghep.pack(fill="x", pady=(0, 18))
+        khung_ghep.pack_propagate(False)
+
+        self._o_ghep_cau = ctk.CTkLabel(
+            khung_ghep,
+            text="",
+            font=phong(20),
+            text_color=Mau.CHU,
+            wraplength=KichThuoc.RONG_NOI_DUNG - 40,
+            justify="left",
+            anchor="w",
+        )
+        # Canh trái để câu lớn dần từ trái sang, chữ không nhảy chỗ mỗi lần bấm.
+        self._o_ghep_cau.pack(fill="both", expand=True, padx=18, pady=10)
+        # Bấm vào câu đang ghép để gỡ mảnh vừa thêm ra.
+        for widget in (khung_ghep, self._o_ghep_cau):
+            widget.bind("<Button-1>", lambda _: self._bo_manh_cuoi(cau_hoi))
+
+        self._kho_manh = ctk.CTkFrame(cha, fg_color="transparent")
+        self._kho_manh.pack(fill="x")
+        self._ve_kho_manh(cau_hoi)
+
+    def _ve_kho_manh(self, cau_hoi: CauHoi) -> None:
+        """Vẽ lại các mảnh chữ chưa dùng, xếp thành nhiều dòng cho vừa bề ngang."""
+        if self._kho_manh is None:
+            return
+        for con in self._kho_manh.winfo_children():
+            con.destroy()
+        self._nut_manh.clear()
+
+        hang = ctk.CTkFrame(self._kho_manh, fg_color="transparent")
+        hang.pack(fill="x", pady=4)
+        rong_da_dung = 0
+
+        da_dung = set(self._vi_tri_da_chon)
+        for chi_so, manh in enumerate(cau_hoi.cac_manh):
+            if chi_so in da_dung:
+                continue
+
+            rong = max(70, len(manh) * 13 + 34)
+            if rong_da_dung + rong > KichThuoc.RONG_NOI_DUNG:
+                hang = ctk.CTkFrame(self._kho_manh, fg_color="transparent")
+                hang.pack(fill="x", pady=4)
+                rong_da_dung = 0
+            rong_da_dung += rong + 8
+
+            nut = NutDuo(
+                hang,
+                text=manh,
+                command=lambda i=chi_so: self._chon_manh(cau_hoi, i),
+                kieu=KieuNut.PHU,
+                chieu_rong=rong,
+                chieu_cao=46,
+                co_chu=16,
+            )
+            nut.pack(side="left", padx=4)
+            self._nut_manh[chi_so] = nut
+
+    def _chon_manh(self, cau_hoi: CauHoi, chi_so: int) -> None:
+        """Thêm một mảnh vào câu đang ghép."""
+        if self._da_kiem_tra or chi_so in self._vi_tri_da_chon:
+            return
+        self._vi_tri_da_chon.append(chi_so)
+        self._cap_nhat_cau_ghep(cau_hoi)
+
+    def _bo_manh_cuoi(self, cau_hoi: CauHoi) -> None:
+        """Bấm vào câu đang ghép thì gỡ mảnh vừa thêm ra."""
+        if self._da_kiem_tra or not self._vi_tri_da_chon:
+            return
+        self._vi_tri_da_chon.pop()
+        self._cap_nhat_cau_ghep(cau_hoi)
+
+    def _cap_nhat_cau_ghep(self, cau_hoi: CauHoi) -> None:
+        cac_manh = [cau_hoi.cac_manh[i] for i in self._vi_tri_da_chon]
+        cau = " ".join(cac_manh)
+
+        if self._o_ghep_cau is not None:
+            self._o_ghep_cau.configure(text=cau)
+        self._ve_kho_manh(cau_hoi)
+
+        self._dap_an_chon = cau or None
+        self._nut_chinh.dat_bat(bool(cac_manh))
+
+    # ------------------------------------------------------------------ #
     # Tương tác
     # ------------------------------------------------------------------ #
 
@@ -574,6 +732,8 @@ class ManHinhBaiHoc(ManHinh):
         def xu_ly(_su_kien: object = None) -> None:
             if self._da_kiem_tra or self._o_nhap is not None:
                 return
+            if not self._the_theo_gia_tri:
+                return
             cac_gia_tri = list(self._the_theo_gia_tri)
             if so <= len(cac_gia_tri):
                 self._chon_dap_an(cac_gia_tri[so - 1])
@@ -585,7 +745,10 @@ class ManHinhBaiHoc(ManHinh):
     # ------------------------------------------------------------------ #
 
     def _khi_bam_nut_chinh(self) -> None:
-        if self._da_kiem_tra:
+        # Đã ở màn tổng kết thì nút (và cả phím Enter) chỉ còn việc thoát ra.
+        if self._da_tong_ket:
+            self._thoat()
+        elif self._da_kiem_tra:
             self._hien_cau_hoi()
         elif self._dap_an_chon is not None:
             self._kiem_tra_dap_an()
@@ -600,14 +763,16 @@ class ManHinhBaiHoc(ManHinh):
 
         # Ghi ngay vào lịch ôn tập: phiên học có thất bại thì công sức với từng
         # từ vẫn được giữ lại.
-        self.ung_dung.tien_do.ghi_nhan_tra_loi(ket_qua.tu.ma, ket_qua.dung)
+        self.ung_dung.tien_do.ghi_nhan_tra_loi(ket_qua.khoa, ket_qua.dung)
 
         if self._nut_mic is not None:
             self._nut_mic.dat_bat(False)
         self._day_tim.dat_so_tim(ket_qua.con_tim)
         self._thanh_tien_do.dat_gia_tri(self._phien.ty_le_hoan_thanh)
         self._to_mau_dap_an(cau_hoi, ket_qua.dung)
-        self._dat_phan_hoi(ket_qua.dung, ket_qua.dap_an_dung)
+        self._dat_phan_hoi(
+            ket_qua.dung, ket_qua.dap_an_dung, ket_qua.giai_thich
+        )
 
         for the in self._the_theo_gia_tri.values():
             the.dat_bat(False)
@@ -632,7 +797,9 @@ class ManHinhBaiHoc(ManHinh):
         if self._o_nhap is not None:
             self._o_nhap.configure(border_color=Mau.XANH_LA if dung else Mau.DO)
 
-    def _dat_phan_hoi(self, dung: bool | None, dap_an: str = "") -> None:
+    def _dat_phan_hoi(
+        self, dung: bool | None, dap_an: str = "", giai_thich: str = ""
+    ) -> None:
         """Đổi màu thanh dưới và câu thông báo theo kết quả."""
         match dung:
             case None:
@@ -645,8 +812,11 @@ class ManHinhBaiHoc(ManHinh):
                 )
             case False:
                 self._thanh_duoi.configure(fg_color=Mau.DO_NHAT)
+                loi_nhan = f"✗  Đáp án đúng: {dap_an}"
+                if giai_thich:
+                    loi_nhan += f"\n{giai_thich}"
                 self._nhan_phan_hoi.configure(
-                    text=f"✗  Đáp án đúng: {dap_an}", text_color=Mau.DO_DAM
+                    text=loi_nhan, text_color=Mau.DO_DAM
                 )
 
     # ------------------------------------------------------------------ #
@@ -655,14 +825,17 @@ class ManHinhBaiHoc(ManHinh):
 
     def _hien_tong_ket(self) -> None:
         thang_loi = self._phien.trang_thai is TrangThaiPhien.HOAN_THANH
-        if thang_loi:
-            if self._la_luyen_tap:
-                self.ung_dung.tien_do.ghi_nhan_luyen_tap(self._phien.xp_dat_duoc)
-            else:
+
+        # Chỉ ghi công một lần: vẽ lại màn tổng kết không được cộng XP thêm.
+        if thang_loi and not self._da_tong_ket:
+            if self._noi_dung.danh_dau_hoan_thanh:
                 self.ung_dung.tien_do.ghi_nhan_hoan_thanh(
-                    self._bai_hoc.ma, self._phien.xp_dat_duoc
+                    self._noi_dung.ma, self._phien.xp_dat_duoc
                 )
+            else:
+                self.ung_dung.tien_do.ghi_nhan_luyen_tap(self._phien.xp_dat_duoc)
             self.ung_dung.luu_tien_do()
+        self._da_tong_ket = True
 
         for con in self._vung_cau_hoi.winfo_children():
             con.destroy()
@@ -706,10 +879,17 @@ class ManHinhBaiHoc(ManHinh):
     def _tieu_de_tong_ket(self, thang_loi: bool) -> str:
         if not thang_loi:
             return "Hết tim rồi!"
-        return "Xong buổi luyện tập!" if self._la_luyen_tap else "Hoàn thành bài học!"
+        return {
+            CheDoPhien.BAI_HOC: "Hoàn thành bài học!",
+            CheDoPhien.LUYEN_TAP: "Xong buổi luyện tập!",
+            CheDoPhien.NGU_PHAP: "Xong chủ điểm ngữ pháp!",
+        }[self._noi_dung.che_do]
 
     def _thoat(self) -> None:
-        if self._la_luyen_tap:
-            self.ung_dung.mo_luyen_tap()
-        else:
-            self.ung_dung.mo_trang_chu()
+        match self._noi_dung.che_do:
+            case CheDoPhien.LUYEN_TAP:
+                self.ung_dung.mo_luyen_tap()
+            case CheDoPhien.NGU_PHAP:
+                self.ung_dung.mo_ngu_phap()
+            case _:
+                self.ung_dung.mo_trang_chu()

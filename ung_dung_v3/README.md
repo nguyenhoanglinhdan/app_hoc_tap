@@ -39,6 +39,17 @@ Cần Python 3.12 trở lên (mã nguồn dùng `match`, `StrEnum`, `Self` và c
   đạt từ 70/100 điểm giống nhau trở lên là qua.
 - Có nút **"Không nói được lúc này"** để bỏ qua bài nói mà không bị trừ tim.
 
+### Ngữ pháp
+- **Mười hai chủ điểm phủ kín lớp 6-9**, 72 câu:
+  - *Lớp 6*: hiện tại đơn, hiện tại tiếp diễn, There is/There are, giới từ nơi chốn
+  - *Lớp 7*: so sánh hơn - nhất, quá khứ đơn
+  - *Lớp 8*: hiện tại hoàn thành, câu bị động, động từ khuyết thiếu
+  - *Lớp 9*: mệnh đề quan hệ, câu tường thuật, câu điều kiện
+- **Ba dạng bài**: điền vào chỗ trống, chọn dạng đúng, và **sắp xếp mảnh chữ
+  thành câu** - dạng trị đúng lỗi trật tự từ mà người Việt hay mắc.
+- Trả lời sai thì hiện luôn **lời giải thích** ngay dưới đáp án đúng.
+- Lọc chủ điểm theo lớp; chủ điểm đã học xong có gắn dấu sao.
+
 ### Luyện tập
 - **Ôn từ tới hạn** theo lịch lặp ngắt quãng.
 - **Luyện từ hay sai**, ưu tiên từ có tỷ lệ đúng thấp nhất.
@@ -62,11 +73,13 @@ Cần Python 3.12 trở lên (mã nguồn dùng `match`, `StrEnum`, `Self` và c
 ung_dung_v3/
 ├── main.py                       # điểm khởi động
 ├── du_lieu/
-│   ├── tu_vung.json              # nội dung học
+│   ├── tu_vung.json              # nội dung từ vựng
+│   ├── ngu_phap.json             # nội dung ngữ pháp
 │   └── tien_do.json              # tiến độ người dùng (tự sinh)
 ├── hoc_tieng_anh/
 │   ├── mo_hinh.py                # TuVung, BaiHoc, DonVi, GiaoTrinh
 │   ├── bai_tap.py                # sinh câu hỏi + máy trạng thái phiên học
+│   ├── ngu_phap.py               # chủ điểm và câu hỏi ngữ pháp
 │   ├── on_tap.py                 # lặp ngắt quãng (SM-2 rút gọn)
 │   ├── tien_do.py                # XP, cấp độ, chuỗi ngày, lịch ôn từng từ
 │   ├── am_thanh.py               # đọc từ và chấm phát âm
@@ -78,6 +91,7 @@ ung_dung_v3/
 │       ├── man_hinh_goc.py       # lớp nền + giao ước điều hướng
 │       ├── man_hinh_chinh.py     # lộ trình học
 │       ├── man_hinh_bai_hoc.py   # màn hình làm bài
+│       ├── man_hinh_ngu_phap.py  # danh sách chủ điểm ngữ pháp
 │       ├── man_hinh_luyen_tap.py # luyện tập tổng hợp
 │       ├── man_hinh_tu_vung.py   # sổ tay từ vựng
 │       ├── man_hinh_soan_tu.py   # soạn nội dung học
@@ -86,8 +100,8 @@ ung_dung_v3/
 └── tests/                        # kiểm thử phần lõi
 ```
 
-Nguyên tắc chia lớp: **`mo_hinh`, `bai_tap`, `on_tap`, `tien_do` không import
-tkinter**. Nhờ vậy toàn bộ luật chơi (sinh câu hỏi, tính điểm, trừ tim, chuỗi
+Nguyên tắc chia lớp: **`mo_hinh`, `bai_tap`, `ngu_phap`, `on_tap`, `tien_do`
+không import tkinter**. Nhờ vậy toàn bộ luật chơi (sinh câu hỏi, tính điểm, trừ tim, chuỗi
 ngày, lịch ôn tập) chạy kiểm thử được mà không cần mở cửa sổ. Phần `giao_dien`
 chỉ lo hiển thị, và các màn hình phụ thuộc vào giao ước `DieuHuong` chứ không
 phụ thuộc thẳng vào lớp `UngDung`.
@@ -123,6 +137,28 @@ tay thì mở `du_lieu/tu_vung.json` và thêm một đơn vị vào danh sách 
 - Ứng dụng tự cắt mỗi đơn vị thành các bài học 5 từ (`SO_TU_MOI_BAI` trong
   `mo_hinh.py`).
 
+## Thêm câu ngữ pháp
+
+Mở `du_lieu/ngu_phap.json` và thêm câu vào một chủ điểm:
+
+```json
+{
+  "dang": "sap_xep_cau",
+  "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+  "cau": "Tôi đi học bằng xe đạp.",
+  "dap_an": "I go to school by bike",
+  "giai_thich": "Trật tự: chủ ngữ + động từ + nơi chốn + phương tiện.",
+  "dich": "I go to school by bike."
+}
+```
+
+- `dang` chọn một trong: `dien_cho_trong`, `sap_xep_cau`, `chon_dang_dung`.
+- `chon_dang_dung` cần thêm `lua_chon`, và `dap_an` phải nằm trong đó.
+- `sap_xep_cau` tự tách mảnh chữ theo khoảng trắng của `dap_an`; muốn gộp cụm
+  từ thì khai báo `cac_manh` riêng.
+- Tệp ngữ pháp là tuỳ chọn: thiếu hoặc hỏng thì mục Ngữ pháp chỉ hiện thông báo
+  trống, ứng dụng vẫn chạy bình thường.
+
 ## Ghi chú kỹ thuật
 
 **Nút nổi khối.** Duolingo dùng nút có một lớp bóng đậm màu nằm dưới, và mặt nút
@@ -150,6 +186,15 @@ Thay vào đó `_chon_micro()` tự duyệt danh sách, bỏ qua các cổng thu
 số dễ, đúng thì giãn khoảng cách, sai thì đưa về ôn lại ngay. Khoảng cách bị chặn
 trần ở 365 ngày - không có trần thì nó nhân dồn theo cấp số nhân và `date` sẽ
 tràn số sau vài chục lần trả lời đúng liên tiếp.
+
+**Một câu hỏi cho cả hai loại nội dung.** `CauHoi` không bắt buộc gắn với một
+`TuVung`: câu ngữ pháp để `tu = None` và tự mang khoá ôn tập qua `ma_muc`. Nhờ
+vậy toàn bộ máy trạng thái phiên học, tim, XP và lịch ôn tập dùng chung được cho
+cả từ vựng lẫn ngữ pháp, không phải viết lại lần hai.
+
+**Chỉ ghi công một lần.** Màn tổng kết có thể bị vẽ lại (ví dụ người học bấm
+Enter thêm lần nữa), nên `_hien_tong_ket` có cờ `_da_tong_ket` chặn việc cộng XP
+và đánh dấu hoàn thành nhiều lần cho cùng một lượt học.
 
 **Lưu tiến độ an toàn.** `KhoDuLieu._ghi_json` ghi ra tệp tạm rồi mới
 `os.replace`, dùng chung cho cả tiến độ lẫn giáo trình, nên tắt máy giữa chừng

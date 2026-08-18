@@ -8,6 +8,7 @@ import customtkinter as ctk
 
 from ..am_thanh import DichVuAmThanh
 from ..mo_hinh import BaiHoc, GiaoTrinh, TuVung
+from ..ngu_phap import BoNguPhap, ChuDiemNguPhap
 from ..tien_do import TienDo
 from .chu_de import Mau
 
@@ -24,6 +25,7 @@ class DieuHuong(Protocol):
     """
 
     giao_trinh: GiaoTrinh
+    ngu_phap: BoNguPhap
     tien_do: TienDo
     am_thanh: DichVuAmThanh
 
@@ -38,6 +40,10 @@ class DieuHuong(Protocol):
     def mo_luyen_tap(self) -> None: ...
 
     def mo_soan_tu(self) -> None: ...
+
+    def mo_ngu_phap(self) -> None: ...
+
+    def mo_chu_diem_ngu_phap(self, chu_diem: ChuDiemNguPhap) -> None: ...
 
     def mo_buoi_luyen(self, cac_tu: "Sequence[TuVung]") -> None: ...
 

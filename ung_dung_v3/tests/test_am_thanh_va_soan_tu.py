@@ -80,7 +80,7 @@ class TestDangBaiCanAmThanh:
         cau_hoi = TrinhTaoCauHoi((), Random(4), co_loa=True, co_micro=True).tao(
             bai_hoc
         )
-        phien = PhienHoc(bai_hoc, cau_hoi)
+        phien = PhienHoc(cau_hoi)
         while phien.trang_thai is TrangThaiPhien.DANG_HOC:
             phien.tra_loi(phien.cau_hoi_hien_tai.dap_an)
         assert phien.trang_thai is TrangThaiPhien.HOAN_THANH

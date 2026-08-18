@@ -143,7 +143,7 @@ class TestTrinhTaoCauHoi:
 
 def _tao_phien(bai_hoc: BaiHoc, seed: int = 11) -> PhienHoc:
     cau_hoi = TrinhTaoCauHoi((), Random(seed)).tao(bai_hoc)
-    return PhienHoc(bai_hoc, cau_hoi)
+    return PhienHoc(cau_hoi)
 
 
 def _dap_an_dung(cau) -> str:
@@ -185,6 +185,7 @@ class TestPhienHoc:
         # Câu sai được đẩy xuống cuối hàng đợi để hỏi lại.
         assert phien.cau_hoi_hien_tai is not cau_dau
         assert cau_dau in phien._hang_doi  # noqa: SLF001
+        assert ket_qua.khoa == cau_dau.khoa_on_tap
 
     def test_het_tim_thi_dung_phien(self, bai_hoc: BaiHoc) -> None:
         phien = _tao_phien(bai_hoc)
@@ -205,7 +206,7 @@ class TestPhienHoc:
 
     def test_phien_khong_co_cau_hoi_bi_tu_choi(self, bai_hoc: BaiHoc) -> None:
         with pytest.raises(ValueError):
-            PhienHoc(bai_hoc, ())
+            PhienHoc(())
 
 
 # ---------------------------------------------------------------------- #
