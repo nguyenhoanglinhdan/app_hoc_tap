@@ -6,13 +6,19 @@ import logging
 import unicodedata
 from dataclasses import dataclass, field
 from tkinter import messagebox
+from typing import Sequence
 
 import customtkinter as ctk
 
 from ..kho_du_lieu import LoiDuLieu
 from ..mo_hinh import DonVi, GiaoTrinh, MauDonVi, TuVung
 from .chu_de import MAU_THEO_DON_VI, KichThuoc, Mau, phong
-from .hop_thoai import HopThoaiDonVi, HopThoaiTu, ThongTinDonVi
+from .hop_thoai import (
+    HopThoaiDonVi,
+    HopThoaiNhapHangLoat,
+    HopThoaiTu,
+    ThongTinDonVi,
+)
 from .man_hinh_goc import DieuHuong, ManHinh
 from .thanh_phan import KieuNut, NutDuo, The
 
@@ -35,6 +41,8 @@ class _DonViSoan:
     mau: MauDonVi
     bieu_tuong: str
     tu_vung: list[TuVung] = field(default_factory=list)
+    lop: int | None = None
+    unit: str = ""
 
     @classmethod
     def tu_don_vi(cls, don_vi: DonVi) -> "_DonViSoan":
@@ -45,7 +53,19 @@ class _DonViSoan:
             mau=don_vi.mau,
             bieu_tuong=don_vi.bieu_tuong,
             tu_vung=list(don_vi.tat_ca_tu_vung),
+            lop=don_vi.lop,
+            unit=don_vi.unit,
         )
+
+    @property
+    def nhan_sgk_nhap(self) -> str:
+        """Nhãn lớp và bài, giống DonVi.nhan_sgk nhưng cho bản nháp."""
+        phan = []
+        if self.lop is not None:
+            phan.append(f"Lớp {self.lop}")
+        if self.unit:
+            phan.append(self.unit)
+        return " · ".join(phan)
 
     def sang_don_vi(self) -> DonVi:
         return DonVi.tu_danh_sach_tu(
@@ -55,6 +75,8 @@ class _DonViSoan:
             mau=self.mau,
             bieu_tuong=self.bieu_tuong,
             tu_vung=tuple(self.tu_vung),
+            lop=self.lop,
+            unit=self.unit,
         )
 
 
@@ -164,8 +186,15 @@ class ManHinhSoanTu(ManHinh):
         ).pack(fill="x")
         ctk.CTkLabel(
             chu,
-            text=f"{len(don_vi.tu_vung)} từ · {don_vi.mo_ta}" if don_vi.mo_ta
-            else f"{len(don_vi.tu_vung)} từ",
+            text=" · ".join(
+                phan
+                for phan in (
+                    f"{len(don_vi.tu_vung)} từ",
+                    don_vi.nhan_sgk_nhap,
+                    don_vi.mo_ta,
+                )
+                if phan
+            ),
             font=phong(12, dam=False),
             text_color=Mau.CHU_MO,
             anchor="w",
@@ -181,15 +210,27 @@ class ManHinhSoanTu(ManHinh):
         for tu in don_vi.tu_vung:
             self._ve_tu(the, don_vi, tu)
 
+        hang_nut = ctk.CTkFrame(the, fg_color="transparent")
+        hang_nut.pack(anchor="w", padx=18, pady=(8, 16))
+
         NutDuo(
-            the,
+            hang_nut,
             text="+ Thêm từ",
             command=lambda: self._them_tu(don_vi),
             kieu=KieuNut.PHU,
             chieu_rong=140,
             chieu_cao=36,
             co_chu=13,
-        ).pack(anchor="w", padx=18, pady=(8, 16))
+        ).pack(side="left")
+        NutDuo(
+            hang_nut,
+            text="Dán danh sách",
+            command=lambda: self._nhap_hang_loat(don_vi),
+            kieu=KieuNut.PHU,
+            chieu_rong=160,
+            chieu_cao=36,
+            co_chu=13,
+        ).pack(side="left", padx=(8, 0))
 
     def _ve_tu(self, cha: ctk.CTkBaseClass, don_vi: _DonViSoan, tu: TuVung) -> None:
         hang = ctk.CTkFrame(cha, fg_color=Mau.NEN_PHU, corner_radius=KichThuoc.BO_GOC_NHO)
@@ -259,6 +300,8 @@ class ManHinhSoanTu(ManHinh):
                     mo_ta=thong_tin.mo_ta,
                     mau=thong_tin.mau,
                     bieu_tuong=thong_tin.bieu_tuong,
+                    lop=thong_tin.lop,
+                    unit=thong_tin.unit,
                 )
             )
             self._danh_dau_thay_doi()
@@ -271,6 +314,8 @@ class ManHinhSoanTu(ManHinh):
             don_vi.mo_ta = thong_tin.mo_ta
             don_vi.mau = thong_tin.mau
             don_vi.bieu_tuong = thong_tin.bieu_tuong
+            don_vi.lop = thong_tin.lop
+            don_vi.unit = thong_tin.unit
             self._danh_dau_thay_doi()
 
         HopThoaiDonVi(
@@ -281,6 +326,8 @@ class ManHinhSoanTu(ManHinh):
                 mo_ta=don_vi.mo_ta,
                 mau=don_vi.mau,
                 bieu_tuong=don_vi.bieu_tuong,
+                lop=don_vi.lop,
+                unit=don_vi.unit,
             ),
         )
 
@@ -302,6 +349,21 @@ class ManHinhSoanTu(ManHinh):
             self._danh_dau_thay_doi()
 
         HopThoaiTu(self, khi_luu=luu, ma_da_dung=self._ma_tu_da_dung)
+
+    def _nhap_hang_loat(self, don_vi: _DonViSoan) -> None:
+        """Dán cả danh sách từ vào một chủ đề."""
+
+        def luu(cac_tu: Sequence[TuVung]) -> None:
+            don_vi.tu_vung.extend(cac_tu)
+            self._danh_dau_thay_doi()
+            self._nhan_trang_thai.configure(
+                text=f"Đã thêm {len(cac_tu)} từ, nhớ bấm Lưu lại",
+                text_color=Mau.CAM_DAM,
+            )
+
+        HopThoaiNhapHangLoat(
+            self, khi_luu=luu, ma_da_dung=self._ma_tu_da_dung
+        )
 
     def _sua_tu(self, don_vi: _DonViSoan, tu: TuVung) -> None:
         def luu(moi: TuVung) -> None:

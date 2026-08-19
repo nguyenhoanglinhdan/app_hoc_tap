@@ -8,17 +8,79 @@
       "mau": "xanh_la",
       "bieu_tuong": "👋",
       "tu_vung": [
-        { "en": "hello", "vi": "xin chào", "phien_am": "/həˈloʊ/" },
-        { "en": "goodbye", "vi": "tạm biệt", "phien_am": "/ˌɡʊdˈbaɪ/" },
-        { "en": "thank you", "vi": "cảm ơn", "phien_am": "/ˈθæŋk juː/" },
-        { "en": "sorry", "vi": "xin lỗi", "phien_am": "/ˈsɒri/" },
-        { "en": "please", "vi": "làm ơn", "phien_am": "/pliːz/" },
-        { "en": "yes", "vi": "vâng", "phien_am": "/jes/" },
-        { "en": "no", "vi": "không", "phien_am": "/noʊ/" },
-        { "en": "good morning", "vi": "chào buổi sáng", "phien_am": "/ɡʊd ˈmɔːrnɪŋ/" },
-        { "en": "good night", "vi": "chúc ngủ ngon", "phien_am": "/ɡʊd naɪt/" },
-        { "en": "nice to meet you", "vi": "rất vui được gặp bạn", "phien_am": "/naɪs tə miːt juː/" }
-      ]
+        {
+          "en": "hello",
+          "vi": "xin chào",
+          "phien_am": "/həˈloʊ/",
+          "vi_du": "Hello, my name is Lan.",
+          "vi_du_dich": "Xin chào, tôi tên là Lan."
+        },
+        {
+          "en": "goodbye",
+          "vi": "tạm biệt",
+          "phien_am": "/ˌɡʊdˈbaɪ/",
+          "vi_du": "Goodbye, see you tomorrow.",
+          "vi_du_dich": "Tạm biệt, hẹn gặp lại ngày mai."
+        },
+        {
+          "en": "thank you",
+          "vi": "cảm ơn",
+          "phien_am": "/ˈθæŋk juː/",
+          "vi_du": "Thank you for your help.",
+          "vi_du_dich": "Cảm ơn bạn đã giúp đỡ."
+        },
+        {
+          "en": "sorry",
+          "vi": "xin lỗi",
+          "phien_am": "/ˈsɒri/",
+          "vi_du": "I am sorry for being late.",
+          "vi_du_dich": "Tôi xin lỗi vì đã đến muộn."
+        },
+        {
+          "en": "please",
+          "vi": "làm ơn",
+          "phien_am": "/pliːz/",
+          "vi_du": "Please open the window.",
+          "vi_du_dich": "Làm ơn mở cửa sổ ra."
+        },
+        {
+          "en": "yes",
+          "vi": "vâng",
+          "phien_am": "/jes/",
+          "vi_du": "Yes, I can help you.",
+          "vi_du_dich": "Vâng, tôi có thể giúp bạn."
+        },
+        {
+          "en": "no",
+          "vi": "không",
+          "phien_am": "/noʊ/",
+          "vi_du": "No, I do not like milk.",
+          "vi_du_dich": "Không, tôi không thích sữa."
+        },
+        {
+          "en": "good morning",
+          "vi": "chào buổi sáng",
+          "phien_am": "/ɡʊd ˈmɔːrnɪŋ/",
+          "vi_du": "Good morning, class!",
+          "vi_du_dich": "Chào buổi sáng, cả lớp!"
+        },
+        {
+          "en": "good night",
+          "vi": "chúc ngủ ngon",
+          "phien_am": "/ɡʊd naɪt/",
+          "vi_du": "Good night, sleep well.",
+          "vi_du_dich": "Chúc ngủ ngon, ngủ thật ngon nhé."
+        },
+        {
+          "en": "nice to meet you",
+          "vi": "rất vui được gặp bạn",
+          "phien_am": "/naɪs tə miːt juː/",
+          "vi_du": "Nice to meet you, Nam.",
+          "vi_du_dich": "Rất vui được gặp bạn, Nam."
+        }
+      ],
+      "lop": 6,
+      "unit": "Unit 1"
     },
     {
       "ma": "gia-dinh",
@@ -27,17 +89,79 @@
       "mau": "xanh_duong",
       "bieu_tuong": "👨‍👩‍👧",
       "tu_vung": [
-        { "en": "family", "vi": "gia đình", "phien_am": "/ˈfæməli/" },
-        { "en": "father", "vi": "bố", "phien_am": "/ˈfɑːðər/" },
-        { "en": "mother", "vi": "mẹ", "phien_am": "/ˈmʌðər/" },
-        { "en": "brother", "vi": "anh trai", "phien_am": "/ˈbrʌðər/" },
-        { "en": "sister", "vi": "chị gái", "phien_am": "/ˈsɪstər/" },
-        { "en": "grandfather", "vi": "ông", "phien_am": "/ˈɡrænfɑːðər/" },
-        { "en": "grandmother", "vi": "bà", "phien_am": "/ˈɡrænmʌðər/" },
-        { "en": "son", "vi": "con trai", "phien_am": "/sʌn/" },
-        { "en": "daughter", "vi": "con gái", "phien_am": "/ˈdɔːtər/" },
-        { "en": "friend", "vi": "bạn bè", "phien_am": "/frend/" }
-      ]
+        {
+          "en": "family",
+          "vi": "gia đình",
+          "phien_am": "/ˈfæməli/",
+          "vi_du": "My family has four people.",
+          "vi_du_dich": "Gia đình tôi có bốn người."
+        },
+        {
+          "en": "father",
+          "vi": "bố",
+          "phien_am": "/ˈfɑːðər/",
+          "vi_du": "My father works in a factory.",
+          "vi_du_dich": "Bố tôi làm việc ở nhà máy."
+        },
+        {
+          "en": "mother",
+          "vi": "mẹ",
+          "phien_am": "/ˈmʌðər/",
+          "vi_du": "My mother cooks very well.",
+          "vi_du_dich": "Mẹ tôi nấu ăn rất ngon."
+        },
+        {
+          "en": "brother",
+          "vi": "anh trai",
+          "phien_am": "/ˈbrʌðər/",
+          "vi_du": "My brother is taller than me.",
+          "vi_du_dich": "Anh trai tôi cao hơn tôi."
+        },
+        {
+          "en": "sister",
+          "vi": "chị gái",
+          "phien_am": "/ˈsɪstər/",
+          "vi_du": "My sister studies in Ha Noi.",
+          "vi_du_dich": "Chị tôi học ở Hà Nội."
+        },
+        {
+          "en": "grandfather",
+          "vi": "ông",
+          "phien_am": "/ˈɡrænfɑːðər/",
+          "vi_du": "My grandfather tells funny stories.",
+          "vi_du_dich": "Ông tôi kể chuyện rất vui."
+        },
+        {
+          "en": "grandmother",
+          "vi": "bà",
+          "phien_am": "/ˈɡrænmʌðər/",
+          "vi_du": "My grandmother lives in the countryside.",
+          "vi_du_dich": "Bà tôi sống ở quê."
+        },
+        {
+          "en": "son",
+          "vi": "con trai",
+          "phien_am": "/sʌn/",
+          "vi_du": "They have one son and two daughters.",
+          "vi_du_dich": "Họ có một con trai và hai con gái."
+        },
+        {
+          "en": "daughter",
+          "vi": "con gái",
+          "phien_am": "/ˈdɔːtər/",
+          "vi_du": "Her daughter is six years old.",
+          "vi_du_dich": "Con gái cô ấy sáu tuổi."
+        },
+        {
+          "en": "friend",
+          "vi": "bạn bè",
+          "phien_am": "/frend/",
+          "vi_du": "Mai is my best friend.",
+          "vi_du_dich": "Mai là bạn thân nhất của tôi."
+        }
+      ],
+      "lop": 6,
+      "unit": "Unit 2"
     },
     {
       "ma": "dong-vat",
@@ -46,17 +170,79 @@
       "mau": "tim",
       "bieu_tuong": "🐶",
       "tu_vung": [
-        { "en": "dog", "vi": "con chó", "phien_am": "/dɔːɡ/" },
-        { "en": "cat", "vi": "con mèo", "phien_am": "/kæt/" },
-        { "en": "bird", "vi": "con chim", "phien_am": "/bɜːrd/" },
-        { "en": "fish", "vi": "con cá", "phien_am": "/fɪʃ/" },
-        { "en": "chicken", "vi": "con gà", "phien_am": "/ˈtʃɪkɪn/" },
-        { "en": "elephant", "vi": "con voi", "phien_am": "/ˈelɪfənt/" },
-        { "en": "tiger", "vi": "con hổ", "phien_am": "/ˈtaɪɡər/" },
-        { "en": "horse", "vi": "con ngựa", "phien_am": "/hɔːrs/" },
-        { "en": "rabbit", "vi": "con thỏ", "phien_am": "/ˈræbɪt/" },
-        { "en": "butterfly", "vi": "con bướm", "phien_am": "/ˈbʌtərflaɪ/" }
-      ]
+        {
+          "en": "dog",
+          "vi": "con chó",
+          "phien_am": "/dɔːɡ/",
+          "vi_du": "My dog runs very fast.",
+          "vi_du_dich": "Con chó của tôi chạy rất nhanh."
+        },
+        {
+          "en": "cat",
+          "vi": "con mèo",
+          "phien_am": "/kæt/",
+          "vi_du": "The cat is sleeping on the sofa.",
+          "vi_du_dich": "Con mèo đang ngủ trên ghế sofa."
+        },
+        {
+          "en": "bird",
+          "vi": "con chim",
+          "phien_am": "/bɜːrd/",
+          "vi_du": "A bird is singing in the tree.",
+          "vi_du_dich": "Một con chim đang hót trên cây."
+        },
+        {
+          "en": "fish",
+          "vi": "con cá",
+          "phien_am": "/fɪʃ/",
+          "vi_du": "There are many fish in the pond.",
+          "vi_du_dich": "Có nhiều cá trong ao."
+        },
+        {
+          "en": "chicken",
+          "vi": "con gà",
+          "phien_am": "/ˈtʃɪkɪn/",
+          "vi_du": "My grandmother keeps ten chickens.",
+          "vi_du_dich": "Bà tôi nuôi mười con gà."
+        },
+        {
+          "en": "elephant",
+          "vi": "con voi",
+          "phien_am": "/ˈelɪfənt/",
+          "vi_du": "The elephant is a very big animal.",
+          "vi_du_dich": "Con voi là loài vật rất to."
+        },
+        {
+          "en": "tiger",
+          "vi": "con hổ",
+          "phien_am": "/ˈtaɪɡər/",
+          "vi_du": "The tiger lives in the forest.",
+          "vi_du_dich": "Con hổ sống trong rừng."
+        },
+        {
+          "en": "horse",
+          "vi": "con ngựa",
+          "phien_am": "/hɔːrs/",
+          "vi_du": "He rides a horse every weekend.",
+          "vi_du_dich": "Anh ấy cưỡi ngựa mỗi cuối tuần."
+        },
+        {
+          "en": "rabbit",
+          "vi": "con thỏ",
+          "phien_am": "/ˈræbɪt/",
+          "vi_du": "The rabbit likes eating carrots.",
+          "vi_du_dich": "Con thỏ thích ăn cà rốt."
+        },
+        {
+          "en": "butterfly",
+          "vi": "con bướm",
+          "phien_am": "/ˈbʌtərflaɪ/",
+          "vi_du": "A butterfly landed on the flower.",
+          "vi_du_dich": "Một con bướm đậu lên bông hoa."
+        }
+      ],
+      "lop": 6,
+      "unit": "Unit 3"
     },
     {
       "ma": "do-an",
@@ -65,17 +251,79 @@
       "mau": "cam",
       "bieu_tuong": "🍎",
       "tu_vung": [
-        { "en": "rice", "vi": "cơm", "phien_am": "/raɪs/" },
-        { "en": "bread", "vi": "bánh mì", "phien_am": "/bred/" },
-        { "en": "water", "vi": "nước", "phien_am": "/ˈwɔːtər/" },
-        { "en": "milk", "vi": "sữa", "phien_am": "/mɪlk/" },
-        { "en": "apple", "vi": "quả táo", "phien_am": "/ˈæpl/" },
-        { "en": "banana", "vi": "quả chuối", "phien_am": "/bəˈnænə/" },
-        { "en": "egg", "vi": "quả trứng", "phien_am": "/eɡ/" },
-        { "en": "fish sauce", "vi": "nước mắm", "phien_am": "/fɪʃ sɔːs/" },
-        { "en": "noodles", "vi": "mì", "phien_am": "/ˈnuːdlz/" },
-        { "en": "vegetables", "vi": "rau củ", "phien_am": "/ˈvedʒtəblz/" }
-      ]
+        {
+          "en": "rice",
+          "vi": "cơm",
+          "phien_am": "/raɪs/",
+          "vi_du": "We eat rice every day.",
+          "vi_du_dich": "Chúng tôi ăn cơm mỗi ngày."
+        },
+        {
+          "en": "bread",
+          "vi": "bánh mì",
+          "phien_am": "/bred/",
+          "vi_du": "I have bread for breakfast.",
+          "vi_du_dich": "Tôi ăn bánh mì vào bữa sáng."
+        },
+        {
+          "en": "water",
+          "vi": "nước",
+          "phien_am": "/ˈwɔːtər/",
+          "vi_du": "Please give me a glass of water.",
+          "vi_du_dich": "Làm ơn cho tôi một cốc nước."
+        },
+        {
+          "en": "milk",
+          "vi": "sữa",
+          "phien_am": "/mɪlk/",
+          "vi_du": "She drinks milk before bed.",
+          "vi_du_dich": "Cô ấy uống sữa trước khi đi ngủ."
+        },
+        {
+          "en": "apple",
+          "vi": "quả táo",
+          "phien_am": "/ˈæpl/",
+          "vi_du": "This apple is very sweet.",
+          "vi_du_dich": "Quả táo này rất ngọt."
+        },
+        {
+          "en": "banana",
+          "vi": "quả chuối",
+          "phien_am": "/bəˈnænə/",
+          "vi_du": "Monkeys love eating bananas.",
+          "vi_du_dich": "Khỉ rất thích ăn chuối."
+        },
+        {
+          "en": "egg",
+          "vi": "quả trứng",
+          "phien_am": "/eɡ/",
+          "vi_du": "I would like two boiled eggs.",
+          "vi_du_dich": "Tôi muốn hai quả trứng luộc."
+        },
+        {
+          "en": "fish sauce",
+          "vi": "nước mắm",
+          "phien_am": "/fɪʃ sɔːs/",
+          "vi_du": "Vietnamese food often uses fish sauce.",
+          "vi_du_dich": "Món Việt hay dùng nước mắm."
+        },
+        {
+          "en": "noodles",
+          "vi": "mì",
+          "phien_am": "/ˈnuːdlz/",
+          "vi_du": "She cooks noodles for lunch.",
+          "vi_du_dich": "Cô ấy nấu mì cho bữa trưa."
+        },
+        {
+          "en": "vegetables",
+          "vi": "rau củ",
+          "phien_am": "/ˈvedʒtəblz/",
+          "vi_du": "You should eat more vegetables.",
+          "vi_du_dich": "Bạn nên ăn nhiều rau hơn."
+        }
+      ],
+      "lop": 6,
+      "unit": "Unit 4"
     },
     {
       "ma": "mau-va-so",
@@ -84,17 +332,79 @@
       "mau": "hong",
       "bieu_tuong": "🎨",
       "tu_vung": [
-        { "en": "red", "vi": "màu đỏ", "phien_am": "/red/" },
-        { "en": "blue", "vi": "màu xanh dương", "phien_am": "/bluː/" },
-        { "en": "green", "vi": "màu xanh lá", "phien_am": "/ɡriːn/" },
-        { "en": "yellow", "vi": "màu vàng", "phien_am": "/ˈjeloʊ/" },
-        { "en": "black", "vi": "màu đen", "phien_am": "/blæk/" },
-        { "en": "white", "vi": "màu trắng", "phien_am": "/waɪt/" },
-        { "en": "one", "vi": "số một", "phien_am": "/wʌn/" },
-        { "en": "two", "vi": "số hai", "phien_am": "/tuː/" },
-        { "en": "three", "vi": "số ba", "phien_am": "/θriː/" },
-        { "en": "ten", "vi": "số mười", "phien_am": "/ten/" }
-      ]
+        {
+          "en": "red",
+          "vi": "màu đỏ",
+          "phien_am": "/red/",
+          "vi_du": "She is wearing a red dress.",
+          "vi_du_dich": "Cô ấy đang mặc váy màu đỏ."
+        },
+        {
+          "en": "blue",
+          "vi": "màu xanh dương",
+          "phien_am": "/bluː/",
+          "vi_du": "The sky is blue today.",
+          "vi_du_dich": "Hôm nay bầu trời màu xanh."
+        },
+        {
+          "en": "green",
+          "vi": "màu xanh lá",
+          "phien_am": "/ɡriːn/",
+          "vi_du": "The leaves are green in spring.",
+          "vi_du_dich": "Lá cây xanh vào mùa xuân."
+        },
+        {
+          "en": "yellow",
+          "vi": "màu vàng",
+          "phien_am": "/ˈjeloʊ/",
+          "vi_du": "I have a yellow pencil.",
+          "vi_du_dich": "Tôi có một cái bút chì màu vàng."
+        },
+        {
+          "en": "black",
+          "vi": "màu đen",
+          "phien_am": "/blæk/",
+          "vi_du": "His shoes are black.",
+          "vi_du_dich": "Giày của cậu ấy màu đen."
+        },
+        {
+          "en": "white",
+          "vi": "màu trắng",
+          "phien_am": "/waɪt/",
+          "vi_du": "She has a white cat.",
+          "vi_du_dich": "Cô ấy có một con mèo trắng."
+        },
+        {
+          "en": "one",
+          "vi": "số một",
+          "phien_am": "/wʌn/",
+          "vi_du": "I have one brother.",
+          "vi_du_dich": "Tôi có một người anh trai."
+        },
+        {
+          "en": "two",
+          "vi": "số hai",
+          "phien_am": "/tuː/",
+          "vi_du": "There are two books on the desk.",
+          "vi_du_dich": "Có hai quyển sách trên bàn."
+        },
+        {
+          "en": "three",
+          "vi": "số ba",
+          "phien_am": "/θriː/",
+          "vi_du": "My class has three teachers.",
+          "vi_du_dich": "Lớp tôi có ba giáo viên."
+        },
+        {
+          "en": "ten",
+          "vi": "số mười",
+          "phien_am": "/ten/",
+          "vi_du": "Ten students are in the library.",
+          "vi_du_dich": "Có mười học sinh trong thư viện."
+        }
+      ],
+      "lop": 6,
+      "unit": "Unit 5"
     },
     {
       "ma": "truong-hoc",
@@ -103,17 +413,79 @@
       "mau": "vang",
       "bieu_tuong": "🎒",
       "tu_vung": [
-        { "en": "school", "vi": "trường học", "phien_am": "/skuːl/" },
-        { "en": "teacher", "vi": "giáo viên", "phien_am": "/ˈtiːtʃər/" },
-        { "en": "student", "vi": "học sinh", "phien_am": "/ˈstuːdnt/" },
-        { "en": "book", "vi": "quyển sách", "phien_am": "/bʊk/" },
-        { "en": "pen", "vi": "cái bút", "phien_am": "/pen/" },
-        { "en": "desk", "vi": "cái bàn", "phien_am": "/desk/" },
-        { "en": "chair", "vi": "cái ghế", "phien_am": "/tʃer/" },
-        { "en": "homework", "vi": "bài tập về nhà", "phien_am": "/ˈhoʊmwɜːrk/" },
-        { "en": "classroom", "vi": "lớp học", "phien_am": "/ˈklæsruːm/" },
-        { "en": "test", "vi": "bài kiểm tra", "phien_am": "/test/" }
-      ]
+        {
+          "en": "school",
+          "vi": "trường học",
+          "phien_am": "/skuːl/",
+          "vi_du": "My school is near my house.",
+          "vi_du_dich": "Trường tôi gần nhà."
+        },
+        {
+          "en": "teacher",
+          "vi": "giáo viên",
+          "phien_am": "/ˈtiːtʃər/",
+          "vi_du": "Our teacher is very kind.",
+          "vi_du_dich": "Cô giáo chúng tôi rất tốt bụng."
+        },
+        {
+          "en": "student",
+          "vi": "học sinh",
+          "phien_am": "/ˈstuːdnt/",
+          "vi_du": "She is a good student.",
+          "vi_du_dich": "Cô ấy là một học sinh giỏi."
+        },
+        {
+          "en": "book",
+          "vi": "quyển sách",
+          "phien_am": "/bʊk/",
+          "vi_du": "This book is about animals.",
+          "vi_du_dich": "Quyển sách này nói về động vật."
+        },
+        {
+          "en": "pen",
+          "vi": "cái bút",
+          "phien_am": "/pen/",
+          "vi_du": "Can I borrow your pen?",
+          "vi_du_dich": "Tôi mượn bút của bạn được không?"
+        },
+        {
+          "en": "desk",
+          "vi": "cái bàn",
+          "phien_am": "/desk/",
+          "vi_du": "Put your bag under the desk.",
+          "vi_du_dich": "Để cặp của bạn dưới gầm bàn."
+        },
+        {
+          "en": "chair",
+          "vi": "cái ghế",
+          "phien_am": "/tʃer/",
+          "vi_du": "Please sit on this chair.",
+          "vi_du_dich": "Mời bạn ngồi lên chiếc ghế này."
+        },
+        {
+          "en": "homework",
+          "vi": "bài tập về nhà",
+          "phien_am": "/ˈhoʊmwɜːrk/",
+          "vi_du": "I do my homework after dinner.",
+          "vi_du_dich": "Tôi làm bài tập sau bữa tối."
+        },
+        {
+          "en": "classroom",
+          "vi": "lớp học",
+          "phien_am": "/ˈklæsruːm/",
+          "vi_du": "Our classroom is on the second floor.",
+          "vi_du_dich": "Lớp tôi ở tầng hai."
+        },
+        {
+          "en": "test",
+          "vi": "bài kiểm tra",
+          "phien_am": "/test/",
+          "vi_du": "We have an English test tomorrow.",
+          "vi_du_dich": "Ngày mai chúng tôi có bài kiểm tra tiếng Anh."
+        }
+      ],
+      "lop": 7,
+      "unit": "Unit 1"
     },
     {
       "ma": "dong-tu",
@@ -122,17 +494,79 @@
       "mau": "xanh_la",
       "bieu_tuong": "🏃",
       "tu_vung": [
-        { "en": "to eat", "vi": "ăn", "phien_am": "/tə iːt/" },
-        { "en": "to drink", "vi": "uống", "phien_am": "/tə drɪŋk/" },
-        { "en": "to sleep", "vi": "ngủ", "phien_am": "/tə sliːp/" },
-        { "en": "to run", "vi": "chạy", "phien_am": "/tə rʌn/" },
-        { "en": "to read", "vi": "đọc", "phien_am": "/tə riːd/" },
-        { "en": "to write", "vi": "viết", "phien_am": "/tə raɪt/" },
-        { "en": "to speak", "vi": "nói", "phien_am": "/tə spiːk/" },
-        { "en": "to listen", "vi": "nghe", "phien_am": "/tə ˈlɪsn/" },
-        { "en": "to learn", "vi": "học", "phien_am": "/tə lɜːrn/" },
-        { "en": "to play", "vi": "chơi", "phien_am": "/tə pleɪ/" }
-      ]
+        {
+          "en": "to eat",
+          "vi": "ăn",
+          "phien_am": "/tə iːt/",
+          "vi_du": "I want to eat some fruit.",
+          "vi_du_dich": "Tôi muốn ăn một ít hoa quả."
+        },
+        {
+          "en": "to drink",
+          "vi": "uống",
+          "phien_am": "/tə drɪŋk/",
+          "vi_du": "She likes to drink green tea.",
+          "vi_du_dich": "Cô ấy thích uống trà xanh."
+        },
+        {
+          "en": "to sleep",
+          "vi": "ngủ",
+          "phien_am": "/tə sliːp/",
+          "vi_du": "Children need to sleep eight hours.",
+          "vi_du_dich": "Trẻ em cần ngủ tám tiếng."
+        },
+        {
+          "en": "to run",
+          "vi": "chạy",
+          "phien_am": "/tə rʌn/",
+          "vi_du": "He likes to run in the park.",
+          "vi_du_dich": "Anh ấy thích chạy trong công viên."
+        },
+        {
+          "en": "to read",
+          "vi": "đọc",
+          "phien_am": "/tə riːd/",
+          "vi_du": "I love to read books at night.",
+          "vi_du_dich": "Tôi thích đọc sách vào buổi tối."
+        },
+        {
+          "en": "to write",
+          "vi": "viết",
+          "phien_am": "/tə raɪt/",
+          "vi_du": "She learns to write English well.",
+          "vi_du_dich": "Cô ấy học viết tiếng Anh tốt."
+        },
+        {
+          "en": "to speak",
+          "vi": "nói",
+          "phien_am": "/tə spiːk/",
+          "vi_du": "I want to speak English fluently.",
+          "vi_du_dich": "Tôi muốn nói tiếng Anh trôi chảy."
+        },
+        {
+          "en": "to listen",
+          "vi": "nghe",
+          "phien_am": "/tə ˈlɪsn/",
+          "vi_du": "We listen to music every evening.",
+          "vi_du_dich": "Chúng tôi nghe nhạc mỗi tối."
+        },
+        {
+          "en": "to learn",
+          "vi": "học",
+          "phien_am": "/tə lɜːrn/",
+          "vi_du": "It is never too late to learn.",
+          "vi_du_dich": "Học không bao giờ là muộn."
+        },
+        {
+          "en": "to play",
+          "vi": "chơi",
+          "phien_am": "/tə pleɪ/",
+          "vi_du": "They play football after school.",
+          "vi_du_dich": "Họ chơi bóng đá sau giờ học."
+        }
+      ],
+      "lop": 7,
+      "unit": "Unit 2"
     },
     {
       "ma": "du-lich",
@@ -141,17 +575,79 @@
       "mau": "xanh_duong",
       "bieu_tuong": "✈️",
       "tu_vung": [
-        { "en": "airport", "vi": "sân bay", "phien_am": "/ˈerpɔːrt/" },
-        { "en": "ticket", "vi": "vé", "phien_am": "/ˈtɪkɪt/" },
-        { "en": "hotel", "vi": "khách sạn", "phien_am": "/hoʊˈtel/" },
-        { "en": "map", "vi": "bản đồ", "phien_am": "/mæp/" },
-        { "en": "train", "vi": "tàu hoả", "phien_am": "/treɪn/" },
-        { "en": "car", "vi": "ô tô", "phien_am": "/kɑːr/" },
-        { "en": "beach", "vi": "bãi biển", "phien_am": "/biːtʃ/" },
-        { "en": "mountain", "vi": "ngọn núi", "phien_am": "/ˈmaʊntn/" },
-        { "en": "city", "vi": "thành phố", "phien_am": "/ˈsɪti/" },
-        { "en": "street", "vi": "đường phố", "phien_am": "/striːt/" }
-      ]
+        {
+          "en": "airport",
+          "vi": "sân bay",
+          "phien_am": "/ˈerpɔːrt/",
+          "vi_du": "We arrived at the airport early.",
+          "vi_du_dich": "Chúng tôi đến sân bay sớm."
+        },
+        {
+          "en": "ticket",
+          "vi": "vé",
+          "phien_am": "/ˈtɪkɪt/",
+          "vi_du": "I bought a train ticket yesterday.",
+          "vi_du_dich": "Hôm qua tôi mua vé tàu."
+        },
+        {
+          "en": "hotel",
+          "vi": "khách sạn",
+          "phien_am": "/hoʊˈtel/",
+          "vi_du": "The hotel is near the beach.",
+          "vi_du_dich": "Khách sạn ở gần bãi biển."
+        },
+        {
+          "en": "map",
+          "vi": "bản đồ",
+          "phien_am": "/mæp/",
+          "vi_du": "He is looking at the map.",
+          "vi_du_dich": "Anh ấy đang xem bản đồ."
+        },
+        {
+          "en": "train",
+          "vi": "tàu hoả",
+          "phien_am": "/treɪn/",
+          "vi_du": "The train leaves at six o'clock.",
+          "vi_du_dich": "Tàu khởi hành lúc sáu giờ."
+        },
+        {
+          "en": "car",
+          "vi": "ô tô",
+          "phien_am": "/kɑːr/",
+          "vi_du": "My father drives a blue car.",
+          "vi_du_dich": "Bố tôi lái một chiếc ô tô màu xanh."
+        },
+        {
+          "en": "beach",
+          "vi": "bãi biển",
+          "phien_am": "/biːtʃ/",
+          "vi_du": "We swam at the beach all day.",
+          "vi_du_dich": "Chúng tôi bơi ở bãi biển cả ngày."
+        },
+        {
+          "en": "mountain",
+          "vi": "ngọn núi",
+          "phien_am": "/ˈmaʊntn/",
+          "vi_du": "That mountain is very high.",
+          "vi_du_dich": "Ngọn núi đó rất cao."
+        },
+        {
+          "en": "city",
+          "vi": "thành phố",
+          "phien_am": "/ˈsɪti/",
+          "vi_du": "Ha Noi is a beautiful city.",
+          "vi_du_dich": "Hà Nội là một thành phố đẹp."
+        },
+        {
+          "en": "street",
+          "vi": "đường phố",
+          "phien_am": "/striːt/",
+          "vi_du": "There are many shops on this street.",
+          "vi_du_dich": "Có nhiều cửa hàng trên phố này."
+        }
+      ],
+      "lop": 7,
+      "unit": "Unit 3"
     }
   ]
 }

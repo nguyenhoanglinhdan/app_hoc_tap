@@ -192,6 +192,16 @@ class UngDung(ctk.CTk):
     def mo_chu_diem_ngu_phap(self, chu_diem: ChuDiemNguPhap) -> None:
         self._mo_phien(NoiDungPhien.tu_chu_diem(chu_diem), Muc.NGU_PHAP)
 
+    def mo_kiem_tra(self) -> None:
+        """Ra một đề kiểm tra trộn từ vựng đã học và các chủ điểm ngữ pháp."""
+        da_hoc = tuple(
+            tu
+            for tu in self.giao_trinh.tat_ca_tu_vung
+            if tu.ma in self.tien_do.trang_thai_tu
+        )
+        noi_dung = NoiDungPhien.kiem_tra(da_hoc, self.ngu_phap.chu_diem)
+        self._mo_phien(noi_dung, Muc.LUYEN_TAP)
+
     def _mo_phien(self, noi_dung: NoiDungPhien, muc: Muc) -> None:
         self._thay_man_hinh(
             lambda cha: ManHinhBaiHoc(cha, self, noi_dung), muc

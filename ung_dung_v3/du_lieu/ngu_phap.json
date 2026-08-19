@@ -2,6 +2,82 @@
   "phien_ban": 1,
   "cac_chu_diem": [
     {
+      "ma": "gioi-tu-noi-chon",
+      "ten": "Giới từ chỉ nơi chốn",
+      "mo_ta": "Phân biệt in, on, at, under",
+      "lop": 6,
+      "mau": "tim",
+      "bieu_tuong": "📍",
+      "cau_hoi": [
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn giới từ đúng",
+          "cau": "The book is ___ the table.",
+          "dap_an": "on",
+          "lua_chon": [
+            "on",
+            "in",
+            "at",
+            "under"
+          ],
+          "giai_thich": "on dùng cho bề mặt: nằm trên mặt bàn.",
+          "dich": "Quyển sách ở trên bàn."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn giới từ đúng",
+          "cau": "She lives ___ Ha Noi.",
+          "dap_an": "in",
+          "lua_chon": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "giai_thich": "in dùng với thành phố, quốc gia và không gian có ranh giới.",
+          "dich": "Cô ấy sống ở Hà Nội."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn giới từ đúng",
+          "cau": "The cat is sleeping ___ the chair.",
+          "dap_an": "under",
+          "lua_chon": [
+            "under",
+            "on",
+            "in",
+            "at"
+          ],
+          "giai_thich": "under nghĩa là ở phía dưới một vật khác.",
+          "dich": "Con mèo đang ngủ dưới cái ghế."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Điền giới từ đúng",
+          "cau": "My school is ___ Le Loi Street.",
+          "dap_an": "on",
+          "giai_thich": "Tên đường trong tiếng Anh đi với on (tiếng Anh Anh dùng in).",
+          "dich": "Trường tôi nằm trên đường Lê Lợi."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Điền giới từ đúng",
+          "cau": "He is waiting ___ the bus stop.",
+          "dap_an": "at",
+          "giai_thich": "at dùng cho một điểm cụ thể như bến xe, cửa, ngã tư.",
+          "dich": "Anh ấy đang đợi ở trạm xe buýt."
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Cái bút ở trong cặp.",
+          "dap_an": "The pen is in the bag",
+          "giai_thich": "in dùng khi vật nằm bên trong một vật chứa.",
+          "dich": "The pen is in the bag."
+        }
+      ]
+    },
+    {
       "ma": "hien-tai-don",
       "ten": "Thì hiện tại đơn",
       "mo_ta": "Nói về thói quen và sự thật hiển nhiên",
@@ -142,6 +218,82 @@
       ]
     },
     {
+      "ma": "mao-tu",
+      "ten": "Mạo từ a / an / the",
+      "mo_ta": "Khi nào dùng a, an và the",
+      "lop": 6,
+      "mau": "hong",
+      "bieu_tuong": "🔤",
+      "cau_hoi": [
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn mạo từ đúng",
+          "cau": "I have ___ apple in my bag.",
+          "dap_an": "an",
+          "lua_chon": [
+            "an",
+            "a",
+            "the",
+            "some"
+          ],
+          "giai_thich": "apple bắt đầu bằng nguyên âm nên dùng an.",
+          "dich": "Tôi có một quả táo trong cặp."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn mạo từ đúng",
+          "cau": "She is ___ teacher at my school.",
+          "dap_an": "a",
+          "lua_chon": [
+            "a",
+            "an",
+            "the",
+            "any"
+          ],
+          "giai_thich": "teacher bắt đầu bằng phụ âm nên dùng a.",
+          "dich": "Cô ấy là giáo viên ở trường tôi."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn mạo từ đúng",
+          "cau": "___ sun rises in the east.",
+          "dap_an": "The",
+          "lua_chon": [
+            "The",
+            "A",
+            "An",
+            "Some"
+          ],
+          "giai_thich": "Vật duy nhất trên đời như mặt trời luôn đi với the.",
+          "dich": "Mặt trời mọc ở hướng đông."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Điền a hoặc an",
+          "cau": "My father is ___ engineer.",
+          "dap_an": "an",
+          "giai_thich": "engineer bắt đầu bằng nguyên âm e nên dùng an.",
+          "dich": "Bố tôi là kỹ sư."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Điền a, an hoặc the",
+          "cau": "I bought a book. ___ book is very interesting.",
+          "dap_an": "The",
+          "giai_thich": "Nhắc lại vật đã nói tới trước đó thì dùng the.",
+          "dich": "Tôi mua một quyển sách. Quyển sách đó rất hay."
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Đây là một quả cam.",
+          "dap_an": "This is an orange",
+          "giai_thich": "orange bắt đầu bằng nguyên âm o nên dùng an.",
+          "dich": "This is an orange."
+        }
+      ]
+    },
+    {
       "ma": "there-is-there-are",
       "ten": "There is / There are",
       "mo_ta": "Nói rằng có cái gì đó ở đâu đó",
@@ -208,152 +360,6 @@
           "dap_an": "There are three books on the shelf",
           "giai_thich": "three books là số nhiều nên dùng There are.",
           "dich": "There are three books on the shelf."
-        }
-      ]
-    },
-    {
-      "ma": "gioi-tu-noi-chon",
-      "ten": "Giới từ chỉ nơi chốn",
-      "mo_ta": "Phân biệt in, on, at, under",
-      "lop": 6,
-      "mau": "tim",
-      "bieu_tuong": "📍",
-      "cau_hoi": [
-        {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn giới từ đúng",
-          "cau": "The book is ___ the table.",
-          "dap_an": "on",
-          "lua_chon": [
-            "on",
-            "in",
-            "at",
-            "under"
-          ],
-          "giai_thich": "on dùng cho bề mặt: nằm trên mặt bàn.",
-          "dich": "Quyển sách ở trên bàn."
-        },
-        {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn giới từ đúng",
-          "cau": "She lives ___ Ha Noi.",
-          "dap_an": "in",
-          "lua_chon": [
-            "in",
-            "on",
-            "at",
-            "to"
-          ],
-          "giai_thich": "in dùng với thành phố, quốc gia và không gian có ranh giới.",
-          "dich": "Cô ấy sống ở Hà Nội."
-        },
-        {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn giới từ đúng",
-          "cau": "The cat is sleeping ___ the chair.",
-          "dap_an": "under",
-          "lua_chon": [
-            "under",
-            "on",
-            "in",
-            "at"
-          ],
-          "giai_thich": "under nghĩa là ở phía dưới một vật khác.",
-          "dich": "Con mèo đang ngủ dưới cái ghế."
-        },
-        {
-          "dang": "dien_cho_trong",
-          "de_bai": "Điền giới từ đúng",
-          "cau": "My school is ___ Le Loi Street.",
-          "dap_an": "on",
-          "giai_thich": "Tên đường trong tiếng Anh đi với on (tiếng Anh Anh dùng in).",
-          "dich": "Trường tôi nằm trên đường Lê Lợi."
-        },
-        {
-          "dang": "dien_cho_trong",
-          "de_bai": "Điền giới từ đúng",
-          "cau": "He is waiting ___ the bus stop.",
-          "dap_an": "at",
-          "giai_thich": "at dùng cho một điểm cụ thể như bến xe, cửa, ngã tư.",
-          "dich": "Anh ấy đang đợi ở trạm xe buýt."
-        },
-        {
-          "dang": "sap_xep_cau",
-          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Cái bút ở trong cặp.",
-          "dap_an": "The pen is in the bag",
-          "giai_thich": "in dùng khi vật nằm bên trong một vật chứa.",
-          "dich": "The pen is in the bag."
-        }
-      ]
-    },
-    {
-      "ma": "so-sanh",
-      "ten": "So sánh hơn và so sánh nhất",
-      "mo_ta": "Dùng -er, -est và more, most",
-      "lop": 7,
-      "mau": "hong",
-      "bieu_tuong": "📊",
-      "cau_hoi": [
-        {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn phương án đúng",
-          "cau": "This book is ___ than that one.",
-          "dap_an": "cheaper",
-          "lua_chon": [
-            "cheaper",
-            "cheapest",
-            "more cheap",
-            "cheap"
-          ],
-          "giai_thich": "Tính từ ngắn khi so sánh hơn thì thêm -er, không dùng more.",
-          "dich": "Quyển sách này rẻ hơn quyển kia."
-        },
-        {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn phương án đúng",
-          "cau": "She is ___ beautiful than her sister.",
-          "dap_an": "more",
-          "lua_chon": [
-            "more",
-            "most",
-            "much",
-            "very"
-          ],
-          "giai_thich": "beautiful là tính từ dài nên so sánh hơn dùng more + tính từ.",
-          "dich": "Cô ấy xinh hơn chị gái mình."
-        },
-        {
-          "dang": "dien_cho_trong",
-          "de_bai": "Viết dạng đúng của từ trong ngoặc",
-          "cau": "Mount Everest is the ___ (high) mountain in the world.",
-          "dap_an": "highest",
-          "giai_thich": "So sánh nhất của tính từ ngắn: the + tính từ + -est.",
-          "dich": "Everest là ngọn núi cao nhất thế giới."
-        },
-        {
-          "dang": "dien_cho_trong",
-          "de_bai": "Viết dạng đúng của từ trong ngoặc",
-          "cau": "This is the ___ (good) film I have ever seen.",
-          "dap_an": "best",
-          "giai_thich": "good là tính từ bất quy tắc: good - better - best.",
-          "dich": "Đây là bộ phim hay nhất tôi từng xem."
-        },
-        {
-          "dang": "sap_xep_cau",
-          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Anh ấy cao hơn tôi.",
-          "dap_an": "He is taller than me",
-          "giai_thich": "Cấu trúc so sánh hơn: chủ ngữ + be + tính từ-er + than + đối tượng.",
-          "dich": "He is taller than me."
-        },
-        {
-          "dang": "sap_xep_cau",
-          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Toán khó hơn tiếng Anh.",
-          "dap_an": "Maths is more difficult than English",
-          "giai_thich": "difficult là tính từ dài nên dùng more difficult than.",
-          "dich": "Maths is more difficult than English."
         }
       ]
     },
@@ -428,72 +434,142 @@
       ]
     },
     {
-      "ma": "hien-tai-hoan-thanh",
-      "ten": "Thì hiện tại hoàn thành",
-      "mo_ta": "Việc đã xảy ra và còn liên quan tới hiện tại",
-      "lop": 8,
-      "mau": "xanh_duong",
-      "bieu_tuong": "⏳",
+      "ma": "so-sanh",
+      "ten": "So sánh hơn và so sánh nhất",
+      "mo_ta": "Dùng -er, -est và more, most",
+      "lop": 7,
+      "mau": "hong",
+      "bieu_tuong": "📊",
       "cau_hoi": [
         {
-          "dang": "dien_cho_trong",
-          "de_bai": "Chia động từ trong ngoặc",
-          "cau": "I ___ (live) here since 2020.",
-          "dap_an": "have lived",
-          "giai_thich": "since + mốc thời gian là dấu hiệu của hiện tại hoàn thành; chủ ngữ I đi với have.",
-          "dich": "Tôi đã sống ở đây từ năm 2020."
-        },
-        {
-          "dang": "dien_cho_trong",
-          "de_bai": "Chia động từ trong ngoặc",
-          "cau": "She ___ (finish) her homework already.",
-          "dap_an": "has finished",
-          "giai_thich": "She là ngôi thứ ba số ít nên dùng has; already đi với hiện tại hoàn thành.",
-          "dich": "Cô ấy đã làm xong bài tập rồi."
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn phương án đúng",
+          "cau": "This book is ___ than that one.",
+          "dap_an": "cheaper",
+          "lua_chon": [
+            "cheaper",
+            "cheapest",
+            "more cheap",
+            "cheap"
+          ],
+          "giai_thich": "Tính từ ngắn khi so sánh hơn thì thêm -er, không dùng more.",
+          "dich": "Quyển sách này rẻ hơn quyển kia."
         },
         {
           "dang": "chon_dang_dung",
-          "de_bai": "Chọn từ đúng",
-          "cau": "Have you ___ been to Ha Long Bay?",
-          "dap_an": "ever",
+          "de_bai": "Chọn phương án đúng",
+          "cau": "She is ___ beautiful than her sister.",
+          "dap_an": "more",
           "lua_chon": [
-            "ever",
-            "never",
-            "already",
-            "yet"
+            "more",
+            "most",
+            "much",
+            "very"
           ],
-          "giai_thich": "ever dùng trong câu hỏi với nghĩa đã từng.",
-          "dich": "Bạn đã từng đến vịnh Hạ Long chưa?"
+          "giai_thich": "beautiful là tính từ dài nên so sánh hơn dùng more + tính từ.",
+          "dich": "Cô ấy xinh hơn chị gái mình."
         },
         {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn giới từ đúng",
-          "cau": "They have lived here ___ five years.",
-          "dap_an": "for",
-          "lua_chon": [
-            "for",
-            "since",
-            "in",
-            "at"
-          ],
-          "giai_thich": "for đi với khoảng thời gian, since đi với mốc thời gian.",
-          "dich": "Họ đã sống ở đây được năm năm."
+          "dang": "dien_cho_trong",
+          "de_bai": "Viết dạng đúng của từ trong ngoặc",
+          "cau": "Mount Everest is the ___ (high) mountain in the world.",
+          "dap_an": "highest",
+          "giai_thich": "So sánh nhất của tính từ ngắn: the + tính từ + -est.",
+          "dich": "Everest là ngọn núi cao nhất thế giới."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Viết dạng đúng của từ trong ngoặc",
+          "cau": "This is the ___ (good) film I have ever seen.",
+          "dap_an": "best",
+          "giai_thich": "good là tính từ bất quy tắc: good - better - best.",
+          "dich": "Đây là bộ phim hay nhất tôi từng xem."
         },
         {
           "dang": "sap_xep_cau",
           "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Tôi chưa ăn sáng.",
-          "dap_an": "I have not had breakfast yet",
-          "giai_thich": "Phủ định hiện tại hoàn thành: have not + quá khứ phân từ; yet đứng cuối câu.",
-          "dich": "I have not had breakfast yet."
+          "cau": "Anh ấy cao hơn tôi.",
+          "dap_an": "He is taller than me",
+          "giai_thich": "Cấu trúc so sánh hơn: chủ ngữ + be + tính từ-er + than + đối tượng.",
+          "dich": "He is taller than me."
         },
         {
           "dang": "sap_xep_cau",
           "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Cô ấy đã sống ở Huế được ba năm.",
-          "dap_an": "She has lived in Hue for three years",
-          "giai_thich": "Ngôi thứ ba số ít dùng has; for + khoảng thời gian.",
-          "dich": "She has lived in Hue for three years."
+          "cau": "Toán khó hơn tiếng Anh.",
+          "dap_an": "Maths is more difficult than English",
+          "giai_thich": "difficult là tính từ dài nên dùng more difficult than.",
+          "dich": "Maths is more difficult than English."
+        }
+      ]
+    },
+    {
+      "ma": "tuong-lai",
+      "ten": "Thì tương lai",
+      "mo_ta": "Phân biệt will và be going to",
+      "lop": 7,
+      "mau": "xanh_duong",
+      "bieu_tuong": "🚀",
+      "cau_hoi": [
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn phương án đúng",
+          "cau": "Look at those clouds! It ___ rain.",
+          "dap_an": "is going to",
+          "lua_chon": [
+            "is going to",
+            "will",
+            "goes to",
+            "is"
+          ],
+          "giai_thich": "Có dấu hiệu nhìn thấy trước mắt thì dùng be going to.",
+          "dich": "Nhìn mấy đám mây kìa! Trời sắp mưa."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn phương án đúng",
+          "cau": "The phone is ringing. I ___ answer it.",
+          "dap_an": "will",
+          "lua_chon": [
+            "will",
+            "am going to",
+            "was",
+            "would"
+          ],
+          "giai_thich": "Quyết định ngay lúc nói thì dùng will.",
+          "dich": "Điện thoại đang reo. Để tôi nghe cho."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Chia động từ với will",
+          "cau": "I think it ___ (be) sunny tomorrow.",
+          "dap_an": "will be",
+          "giai_thich": "Dự đoán về tương lai dùng will + động từ nguyên thể.",
+          "dich": "Tôi nghĩ ngày mai trời sẽ nắng."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Điền will hoặc are going to",
+          "cau": "We have booked the tickets. We ___ visit Da Lat next week.",
+          "dap_an": "are going to",
+          "giai_thich": "Kế hoạch đã định trước thì dùng be going to.",
+          "dich": "Chúng tôi đã đặt vé rồi. Tuần sau chúng tôi sẽ đi Đà Lạt."
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Ngày mai tôi sẽ gọi cho bạn.",
+          "dap_an": "I will call you tomorrow",
+          "giai_thich": "Sau will là động từ nguyên thể không to.",
+          "dich": "I will call you tomorrow."
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Cô ấy sẽ không đến bữa tiệc.",
+          "dap_an": "She will not come to the party",
+          "giai_thich": "Phủ định tương lai đơn: will not + động từ nguyên thể.",
+          "dich": "She will not come to the party."
         }
       ]
     },
@@ -638,78 +714,288 @@
       ]
     },
     {
-      "ma": "menh-de-quan-he",
-      "ten": "Mệnh đề quan hệ",
-      "mo_ta": "Dùng who, which, whose để nối câu",
-      "lop": 9,
-      "mau": "tim",
-      "bieu_tuong": "🔗",
+      "ma": "hien-tai-hoan-thanh",
+      "ten": "Thì hiện tại hoàn thành",
+      "mo_ta": "Việc đã xảy ra và còn liên quan tới hiện tại",
+      "lop": 8,
+      "mau": "xanh_duong",
+      "bieu_tuong": "⏳",
       "cau_hoi": [
         {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn đại từ quan hệ đúng",
-          "cau": "The man ___ lives next door is a doctor.",
-          "dap_an": "who",
-          "lua_chon": [
-            "who",
-            "which",
-            "whose",
-            "where"
-          ],
-          "giai_thich": "who thay cho danh từ chỉ người và làm chủ ngữ của mệnh đề.",
-          "dich": "Người đàn ông sống cạnh nhà tôi là bác sĩ."
-        },
-        {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn đại từ quan hệ đúng",
-          "cau": "This is the book ___ I bought yesterday.",
-          "dap_an": "which",
-          "lua_chon": [
-            "which",
-            "who",
-            "whose",
-            "whom"
-          ],
-          "giai_thich": "which thay cho danh từ chỉ vật.",
-          "dich": "Đây là quyển sách mà tôi mua hôm qua."
-        },
-        {
-          "dang": "chon_dang_dung",
-          "de_bai": "Chọn đại từ quan hệ đúng",
-          "cau": "I know a girl ___ father is a teacher.",
-          "dap_an": "whose",
-          "lua_chon": [
-            "whose",
-            "who",
-            "which",
-            "that"
-          ],
-          "giai_thich": "whose chỉ sự sở hữu: bố của cô bé ấy.",
-          "dich": "Tôi biết một cô bé có bố là giáo viên."
+          "dang": "dien_cho_trong",
+          "de_bai": "Chia động từ trong ngoặc",
+          "cau": "I ___ (live) here since 2020.",
+          "dap_an": "have lived",
+          "giai_thich": "since + mốc thời gian là dấu hiệu của hiện tại hoàn thành; chủ ngữ I đi với have.",
+          "dich": "Tôi đã sống ở đây từ năm 2020."
         },
         {
           "dang": "dien_cho_trong",
-          "de_bai": "Điền who hoặc which",
-          "cau": "The film ___ we watched last night was great.",
-          "dap_an": "which",
-          "giai_thich": "film là vật nên dùng which.",
-          "dich": "Bộ phim mà chúng tôi xem tối qua rất hay."
+          "de_bai": "Chia động từ trong ngoặc",
+          "cau": "She ___ (finish) her homework already.",
+          "dap_an": "has finished",
+          "giai_thich": "She là ngôi thứ ba số ít nên dùng has; already đi với hiện tại hoàn thành.",
+          "dich": "Cô ấy đã làm xong bài tập rồi."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn từ đúng",
+          "cau": "Have you ___ been to Ha Long Bay?",
+          "dap_an": "ever",
+          "lua_chon": [
+            "ever",
+            "never",
+            "already",
+            "yet"
+          ],
+          "giai_thich": "ever dùng trong câu hỏi với nghĩa đã từng.",
+          "dich": "Bạn đã từng đến vịnh Hạ Long chưa?"
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn giới từ đúng",
+          "cau": "They have lived here ___ five years.",
+          "dap_an": "for",
+          "lua_chon": [
+            "for",
+            "since",
+            "in",
+            "at"
+          ],
+          "giai_thich": "for đi với khoảng thời gian, since đi với mốc thời gian.",
+          "dich": "Họ đã sống ở đây được năm năm."
         },
         {
           "dang": "sap_xep_cau",
           "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Người phụ nữ đang hát là mẹ tôi.",
-          "dap_an": "The woman who is singing is my mother",
-          "giai_thich": "Mệnh đề quan hệ đứng ngay sau danh từ mà nó bổ nghĩa.",
-          "dich": "The woman who is singing is my mother."
+          "cau": "Tôi chưa ăn sáng.",
+          "dap_an": "I have not had breakfast yet",
+          "giai_thich": "Phủ định hiện tại hoàn thành: have not + quá khứ phân từ; yet đứng cuối câu.",
+          "dich": "I have not had breakfast yet."
         },
         {
           "dang": "sap_xep_cau",
           "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Tôi thích quyển sách mà bạn đã tặng tôi.",
-          "dap_an": "I like the book which you gave me",
-          "giai_thich": "which làm tân ngữ của mệnh đề quan hệ, thay cho the book.",
-          "dich": "I like the book which you gave me."
+          "cau": "Cô ấy đã sống ở Huế được ba năm.",
+          "dap_an": "She has lived in Hue for three years",
+          "giai_thich": "Ngôi thứ ba số ít dùng has; for + khoảng thời gian.",
+          "dich": "She has lived in Hue for three years."
+        }
+      ]
+    },
+    {
+      "ma": "qua-khu-tiep-dien",
+      "ten": "Thì quá khứ tiếp diễn",
+      "mo_ta": "Việc đang xảy ra tại một thời điểm trong quá khứ",
+      "lop": 8,
+      "mau": "tim",
+      "bieu_tuong": "🕰️",
+      "cau_hoi": [
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Chia động từ trong ngoặc",
+          "cau": "At 8 p.m. last night, I ___ (watch) TV.",
+          "dap_an": "was watching",
+          "giai_thich": "Quá khứ tiếp diễn: was/were + động từ thêm -ing.",
+          "dich": "Lúc 8 giờ tối qua, tôi đang xem tivi."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Chia động từ trong ngoặc",
+          "cau": "They ___ (play) football when it started to rain.",
+          "dap_an": "were playing",
+          "giai_thich": "They là số nhiều nên dùng were + động từ thêm -ing.",
+          "dich": "Họ đang chơi bóng thì trời bắt đầu mưa."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn phương án đúng",
+          "cau": "While I ___ dinner, the phone rang.",
+          "dap_an": "was cooking",
+          "lua_chon": [
+            "was cooking",
+            "cooked",
+            "cook",
+            "am cooking"
+          ],
+          "giai_thich": "While đi với quá khứ tiếp diễn cho việc đang diễn ra.",
+          "dich": "Trong lúc tôi đang nấu ăn thì điện thoại reo."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn phương án đúng",
+          "cau": "She was reading when her mother ___ home.",
+          "dap_an": "came",
+          "lua_chon": [
+            "came",
+            "was coming",
+            "comes",
+            "come"
+          ],
+          "giai_thich": "Việc xen vào cắt ngang dùng quá khứ đơn.",
+          "dich": "Cô ấy đang đọc sách thì mẹ về nhà."
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Lúc đó tôi đang làm bài tập.",
+          "dap_an": "I was doing my homework at that time",
+          "giai_thich": "Trạng ngữ chỉ thời gian thường đứng cuối câu.",
+          "dich": "I was doing my homework at that time."
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Chúng tôi đang đợi xe buýt.",
+          "dap_an": "We were waiting for the bus",
+          "giai_thich": "wait luôn đi kèm giới từ for khi có tân ngữ.",
+          "dich": "We were waiting for the bus."
+        }
+      ]
+    },
+    {
+      "ma": "cau-dieu-kien",
+      "ten": "Câu điều kiện",
+      "mo_ta": "Loại 1 có thật, loại 2 giả định",
+      "lop": 9,
+      "mau": "vang",
+      "bieu_tuong": "🌦️",
+      "cau_hoi": [
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn phương án đúng",
+          "cau": "If it ___ tomorrow, we will stay at home.",
+          "dap_an": "rains",
+          "lua_chon": [
+            "rains",
+            "will rain",
+            "rained",
+            "rain"
+          ],
+          "giai_thich": "Điều kiện loại 1: If + hiện tại đơn, will + động từ nguyên thể.",
+          "dich": "Nếu ngày mai trời mưa, chúng tôi sẽ ở nhà."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn phương án đúng",
+          "cau": "If I ___ rich, I would travel around the world.",
+          "dap_an": "were",
+          "lua_chon": [
+            "were",
+            "am",
+            "will be",
+            "are"
+          ],
+          "giai_thich": "Điều kiện loại 2 dùng were cho mọi chủ ngữ, kể cả I.",
+          "dich": "Nếu tôi giàu, tôi sẽ đi vòng quanh thế giới."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Chia động từ trong ngoặc",
+          "cau": "If you study hard, you ___ (pass) the exam.",
+          "dap_an": "will pass",
+          "giai_thich": "Vế kết quả của điều kiện loại 1 dùng will + nguyên thể.",
+          "dich": "Nếu bạn học chăm, bạn sẽ đỗ kỳ thi."
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Chia động từ trong ngoặc",
+          "cau": "If I ___ (have) more time, I would learn the guitar.",
+          "dap_an": "had",
+          "giai_thich": "Điều kiện loại 2: vế if dùng quá khứ đơn dù đang nói về hiện tại.",
+          "dich": "Nếu tôi có nhiều thời gian hơn, tôi sẽ học ghi ta."
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Chúng tôi sẽ đi biển nếu trời nắng.",
+          "dap_an": "We will go to the beach if it is sunny",
+          "giai_thich": "Vế if đứng sau thì không cần dấu phẩy ngăn cách.",
+          "dich": "We will go to the beach if it is sunny."
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Nếu tôi là bạn, tôi sẽ học chăm hơn.",
+          "dap_an": "I would study harder if I were you",
+          "giai_thich": "Điều kiện loại 2: would + nguyên thể ở vế kết quả, were ở vế if.",
+          "dich": "I would study harder if I were you."
+        }
+      ]
+    },
+    {
+      "ma": "cau-hoi-duoi",
+      "ten": "Câu hỏi đuôi",
+      "mo_ta": "Phần hỏi ngắn thêm vào cuối câu",
+      "lop": 9,
+      "mau": "cam",
+      "bieu_tuong": "❓",
+      "cau_hoi": [
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn câu hỏi đuôi đúng",
+          "cau": "She is a doctor, ___?",
+          "dap_an": "isn't she",
+          "lua_chon": [
+            "isn't she",
+            "is she",
+            "doesn't she",
+            "isn't it"
+          ],
+          "giai_thich": "Câu khẳng định thì đuôi phủ định, và lặp lại đúng trợ động từ is.",
+          "dich": "Cô ấy là bác sĩ, phải không?"
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn câu hỏi đuôi đúng",
+          "cau": "You don't like coffee, ___?",
+          "dap_an": "do you",
+          "lua_chon": [
+            "do you",
+            "don't you",
+            "are you",
+            "did you"
+          ],
+          "giai_thich": "Câu phủ định thì đuôi khẳng định.",
+          "dich": "Bạn không thích cà phê, đúng không?"
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn câu hỏi đuôi đúng",
+          "cau": "They went to Hue last year, ___?",
+          "dap_an": "didn't they",
+          "lua_chon": [
+            "didn't they",
+            "don't they",
+            "weren't they",
+            "did they"
+          ],
+          "giai_thich": "Câu quá khứ đơn không có trợ động từ thì mượn did.",
+          "dich": "Năm ngoái họ đã đi Huế, phải không?"
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Điền câu hỏi đuôi",
+          "cau": "He can swim, ___ he?",
+          "dap_an": "can't",
+          "giai_thich": "Trợ động từ can ở câu khẳng định thì đuôi dùng can't.",
+          "dich": "Anh ấy biết bơi, phải không?"
+        },
+        {
+          "dang": "dien_cho_trong",
+          "de_bai": "Điền câu hỏi đuôi",
+          "cau": "Lan isn't at home, ___ she?",
+          "dap_an": "is",
+          "giai_thich": "Câu phủ định thì đuôi khẳng định nên chỉ dùng is.",
+          "dich": "Lan không có ở nhà, phải không?"
+        },
+        {
+          "dang": "sap_xep_cau",
+          "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
+          "cau": "Bạn là học sinh mới phải không?",
+          "dap_an": "You are the new student aren't you",
+          "giai_thich": "Câu khẳng định với are thì đuôi là aren't you.",
+          "dich": "You are the new student, aren't you?"
         }
       ]
     },
@@ -784,72 +1070,78 @@
       ]
     },
     {
-      "ma": "cau-dieu-kien",
-      "ten": "Câu điều kiện",
-      "mo_ta": "Loại 1 có thật, loại 2 giả định",
+      "ma": "menh-de-quan-he",
+      "ten": "Mệnh đề quan hệ",
+      "mo_ta": "Dùng who, which, whose để nối câu",
       "lop": 9,
-      "mau": "vang",
-      "bieu_tuong": "🌦️",
+      "mau": "tim",
+      "bieu_tuong": "🔗",
       "cau_hoi": [
         {
           "dang": "chon_dang_dung",
-          "de_bai": "Chọn phương án đúng",
-          "cau": "If it ___ tomorrow, we will stay at home.",
-          "dap_an": "rains",
+          "de_bai": "Chọn đại từ quan hệ đúng",
+          "cau": "The man ___ lives next door is a doctor.",
+          "dap_an": "who",
           "lua_chon": [
-            "rains",
-            "will rain",
-            "rained",
-            "rain"
+            "who",
+            "which",
+            "whose",
+            "where"
           ],
-          "giai_thich": "Điều kiện loại 1: If + hiện tại đơn, will + động từ nguyên thể.",
-          "dich": "Nếu ngày mai trời mưa, chúng tôi sẽ ở nhà."
+          "giai_thich": "who thay cho danh từ chỉ người và làm chủ ngữ của mệnh đề.",
+          "dich": "Người đàn ông sống cạnh nhà tôi là bác sĩ."
         },
         {
           "dang": "chon_dang_dung",
-          "de_bai": "Chọn phương án đúng",
-          "cau": "If I ___ rich, I would travel around the world.",
-          "dap_an": "were",
+          "de_bai": "Chọn đại từ quan hệ đúng",
+          "cau": "This is the book ___ I bought yesterday.",
+          "dap_an": "which",
           "lua_chon": [
-            "were",
-            "am",
-            "will be",
-            "are"
+            "which",
+            "who",
+            "whose",
+            "whom"
           ],
-          "giai_thich": "Điều kiện loại 2 dùng were cho mọi chủ ngữ, kể cả I.",
-          "dich": "Nếu tôi giàu, tôi sẽ đi vòng quanh thế giới."
+          "giai_thich": "which thay cho danh từ chỉ vật.",
+          "dich": "Đây là quyển sách mà tôi mua hôm qua."
+        },
+        {
+          "dang": "chon_dang_dung",
+          "de_bai": "Chọn đại từ quan hệ đúng",
+          "cau": "I know a girl ___ father is a teacher.",
+          "dap_an": "whose",
+          "lua_chon": [
+            "whose",
+            "who",
+            "which",
+            "that"
+          ],
+          "giai_thich": "whose chỉ sự sở hữu: bố của cô bé ấy.",
+          "dich": "Tôi biết một cô bé có bố là giáo viên."
         },
         {
           "dang": "dien_cho_trong",
-          "de_bai": "Chia động từ trong ngoặc",
-          "cau": "If you study hard, you ___ (pass) the exam.",
-          "dap_an": "will pass",
-          "giai_thich": "Vế kết quả của điều kiện loại 1 dùng will + nguyên thể.",
-          "dich": "Nếu bạn học chăm, bạn sẽ đỗ kỳ thi."
-        },
-        {
-          "dang": "dien_cho_trong",
-          "de_bai": "Chia động từ trong ngoặc",
-          "cau": "If I ___ (have) more time, I would learn the guitar.",
-          "dap_an": "had",
-          "giai_thich": "Điều kiện loại 2: vế if dùng quá khứ đơn dù đang nói về hiện tại.",
-          "dich": "Nếu tôi có nhiều thời gian hơn, tôi sẽ học ghi ta."
+          "de_bai": "Điền who hoặc which",
+          "cau": "The film ___ we watched last night was great.",
+          "dap_an": "which",
+          "giai_thich": "film là vật nên dùng which.",
+          "dich": "Bộ phim mà chúng tôi xem tối qua rất hay."
         },
         {
           "dang": "sap_xep_cau",
           "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Chúng tôi sẽ đi biển nếu trời nắng.",
-          "dap_an": "We will go to the beach if it is sunny",
-          "giai_thich": "Vế if đứng sau thì không cần dấu phẩy ngăn cách.",
-          "dich": "We will go to the beach if it is sunny."
+          "cau": "Người phụ nữ đang hát là mẹ tôi.",
+          "dap_an": "The woman who is singing is my mother",
+          "giai_thich": "Mệnh đề quan hệ đứng ngay sau danh từ mà nó bổ nghĩa.",
+          "dich": "The woman who is singing is my mother."
         },
         {
           "dang": "sap_xep_cau",
           "de_bai": "Sắp xếp thành câu tiếng Anh đúng",
-          "cau": "Nếu tôi là bạn, tôi sẽ học chăm hơn.",
-          "dap_an": "I would study harder if I were you",
-          "giai_thich": "Điều kiện loại 2: would + nguyên thể ở vế kết quả, were ở vế if.",
-          "dich": "I would study harder if I were you."
+          "cau": "Tôi thích quyển sách mà bạn đã tặng tôi.",
+          "dap_an": "I like the book which you gave me",
+          "giai_thich": "which làm tân ngữ của mệnh đề quan hệ, thay cho the book.",
+          "dich": "I like the book which you gave me."
         }
       ]
     }

@@ -144,13 +144,21 @@ class ManHinhChinh(ManHinh):
 
         chu = ctk.CTkFrame(noi_dung, fg_color="transparent")
         chu.pack(side="left", fill="x", expand=True)
+        hang_ten = ctk.CTkFrame(chu, fg_color="transparent")
+        hang_ten.pack(fill="x")
         ctk.CTkLabel(
-            chu,
+            hang_ten,
             text=don_vi.ten,
             font=phong(19),
             text_color=Mau.CHU_TREN_NEN_DAM,
-            anchor="w",
-        ).pack(fill="x")
+        ).pack(side="left")
+        if don_vi.nhan_sgk:
+            ctk.CTkLabel(
+                hang_ten,
+                text=f"   {don_vi.nhan_sgk}",
+                font=phong(12),
+                text_color=Mau.CHU_TREN_NEN_DAM,
+            ).pack(side="left")
         ctk.CTkLabel(
             chu,
             text=don_vi.mo_ta,

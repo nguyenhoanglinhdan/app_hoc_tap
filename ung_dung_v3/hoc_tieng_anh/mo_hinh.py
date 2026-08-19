@@ -61,11 +61,20 @@ def chuan_hoa(van_ban: str) -> str:
 
 @dataclass(frozen=True, slots=True)
 class TuVung:
-    """Một cặp từ Anh - Việt."""
+    """Một cặp từ Anh - Việt, kèm phiên âm và câu ví dụ."""
 
     en: str
     vi: str
     phien_am: str = ""
+    vi_du: str = ""
+    """Câu ví dụ tiếng Anh chứa từ này."""
+
+    vi_du_dich: str = ""
+    """Nghĩa tiếng Việt của câu ví dụ."""
+
+    @property
+    def co_vi_du(self) -> bool:
+        return bool(self.vi_du.strip())
 
     def __post_init__(self) -> None:
         if not self.en.strip() or not self.vi.strip():
@@ -110,6 +119,21 @@ class DonVi:
     mau: MauDonVi
     bieu_tuong: str
     bai_hoc: tuple[BaiHoc, ...]
+    lop: int | None = None
+    """Lớp trong chương trình phổ thông, None nghĩa là không gắn với lớp nào."""
+
+    unit: str = ""
+    """Tên bài trong sách giáo khoa, ví dụ "Unit 1"."""
+
+    @property
+    def nhan_sgk(self) -> str:
+        """Nhãn ngắn kiểu "Lớp 6 · Unit 1", rỗng nếu chưa gắn gì."""
+        phan = []
+        if self.lop is not None:
+            phan.append(f"Lớp {self.lop}")
+        if self.unit:
+            phan.append(self.unit)
+        return " · ".join(phan)
 
     def __post_init__(self) -> None:
         if not self.bai_hoc:
@@ -129,6 +153,8 @@ class DonVi:
         mau: MauDonVi,
         bieu_tuong: str,
         tu_vung: Sequence[TuVung],
+        lop: int | None = None,
+        unit: str = "",
     ) -> Self:
         """Dựng một đơn vị từ danh sách từ phẳng, tự cắt thành các bài nhỏ.
 
@@ -152,6 +178,8 @@ class DonVi:
             mau=mau,
             bieu_tuong=bieu_tuong,
             bai_hoc=cac_bai,
+            lop=lop,
+            unit=unit,
         )
 
 
@@ -175,6 +203,13 @@ class GiaoTrinh:
     @property
     def tat_ca_tu_vung(self) -> tuple[TuVung, ...]:
         return tuple(tu for dv in self.don_vi for tu in dv.tat_ca_tu_vung)
+
+    @property
+    def cac_lop(self) -> tuple[int, ...]:
+        """Các lớp có nội dung từ vựng, đã sắp xếp tăng dần."""
+        return tuple(
+            sorted({dv.lop for dv in self.don_vi if dv.lop is not None})
+        )
 
     def tim_bai_hoc(self, ma: str) -> BaiHoc | None:
         return next((bai for bai in self.tat_ca_bai_hoc if bai.ma == ma), None)

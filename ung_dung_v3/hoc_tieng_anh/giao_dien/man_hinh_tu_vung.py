@@ -11,12 +11,15 @@ from .thanh_phan import The
 
 __all__ = ["ManHinhTuVung"]
 
+_TAT_CA = "Tất cả"
+
 
 class ManHinhTuVung(ManHinh):
     """Danh sách từ vựng kèm bộ lọc theo từ khoá."""
 
     def __init__(self, master: ctk.CTkBaseClass, ung_dung: DieuHuong) -> None:
         self._tu_khoa = ""
+        self._lop_dang_chon: int | None = None
         super().__init__(master, ung_dung)
 
     def dung_giao_dien(self) -> None:
@@ -53,7 +56,29 @@ class ManHinhTuVung(ManHinh):
         o_tim.pack(fill="x")
         o_tim.bind("<KeyRelease>", lambda _: self._khi_tim(o_tim.get()))
 
+        cac_lop = self.ung_dung.giao_trinh.cac_lop
+        if cac_lop:
+            bo_loc = ctk.CTkSegmentedButton(
+                thanh,
+                values=[_TAT_CA, *(f"Lớp {lop}" for lop in cac_lop)],
+                command=self._doi_lop,
+                font=phong(13),
+                corner_radius=KichThuoc.BO_GOC_NHO,
+                selected_color=Mau.XANH_LA,
+                selected_hover_color=Mau.XANH_LA_DAM,
+                unselected_color=Mau.NEN_PHU,
+                text_color=Mau.CHU,
+            )
+            bo_loc.pack(anchor="w", pady=(12, 0))
+            bo_loc.set(_TAT_CA)
+
         ctk.CTkFrame(self, height=2, fg_color=Mau.VIEN, corner_radius=0).pack(fill="x")
+
+    def _doi_lop(self, lua_chon: str) -> None:
+        self._lop_dang_chon = (
+            None if lua_chon == _TAT_CA else int(lua_chon.removeprefix("Lớp "))
+        )
+        self._ve_danh_sach()
 
     def _khi_tim(self, tu_khoa: str) -> None:
         moi = chuan_hoa(tu_khoa)
@@ -70,6 +95,8 @@ class ManHinhTuVung(ManHinh):
 
         so_ket_qua = 0
         for don_vi in self.ung_dung.giao_trinh.don_vi:
+            if self._lop_dang_chon is not None and don_vi.lop != self._lop_dang_chon:
+                continue
             khop = [tu for tu in don_vi.tat_ca_tu_vung if self._khop(tu)]
             if not khop:
                 continue
@@ -100,6 +127,13 @@ class ManHinhTuVung(ManHinh):
             font=phong(17),
             text_color=bo_mau.chinh,
         ).pack(side="left")
+        if don_vi.nhan_sgk:
+            ctk.CTkLabel(
+                tieu_de,
+                text=f"   {don_vi.nhan_sgk}",
+                font=phong(12),
+                text_color=Mau.CHU_MO,
+            ).pack(side="left")
         ctk.CTkLabel(
             tieu_de,
             text=f"{len(cac_tu)} từ",
@@ -142,3 +176,33 @@ class ManHinhTuVung(ManHinh):
             font=phong(16, dam=False),
             text_color=Mau.CHU_PHU,
         ).pack(side="right")
+
+        if tu.co_vi_du:
+            self._ve_vi_du(the, tu)
+
+    def _ve_vi_du(self, the: The, tu: TuVung) -> None:
+        """Câu ví dụ nằm dưới, tách bằng một đường kẻ nhạt."""
+        ctk.CTkFrame(the, height=1, fg_color=Mau.VIEN, corner_radius=0).pack(
+            fill="x", padx=18
+        )
+
+        khung = ctk.CTkFrame(the, fg_color="transparent")
+        khung.pack(fill="x", padx=18, pady=(8, 12))
+
+        ctk.CTkLabel(
+            khung,
+            text=tu.vi_du,
+            font=phong(13, dam=False),
+            text_color=Mau.CHU_PHU,
+            anchor="w",
+            justify="left",
+        ).pack(fill="x")
+        if tu.vi_du_dich:
+            ctk.CTkLabel(
+                khung,
+                text=tu.vi_du_dich,
+                font=phong(12, dam=False),
+                text_color=Mau.CHU_MO,
+                anchor="w",
+                justify="left",
+            ).pack(fill="x")

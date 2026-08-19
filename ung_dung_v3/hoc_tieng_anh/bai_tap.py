@@ -11,7 +11,7 @@ from collections import deque
 from dataclasses import dataclass
 from enum import StrEnum, auto
 from random import Random
-from typing import Sequence
+from typing import Final, Sequence
 
 from .mo_hinh import BaiHoc, TuVung, chuan_hoa
 from .ngu_phap import CauNguPhap, ChuDiemNguPhap, DangNguPhap
@@ -45,6 +45,12 @@ DAP_AN_NOI_DUNG = "__noi_dung__"
 MA_LUYEN_TAP = "__luyen_tap__"
 """Mã của lượt luyện tập tổng hợp, không thuộc lộ trình nào."""
 
+MA_KIEM_TRA = "__kiem_tra__"
+"""Mã của bài kiểm tra thử."""
+
+SO_CAU_KIEM_TRA = 20
+"""Số câu mặc định của một bài kiểm tra thử."""
+
 
 class LoaiBaiTap(StrEnum):
     """Các dạng bài tập được hỗ trợ."""
@@ -66,6 +72,9 @@ class LoaiBaiTap(StrEnum):
 
     NOI_THEO = auto()
     """Đọc to từ tiếng Anh để máy chấm phát âm."""
+
+    NGHE_VIET = auto()
+    """Nghe cả câu ví dụ rồi gõ lại - bài chính tả."""
 
     DIEN_CHO_TRONG = auto()
     """Điền từ còn thiếu vào chỗ trống trong câu."""
@@ -124,7 +133,11 @@ class CauHoi:
     @property
     def can_am_thanh(self) -> bool:
         """Câu hỏi chỉ làm được khi máy phát/thu được tiếng."""
-        return self.loai in (LoaiBaiTap.NGHE_CHON, LoaiBaiTap.NOI_THEO)
+        return self.loai in (
+            LoaiBaiTap.NGHE_CHON,
+            LoaiBaiTap.NOI_THEO,
+            LoaiBaiTap.NGHE_VIET,
+        )
 
     @property
     def la_ngu_phap(self) -> bool:
@@ -169,7 +182,12 @@ class KetQuaTraLoi:
 
 
 _DANG_GO_CHU: Final[frozenset[LoaiBaiTap]] = frozenset(
-    {LoaiBaiTap.GO_TU, LoaiBaiTap.DIEN_CHO_TRONG, LoaiBaiTap.SAP_XEP_CAU}
+    {
+        LoaiBaiTap.GO_TU,
+        LoaiBaiTap.DIEN_CHO_TRONG,
+        LoaiBaiTap.SAP_XEP_CAU,
+        LoaiBaiTap.NGHE_VIET,
+    }
 )
 """Những dạng người học tự tạo ra chuỗi trả lời, cần so khớp linh hoạt."""
 
@@ -231,13 +249,32 @@ class TrinhTaoCauHoi:
         if cau_ghep is not None:
             cau_hoi.insert(len(cau_hoi) // 2, cau_ghep)
 
+        # Chính tả cả câu khá nặng nên cũng chỉ một câu mỗi lượt học.
+        if self._co_loa:
+            co_vi_du = [tu for tu in bai_hoc.tu_vung if tu.co_vi_du]
+            if co_vi_du:
+                tu_nghe = self._rng.choice(co_vi_du)
+                cau_hoi.append(
+                    self._tao_mot_cau(tu_nghe, LoaiBaiTap.NGHE_VIET, bai_hoc)
+                )
+
         # Bài nói mất vài giây thu âm nên chỉ chèn đúng một câu mỗi lượt học.
         if self._co_micro:
             tu_noi = self._rng.choice(list(bai_hoc.tu_vung))
             cau_hoi.append(self._tao_mot_cau(tu_noi, LoaiBaiTap.NOI_THEO, bai_hoc))
         return tuple(cau_hoi)
 
+    @staticmethod
+    def _goi_y_tu_vi_du(tu: TuVung) -> str:
+        """Câu ví dụ đóng luôn vai trò lời giải thích khi người học trả lời sai."""
+        if not tu.co_vi_du:
+            return ""
+        if tu.vi_du_dich:
+            return f"{tu.vi_du}  ({tu.vi_du_dich})"
+        return tu.vi_du
+
     def _tao_mot_cau(self, tu: TuVung, loai: LoaiBaiTap, bai_hoc: BaiHoc) -> CauHoi:
+        goi_y = self._goi_y_tu_vi_du(tu)
         match loai:
             case LoaiBaiTap.CHON_NGHIA:
                 return CauHoi(
@@ -247,6 +284,7 @@ class TrinhTaoCauHoi:
                     cau_hoi=tu.en,
                     dap_an=tu.vi,
                     lua_chon=self._lua_chon(tu, bai_hoc, lay_tieng_anh=False),
+                    giai_thich=goi_y,
                 )
             case LoaiBaiTap.CHON_TU:
                 return CauHoi(
@@ -256,6 +294,7 @@ class TrinhTaoCauHoi:
                     cau_hoi=tu.vi,
                     dap_an=tu.en,
                     lua_chon=self._lua_chon(tu, bai_hoc, lay_tieng_anh=True),
+                    giai_thich=goi_y,
                 )
             case LoaiBaiTap.GO_TU:
                 return CauHoi(
@@ -264,6 +303,7 @@ class TrinhTaoCauHoi:
                     de_bai="Viết từ này bằng tiếng Anh",
                     cau_hoi=tu.vi,
                     dap_an=tu.en,
+                    giai_thich=goi_y,
                 )
             case LoaiBaiTap.NGHE_CHON:
                 return CauHoi(
@@ -281,6 +321,15 @@ class TrinhTaoCauHoi:
                     de_bai="Nhấn nút và đọc to từ này",
                     cau_hoi=tu.en,
                     dap_an=DAP_AN_NOI_DUNG,
+                )
+            case LoaiBaiTap.NGHE_VIET:
+                return CauHoi(
+                    loai=loai,
+                    tu=tu,
+                    de_bai="Nghe rồi viết lại cả câu",
+                    cau_hoi="",  # giấu chữ đi, người học phải nghe
+                    dap_an=tu.vi_du,
+                    giai_thich=tu.vi_du_dich,
                 )
             case _:
                 raise ValueError(f"Dạng bài không tạo được theo từ đơn: {loai}")
@@ -373,6 +422,9 @@ class CheDoPhien(StrEnum):
     NGU_PHAP = auto()
     """Chủ điểm ngữ pháp: hoàn thành thì đánh dấu chủ điểm đó."""
 
+    KIEM_TRA = auto()
+    """Bài kiểm tra thử: không có tim, chấm thang điểm 10."""
+
 
 @dataclass(frozen=True, slots=True)
 class NoiDungPhien:
@@ -389,8 +441,12 @@ class NoiDungPhien:
 
     @property
     def danh_dau_hoan_thanh(self) -> bool:
-        """Buổi luyện tập không đánh dấu mục nào là đã xong."""
-        return self.che_do is not CheDoPhien.LUYEN_TAP
+        """Chỉ lộ trình và ngữ pháp mới đánh dấu mục là đã xong."""
+        return self.che_do in (CheDoPhien.BAI_HOC, CheDoPhien.NGU_PHAP)
+
+    @property
+    def la_kiem_tra(self) -> bool:
+        return self.che_do is CheDoPhien.KIEM_TRA
 
     # ------------------------------------------------------------------ #
 
@@ -437,6 +493,41 @@ class NoiDungPhien:
         )
 
     @classmethod
+    def kiem_tra(
+        cls,
+        cac_tu: Sequence[TuVung],
+        cac_chu_diem: Sequence[ChuDiemNguPhap],
+        rng: Random | None = None,
+        so_cau: int = SO_CAU_KIEM_TRA,
+    ) -> "NoiDungPhien":
+        """Trộn câu từ vựng và câu ngữ pháp thành một đề kiểm tra.
+
+        Đề lấy khoảng một nửa từ vựng, một nửa ngữ pháp; thiếu bên nào thì bên
+        kia bù vào cho đủ số câu.
+        """
+        rng = rng or Random()
+        ngan_hang: list[CauHoi] = []
+
+        if cac_tu:
+            bai_tam = BaiHoc(ma=MA_KIEM_TRA, ten="Kiểm tra", tu_vung=tuple(cac_tu))
+            ngan_hang.extend(TrinhTaoCauHoi(cac_tu, rng).tao(bai_tam))
+        for chu_diem in cac_chu_diem:
+            ngan_hang.extend(TrinhTaoCauHoiNguPhap(rng).tao(chu_diem))
+
+        # Bài kiểm tra không nên có câu ghép đôi vì nó gộp nhiều từ vào một câu.
+        ngan_hang = [c for c in ngan_hang if c.loai is not LoaiBaiTap.GHEP_DOI]
+        if not ngan_hang:
+            raise ValueError("Chưa có nội dung nào để ra đề kiểm tra")
+
+        rng.shuffle(ngan_hang)
+        return cls(
+            ma=MA_KIEM_TRA,
+            ten="Kiểm tra thử",
+            cau_hoi=tuple(ngan_hang[:so_cau]),
+            che_do=CheDoPhien.KIEM_TRA,
+        )
+
+    @classmethod
     def tu_chu_diem(
         cls, chu_diem: ChuDiemNguPhap, rng: Random | None = None
     ) -> "NoiDungPhien":
@@ -448,6 +539,10 @@ class NoiDungPhien:
         )
 
 
+SO_TIM_MAC_DINH = 5
+"""Số lần được phép trả lời sai trong một lượt học thường."""
+
+
 class PhienHoc:
     """Máy trạng thái cho một lượt học.
 
@@ -455,18 +550,37 @@ class PhienHoc:
     đợi để hỏi lại; hết tim thì phiên học thất bại.
     """
 
-    SO_TIM_TOI_DA = 5
+    SO_TIM_TOI_DA = SO_TIM_MAC_DINH
+    """Giữ lại tên cũ cho giao diện và kiểm thử tham chiếu tới."""
+
     XP_MOI_CAU = 2
     XP_THUONG_HOAN_HAO = 10
 
-    def __init__(self, cau_hoi: Sequence[CauHoi]) -> None:
+    def __init__(
+        self,
+        cau_hoi: Sequence[CauHoi],
+        *,
+        so_tim: int | None = SO_TIM_MAC_DINH,
+        hoi_lai_cau_sai: bool = True,
+    ) -> None:
+        """Khởi tạo một lượt học.
+
+        Args:
+            cau_hoi: bộ câu hỏi, phải có ít nhất một câu.
+            so_tim: số lần được phép sai; ``None`` nghĩa là không giới hạn, dùng
+                cho bài kiểm tra.
+            hoi_lai_cau_sai: câu trả lời sai có bị đẩy xuống cuối để hỏi lại hay
+                không. Bài kiểm tra thì không hỏi lại.
+        """
         if not cau_hoi:
             raise ValueError("Phiên học cần ít nhất một câu hỏi")
         self._hang_doi: deque[CauHoi] = deque(cau_hoi)
         self._tong_cau = len(cau_hoi)
         self._da_dung = 0
         self._so_loi = 0
-        self._con_tim = self.SO_TIM_TOI_DA
+        self._hoi_lai_cau_sai = hoi_lai_cau_sai
+        self._vo_han_tim = so_tim is None
+        self._con_tim = SO_TIM_MAC_DINH if so_tim is None else so_tim
 
     @property
     def cau_hoi_hien_tai(self) -> CauHoi | None:
@@ -487,11 +601,29 @@ class PhienHoc:
     @property
     def ty_le_hoan_thanh(self) -> float:
         """Tỷ lệ 0.0 - 1.0 dùng cho thanh tiến độ phía trên màn hình."""
-        return self._da_dung / self._tong_cau if self._tong_cau else 1.0
+        if not self._tong_cau:
+            return 1.0
+        da_hoi = self._tong_cau - len(self._hang_doi)
+        return max(self._da_dung, da_hoi) / self._tong_cau
+
+    @property
+    def so_cau_dung(self) -> int:
+        return self._da_dung
+
+    @property
+    def tong_so_cau(self) -> int:
+        return self._tong_cau
+
+    @property
+    def diem_thang_muoi(self) -> float:
+        """Điểm trên thang 10 như cách chấm ở trường, làm tròn một chữ số."""
+        if not self._tong_cau:
+            return 0.0
+        return round(self._da_dung / self._tong_cau * 10, 1)
 
     @property
     def trang_thai(self) -> TrangThaiPhien:
-        if self._con_tim <= 0:
+        if not self._vo_han_tim and self._con_tim <= 0:
             return TrangThaiPhien.HET_TIM
         if not self._hang_doi:
             return TrangThaiPhien.HOAN_THANH
@@ -518,7 +650,8 @@ class PhienHoc:
         else:
             self._so_loi += 1
             self._con_tim -= 1
-            self._hang_doi.append(cau_hoi)
+            if self._hoi_lai_cau_sai:
+                self._hang_doi.append(cau_hoi)
 
         return KetQuaTraLoi(
             dung=dung,

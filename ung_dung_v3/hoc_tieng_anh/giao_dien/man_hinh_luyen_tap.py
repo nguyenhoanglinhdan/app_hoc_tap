@@ -56,6 +56,7 @@ class ManHinhLuyenTap(ManHinh):
             return
 
         self._dung_the_buoi_luyen(vung)
+        self._dung_the_kiem_tra(vung)
         self._dung_bang_muc_thuoc(vung)
         self._dung_danh_sach_yeu(vung)
 
@@ -136,6 +137,34 @@ class ManHinhLuyenTap(ManHinh):
             nhan_nut="BẮT ĐẦU",
             bat=bool(tat_ca),
             khi_bam=lambda: self._bat_dau(self._tron_ngau_nhien()),
+        )
+
+    def _dung_the_kiem_tra(self, cha: ctk.CTkBaseClass) -> None:
+        """Thẻ mở bài kiểm tra thử, tách riêng vì cách chấm khác hẳn."""
+        ctk.CTkLabel(
+            cha, text="Kiểm tra", font=phong(20), text_color=Mau.CHU
+        ).pack(anchor="w", padx=KichThuoc.LE * 2, pady=(28, 10))
+
+        lich_su = self.ung_dung.tien_do.lich_su_kiem_tra
+        cao_nhat = self.ung_dung.tien_do.diem_kiem_tra_cao_nhat
+
+        if lich_su:
+            mo_ta = (
+                f"Đã làm {len(lich_su)} bài · "
+                f"gần nhất {lich_su[0].diem} · cao nhất {cao_nhat}"
+            )
+        else:
+            mo_ta = "20 câu, không có tim, chấm thang điểm 10"
+
+        self._the_lua_chon(
+            cha,
+            bieu_tuong="📋",
+            tieu_de="Kiểm tra thử",
+            mo_ta=mo_ta,
+            mau=Mau.XANH_DUONG,
+            nhan_nut="LÀM BÀI",
+            bat=True,
+            khi_bam=self.ung_dung.mo_kiem_tra,
         )
 
     def _the_lua_chon(

@@ -31,6 +31,16 @@ class LoiDuLieu(RuntimeError):
     """Lỗi không thể phục hồi khi nạp dữ liệu học."""
 
 
+def _so_nguyen_hoac_none(gia_tri: Any) -> int | None:
+    """Đọc số lớp; giá trị thiếu hoặc hỏng thì coi như chưa gắn lớp."""
+    if gia_tri is None:
+        return None
+    try:
+        return int(gia_tri)
+    except (TypeError, ValueError):
+        return None
+
+
 class KhoDuLieu:
     """Đọc ghi dữ liệu của ứng dụng trong một thư mục cho trước."""
 
@@ -94,6 +104,8 @@ class KhoDuLieu:
             mau=MauDonVi.tu_chuoi(str(du_lieu.get("mau", ""))),
             bieu_tuong=str(du_lieu.get("bieu_tuong", "📘")),
             tu_vung=tuple(self._doc_tu_vung(tu) for tu in du_lieu["tu_vung"]),
+            lop=_so_nguyen_hoac_none(du_lieu.get("lop")),
+            unit=str(du_lieu.get("unit", "")).strip(),
         )
 
     @staticmethod
@@ -102,6 +114,8 @@ class KhoDuLieu:
             en=str(du_lieu["en"]).strip(),
             vi=str(du_lieu["vi"]).strip(),
             phien_am=str(du_lieu.get("phien_am", "")).strip(),
+            vi_du=str(du_lieu.get("vi_du", "")).strip(),
+            vi_du_dich=str(du_lieu.get("vi_du_dich", "")).strip(),
         )
 
     # ------------------------------------------------------------------ #
@@ -221,8 +235,16 @@ class KhoDuLieu:
                     "mo_ta": don_vi.mo_ta,
                     "mau": don_vi.mau.value,
                     "bieu_tuong": don_vi.bieu_tuong,
+                    "lop": don_vi.lop,
+                    "unit": don_vi.unit,
                     "tu_vung": [
-                        {"en": tu.en, "vi": tu.vi, "phien_am": tu.phien_am}
+                        {
+                            "en": tu.en,
+                            "vi": tu.vi,
+                            "phien_am": tu.phien_am,
+                            "vi_du": tu.vi_du,
+                            "vi_du_dich": tu.vi_du_dich,
+                        }
                         for tu in don_vi.tat_ca_tu_vung
                     ],
                 }

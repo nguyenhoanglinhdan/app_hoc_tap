@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from random import Random
 from typing import Callable, Final
 
@@ -19,6 +20,7 @@ from ..bai_tap import (
     TrangThaiPhien,
 )
 from ..mo_hinh import TuVung
+from ..tien_do import KetQuaKiemTra
 from .chu_de import KichThuoc, Mau, phong
 from .man_hinh_goc import DieuHuong, ManHinh
 from .thanh_phan import (
@@ -54,13 +56,19 @@ class ManHinhBaiHoc(ManHinh):
     ) -> None:
         self._noi_dung = noi_dung
         self._am_thanh = ung_dung.am_thanh
-        self._phien = PhienHoc(noi_dung.cau_hoi)
+        self._phien = PhienHoc(
+            noi_dung.cau_hoi,
+            so_tim=None if noi_dung.la_kiem_tra else PhienHoc.SO_TIM_TOI_DA,
+            hoi_lai_cau_sai=not noi_dung.la_kiem_tra,
+        )
+        self._luc_bat_dau = time.monotonic()
 
         self._dap_an_chon: str | None = None
         self._the_theo_gia_tri: dict[str, TheLuaChon] = {}
         self._o_nhap: ctk.CTkEntry | None = None
         self._da_kiem_tra = False
         self._da_tong_ket = False
+        self._ket_qua_kiem_tra: KetQuaKiemTra | None = None
         self._cho_ghep: TheLuaChon | None = None
         self._vi_tri_da_chon: list[int] = []
         self._nut_manh: dict[int, NutDuo] = {}
@@ -110,9 +118,18 @@ class ManHinhBaiHoc(ManHinh):
         self._thanh_tien_do = ThanhTienDo(trong, mau=Mau.XANH_LA)
         self._thanh_tien_do.pack(side="left", fill="x", expand=True)
 
-        self._day_tim = DayTim(trong, toi_da=PhienHoc.SO_TIM_TOI_DA)
-        self._day_tim.pack(side="left", padx=(14, 0))
-        self._day_tim.dat_so_tim(self._phien.con_tim)
+        if self._noi_dung.la_kiem_tra:
+            self._day_tim = None
+            self._nhan_so_cau = ctk.CTkLabel(
+                trong, text="", font=phong(14), text_color=Mau.CHU_PHU
+            )
+            self._nhan_so_cau.pack(side="left", padx=(14, 0))
+            self._cap_nhat_so_cau()
+        else:
+            self._nhan_so_cau = None
+            self._day_tim = DayTim(trong, toi_da=PhienHoc.SO_TIM_TOI_DA)
+            self._day_tim.pack(side="left", padx=(14, 0))
+            self._day_tim.dat_so_tim(self._phien.con_tim)
 
     def _dung_thanh_duoi(self) -> None:
         self._thanh_duoi = ctk.CTkFrame(
@@ -216,6 +233,8 @@ class ManHinhBaiHoc(ManHinh):
                 self._dung_cau_ghep(cot, cau_hoi)
             case LoaiBaiTap.NGHE_CHON:
                 self._dung_cau_nghe(cot, cau_hoi)
+            case LoaiBaiTap.NGHE_VIET:
+                self._dung_cau_nghe_viet(cot, cau_hoi)
             case LoaiBaiTap.NOI_THEO:
                 self._dung_cau_noi(cot, cau_hoi)
             case LoaiBaiTap.DIEN_CHO_TRONG:
@@ -378,6 +397,46 @@ class ManHinhBaiHoc(ManHinh):
                 row=thu_tu // 2, column=thu_tu % 2, sticky="ew", padx=6, pady=6
             )
             self._the_theo_gia_tri[gia_tri] = the_chon
+
+    def _dung_cau_nghe_viet(self, cha: ctk.CTkFrame, cau_hoi: CauHoi) -> None:
+        """Bài chính tả: nghe cả câu rồi gõ lại."""
+        the = The(cha)
+        the.pack(fill="x", pady=(0, 18))
+
+        trong = ctk.CTkFrame(the, fg_color="transparent")
+        trong.pack(pady=24)
+
+        NutLoa(
+            trong,
+            khi_bam=lambda: self._am_thanh.doc(cau_hoi.dap_an),
+            duong_kinh=72,
+            co_chu=30,
+        ).pack()
+        ctk.CTkLabel(
+            trong,
+            text="Nhấn để nghe lại cả câu",
+            font=phong(13, dam=False),
+            text_color=Mau.CHU_MO,
+        ).pack(pady=(10, 0))
+
+        self.after(320, lambda: self._am_thanh.doc(cau_hoi.dap_an))
+
+        o_nhap = ctk.CTkEntry(
+            cha,
+            height=58,
+            corner_radius=KichThuoc.BO_GOC,
+            border_width=2,
+            border_color=Mau.VIEN,
+            fg_color=Mau.NEN_THE,
+            text_color=Mau.CHU,
+            font=phong(18, dam=False),
+            placeholder_text="Gõ lại câu em vừa nghe...",
+            placeholder_text_color=Mau.CHU_MO,
+        )
+        o_nhap.pack(fill="x")
+        o_nhap.bind("<KeyRelease>", self._khi_go_phim)
+        o_nhap.after(50, o_nhap.focus_set)
+        self._o_nhap = o_nhap
 
     def _dung_cau_noi(self, cha: ctk.CTkFrame, cau_hoi: CauHoi) -> None:
         """Hiện từ cần đọc, kèm nút nghe mẫu và nút micro."""
@@ -767,7 +826,9 @@ class ManHinhBaiHoc(ManHinh):
 
         if self._nut_mic is not None:
             self._nut_mic.dat_bat(False)
-        self._day_tim.dat_so_tim(ket_qua.con_tim)
+        if self._day_tim is not None:
+            self._day_tim.dat_so_tim(ket_qua.con_tim)
+        self._cap_nhat_so_cau()
         self._thanh_tien_do.dat_gia_tri(self._phien.ty_le_hoan_thanh)
         self._to_mau_dap_an(cau_hoi, ket_qua.dung)
         self._dat_phan_hoi(
@@ -782,6 +843,16 @@ class ManHinhBaiHoc(ManHinh):
         ket_thuc = self._phien.trang_thai is not TrangThaiPhien.DANG_HOC
         self._nut_chinh.dat_chu("XEM KẾT QUẢ" if ket_thuc else "TIẾP TỤC")
         self._nut_chinh.dat_bat(True)
+
+    def _cap_nhat_so_cau(self) -> None:
+        """Bài kiểm tra hiện số câu đã làm thay cho dãy tim."""
+        if self._nhan_so_cau is None:
+            return
+        da_lam = self._phien.tong_so_cau - len(self._phien._hang_doi)  # noqa: SLF001
+        self._nhan_so_cau.configure(
+            text=f"Câu {min(da_lam + 1, self._phien.tong_so_cau)}"
+            f"/{self._phien.tong_so_cau}"
+        )
 
     def _to_mau_dap_an(self, cau_hoi: CauHoi | None, dung: bool) -> None:
         """Tô xanh đáp án đúng và tô đỏ lựa chọn sai của người học."""
@@ -824,6 +895,10 @@ class ManHinhBaiHoc(ManHinh):
     # ------------------------------------------------------------------ #
 
     def _hien_tong_ket(self) -> None:
+        if self._noi_dung.la_kiem_tra:
+            self._hien_ket_qua_kiem_tra()
+            return
+
         thang_loi = self._phien.trang_thai is TrangThaiPhien.HOAN_THANH
 
         # Chỉ ghi công một lần: vẽ lại màn tổng kết không được cộng XP thêm.
@@ -876,6 +951,71 @@ class ManHinhBaiHoc(ManHinh):
         self._nut_chinh.dat_hanh_dong(self._thoat)
         self._nut_chinh.dat_bat(True)
 
+    def _hien_ket_qua_kiem_tra(self) -> None:
+        """Màn hình điểm số kiểu bài kiểm tra ở trường."""
+        giay = int(time.monotonic() - self._luc_bat_dau)
+        if not self._da_tong_ket:
+            ket_qua = self.ung_dung.tien_do.ghi_nhan_kiem_tra(
+                self._phien.tong_so_cau, self._phien.so_cau_dung, giay
+            )
+            self.ung_dung.luu_tien_do()
+            self._ket_qua_kiem_tra = ket_qua
+        self._da_tong_ket = True
+
+        ket_qua = self._ket_qua_kiem_tra
+        diem = ket_qua.diem
+        mau_diem = (
+            Mau.XANH_LA_DAM
+            if diem >= 8
+            else Mau.XANH_DUONG_DAM
+            if diem >= 6.5
+            else Mau.CAM_DAM
+            if diem >= 5
+            else Mau.DO_DAM
+        )
+
+        for con in self._vung_cau_hoi.winfo_children():
+            con.destroy()
+        self._thanh_tien_do.dat_gia_tri(1.0)
+
+        cot = ctk.CTkFrame(self._vung_cau_hoi, fg_color="transparent")
+        cot.pack(expand=True)
+
+        ctk.CTkLabel(cot, text="📋", font=phong(56)).pack()
+        ctk.CTkLabel(
+            cot, text="Kết quả bài kiểm tra", font=phong(22), text_color=Mau.CHU
+        ).pack(pady=(10, 16))
+
+        ctk.CTkLabel(
+            cot, text=f"{diem}", font=phong(64), text_color=mau_diem
+        ).pack()
+        ctk.CTkLabel(
+            cot, text="trên thang điểm 10", font=phong(13, dam=False),
+            text_color=Mau.CHU_MO,
+        ).pack(pady=(0, 14))
+
+        ctk.CTkLabel(
+            cot,
+            text=f"{ket_qua.xep_loai} · Đúng {ket_qua.so_dung}/{ket_qua.so_cau} câu"
+            f" · {giay // 60} phút {giay % 60} giây",
+            font=phong(15),
+            text_color=Mau.CHU_PHU,
+        ).pack()
+
+        cao_nhat = self.ung_dung.tien_do.diem_kiem_tra_cao_nhat
+        if cao_nhat is not None and cao_nhat > diem:
+            ctk.CTkLabel(
+                cot,
+                text=f"Điểm cao nhất của bạn: {cao_nhat}",
+                font=phong(13, dam=False),
+                text_color=Mau.CHU_MO,
+            ).pack(pady=(8, 0))
+
+        self._dat_phan_hoi(None)
+        self._nut_chinh.dat_chu("XONG")
+        self._nut_chinh.dat_hanh_dong(self._thoat)
+        self._nut_chinh.dat_bat(True)
+
     def _tieu_de_tong_ket(self, thang_loi: bool) -> str:
         if not thang_loi:
             return "Hết tim rồi!"
@@ -887,7 +1027,7 @@ class ManHinhBaiHoc(ManHinh):
 
     def _thoat(self) -> None:
         match self._noi_dung.che_do:
-            case CheDoPhien.LUYEN_TAP:
+            case CheDoPhien.LUYEN_TAP | CheDoPhien.KIEM_TRA:
                 self.ung_dung.mo_luyen_tap()
             case CheDoPhien.NGU_PHAP:
                 self.ung_dung.mo_ngu_phap()

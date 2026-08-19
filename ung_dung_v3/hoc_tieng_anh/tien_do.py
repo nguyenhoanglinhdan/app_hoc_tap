@@ -8,14 +8,70 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import date, timedelta
-from typing import Any, Mapping, Self
+from typing import Any, Mapping, Self, Sequence
 
 from .on_tap import TrangThaiTu
 
-__all__ = ["TienDo", "XP_MOI_CAP"]
+__all__ = ["TienDo", "KetQuaKiemTra", "XP_MOI_CAP", "SO_DIEM_LUU"]
 
 XP_MOI_CAP = 100
 """Số XP cần thiết để lên một cấp."""
+
+SO_DIEM_LUU = 20
+"""Số bài kiểm tra gần nhất được giữ lại trong lịch sử."""
+
+
+@dataclass(frozen=True, slots=True)
+class KetQuaKiemTra:
+    """Kết quả một bài kiểm tra thử."""
+
+    ngay: date
+    so_cau: int
+    so_dung: int
+    giay: int = 0
+
+    def __post_init__(self) -> None:
+        if self.so_cau <= 0:
+            raise ValueError("Bài kiểm tra phải có ít nhất một câu")
+        if not 0 <= self.so_dung <= self.so_cau:
+            raise ValueError("Số câu đúng không hợp lệ")
+
+    @property
+    def diem(self) -> float:
+        """Điểm thang 10, làm tròn một chữ số như cách chấm ở trường."""
+        return round(self.so_dung / self.so_cau * 10, 1)
+
+    @property
+    def xep_loai(self) -> str:
+        diem = self.diem
+        if diem >= 8:
+            return "Giỏi"
+        if diem >= 6.5:
+            return "Khá"
+        if diem >= 5:
+            return "Trung bình"
+        return "Cần cố gắng"
+
+    def sang_dict(self) -> dict[str, Any]:
+        return {
+            "ngay": self.ngay.isoformat(),
+            "so_cau": self.so_cau,
+            "so_dung": self.so_dung,
+            "giay": self.giay,
+        }
+
+    @classmethod
+    def tu_dict(cls, du_lieu: Mapping[str, Any]) -> "KetQuaKiemTra | None":
+        """Trả về None nếu bản ghi hỏng, để bên gọi bỏ qua nó."""
+        try:
+            return cls(
+                ngay=date.fromisoformat(str(du_lieu["ngay"])),
+                so_cau=int(du_lieu["so_cau"]),
+                so_dung=int(du_lieu["so_dung"]),
+                giay=_so_nguyen(du_lieu.get("giay")),
+            )
+        except (KeyError, TypeError, ValueError):
+            return None
 
 
 @dataclass(slots=True)
@@ -28,6 +84,9 @@ class TienDo:
     so_lan_hoan_thanh: dict[str, int] = field(default_factory=dict)
     trang_thai_tu: dict[str, TrangThaiTu] = field(default_factory=dict)
     """Lịch ôn tập của từng từ, khoá là ``TuVung.ma``."""
+
+    lich_su_kiem_tra: list[KetQuaKiemTra] = field(default_factory=list)
+    """Các bài kiểm tra gần nhất, mới nhất đứng đầu."""
 
     # ------------------------------------------------------------------ #
     # Truy vấn
@@ -76,6 +135,31 @@ class TienDo:
         self.so_lan_hoan_thanh[ma_bai] = self.so_lan_hoan_thanh.get(ma_bai, 0) + 1
         self.ghi_nhan_luyen_tap(xp_nhan, hom_nay)
 
+    def ghi_nhan_kiem_tra(
+        self,
+        so_cau: int,
+        so_dung: int,
+        giay: int = 0,
+        hom_nay: date | None = None,
+    ) -> KetQuaKiemTra:
+        """Lưu kết quả một bài kiểm tra và cộng XP theo số câu đúng."""
+        ket_qua = KetQuaKiemTra(
+            ngay=hom_nay or date.today(),
+            so_cau=so_cau,
+            so_dung=so_dung,
+            giay=giay,
+        )
+        self.lich_su_kiem_tra.insert(0, ket_qua)
+        del self.lich_su_kiem_tra[SO_DIEM_LUU:]
+        self.ghi_nhan_luyen_tap(so_dung, hom_nay)
+        return ket_qua
+
+    @property
+    def diem_kiem_tra_cao_nhat(self) -> float | None:
+        if not self.lich_su_kiem_tra:
+            return None
+        return max(kq.diem for kq in self.lich_su_kiem_tra)
+
     def ghi_nhan_luyen_tap(self, xp_nhan: int, hom_nay: date | None = None) -> None:
         """Cộng XP và cập nhật chuỗi ngày mà không đánh dấu bài học nào hoàn thành.
 
@@ -94,6 +178,7 @@ class TienDo:
         self.ngay_hoc_cuoi = None
         self.so_lan_hoan_thanh.clear()
         self.trang_thai_tu.clear()
+        self.lich_su_kiem_tra.clear()
 
     def ghi_nhan_tra_loi(
         self, ma_tu: str, dung: bool, hom_nay: date | None = None
@@ -149,6 +234,7 @@ class TienDo:
                 ma: trang_thai.sang_dict()
                 for ma, trang_thai in self.trang_thai_tu.items()
             },
+            "lich_su_kiem_tra": [kq.sang_dict() for kq in self.lich_su_kiem_tra],
         }
 
     @classmethod
@@ -173,6 +259,15 @@ class TienDo:
             if isinstance(gia_tri, Mapping)
         }
 
+        lich_su_tho = du_lieu.get("lich_su_kiem_tra") or []
+        lich_su: list[KetQuaKiemTra] = []
+        if isinstance(lich_su_tho, Sequence) and not isinstance(lich_su_tho, str):
+            for muc in lich_su_tho:
+                if isinstance(muc, Mapping):
+                    ket_qua = KetQuaKiemTra.tu_dict(muc)
+                    if ket_qua is not None:
+                        lich_su.append(ket_qua)
+
         return cls(
             xp=max(0, _so_nguyen(du_lieu.get("xp"))),
             chuoi_ngay=max(0, _so_nguyen(du_lieu.get("chuoi_ngay"))),
@@ -181,6 +276,7 @@ class TienDo:
                 str(ma): _so_nguyen(lan) for ma, lan in so_lan.items()
             },
             trang_thai_tu=trang_thai_tu,
+            lich_su_kiem_tra=lich_su[:SO_DIEM_LUU],
         )
 
 

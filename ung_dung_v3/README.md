@@ -24,8 +24,10 @@ Cần Python 3.12 trở lên (mã nguồn dùng `match`, `StrEnum`, `Self` và c
 ### Học
 - **Lộ trình học** uốn lượn với các chặng hình tròn, mở khoá dần: xong chặng
   trước mới đi tiếp được chặng sau.
-- **Sáu dạng bài tập**: chọn nghĩa tiếng Việt, chọn từ tiếng Anh, tự gõ từ, ghép
-  cặp Anh - Việt, **nghe rồi chọn từ**, và **đọc to cho máy chấm phát âm**.
+- **Bảy dạng bài tập**: chọn nghĩa tiếng Việt, chọn từ tiếng Anh, tự gõ từ, ghép
+  cặp Anh - Việt, nghe rồi chọn từ, **nghe cả câu rồi viết lại**, và đọc to cho
+  máy chấm phát âm.
+- Mỗi chủ đề gắn **lớp và bài trong sách giáo khoa**, ví dụ "Lớp 6 · Unit 1".
 - **Năm trái tim mỗi lượt học**. Trả lời sai mất một tim và câu đó bị hỏi lại ở
   cuối; hết tim thì phải học lại từ đầu. Ghép sai trong bài ghép đôi không bị
   trừ tim.
@@ -40,11 +42,13 @@ Cần Python 3.12 trở lên (mã nguồn dùng `match`, `StrEnum`, `Self` và c
 - Có nút **"Không nói được lúc này"** để bỏ qua bài nói mà không bị trừ tim.
 
 ### Ngữ pháp
-- **Mười hai chủ điểm phủ kín lớp 6-9**, 72 câu:
-  - *Lớp 6*: hiện tại đơn, hiện tại tiếp diễn, There is/There are, giới từ nơi chốn
-  - *Lớp 7*: so sánh hơn - nhất, quá khứ đơn
-  - *Lớp 8*: hiện tại hoàn thành, câu bị động, động từ khuyết thiếu
-  - *Lớp 9*: mệnh đề quan hệ, câu tường thuật, câu điều kiện
+- **Mười sáu chủ điểm phủ kín lớp 6-9**, 96 câu:
+  - *Lớp 6*: hiện tại đơn, hiện tại tiếp diễn, There is/There are, giới từ nơi
+    chốn, mạo từ a/an/the
+  - *Lớp 7*: so sánh hơn - nhất, quá khứ đơn, thì tương lai
+  - *Lớp 8*: hiện tại hoàn thành, câu bị động, động từ khuyết thiếu, quá khứ
+    tiếp diễn
+  - *Lớp 9*: mệnh đề quan hệ, câu tường thuật, câu điều kiện, câu hỏi đuôi
 - **Ba dạng bài**: điền vào chỗ trống, chọn dạng đúng, và **sắp xếp mảnh chữ
   thành câu** - dạng trị đúng lỗi trật tự từ mà người Việt hay mắc.
 - Trả lời sai thì hiện luôn **lời giải thích** ngay dưới đáp án đúng.
@@ -58,10 +62,21 @@ Cần Python 3.12 trở lên (mã nguồn dùng `match`, `StrEnum`, `Self` và c
   sách từ cần chú ý nhất.
 - Buổi luyện tập chỉ cộng XP, không đánh dấu chặng nào trong lộ trình.
 
+### Kiểm tra thử
+- **20 câu trộn từ vựng và ngữ pháp**, không có tim nên làm hết đề.
+- Câu sai **không bị hỏi lại** - đúng như một bài kiểm tra thật.
+- Chấm **thang điểm 10** kèm xếp loại Giỏi / Khá / Trung bình / Cần cố gắng,
+  có bấm giờ.
+- Lưu **bảng điểm 20 bài gần nhất**, xem lại ở màn hình Hồ sơ.
+
 ### Sổ tay và soạn từ
-- **Sổ tay từ vựng** tra cứu được, tìm kiếm không cần gõ dấu.
+- **Sổ tay từ vựng** tra cứu được, tìm kiếm không cần gõ dấu, lọc theo lớp, mỗi
+  từ kèm câu ví dụ và bản dịch.
 - **Soạn từ vựng ngay trong ứng dụng**: thêm/sửa/xoá chủ đề và từ, có kiểm tra
   trùng lặp và xác nhận trước khi xoá, ghi thẳng vào `du_lieu/tu_vung.json`.
+- **Dán danh sách hàng loạt**: dán nguyên bảng từ cô giáo cho, ứng dụng tự tách
+  theo dấu `=`, `:`, tab hoặc gạch ngang, đếm trước số từ hợp lệ và chỉ ra dòng
+  nào bị bỏ qua vì sao.
 
 ### Khác
 - **Chế độ sáng/tối**, đổi trong màn hình Hồ sơ.
@@ -80,6 +95,7 @@ ung_dung_v3/
 │   ├── mo_hinh.py                # TuVung, BaiHoc, DonVi, GiaoTrinh
 │   ├── bai_tap.py                # sinh câu hỏi + máy trạng thái phiên học
 │   ├── ngu_phap.py               # chủ điểm và câu hỏi ngữ pháp
+│   ├── nhap_hang_loat.py         # tách danh sách từ dán vào
 │   ├── on_tap.py                 # lặp ngắt quãng (SM-2 rút gọn)
 │   ├── tien_do.py                # XP, cấp độ, chuỗi ngày, lịch ôn từng từ
 │   ├── am_thanh.py               # đọc từ và chấm phát âm
@@ -100,8 +116,8 @@ ung_dung_v3/
 └── tests/                        # kiểm thử phần lõi
 ```
 
-Nguyên tắc chia lớp: **`mo_hinh`, `bai_tap`, `ngu_phap`, `on_tap`, `tien_do`
-không import tkinter**. Nhờ vậy toàn bộ luật chơi (sinh câu hỏi, tính điểm, trừ tim, chuỗi
+Nguyên tắc chia lớp: **`mo_hinh`, `bai_tap`, `ngu_phap`, `on_tap`, `tien_do`,
+`nhap_hang_loat` không import tkinter**. Nhờ vậy toàn bộ luật chơi (sinh câu hỏi, tính điểm, trừ tim, chuỗi
 ngày, lịch ôn tập) chạy kiểm thử được mà không cần mở cửa sổ. Phần `giao_dien`
 chỉ lo hiển thị, và các màn hình phụ thuộc vào giao ước `DieuHuong` chứ không
 phụ thuộc thẳng vào lớp `UngDung`.
@@ -111,7 +127,11 @@ phụ thuộc thẳng vào lớp `UngDung`.
 ```bash
 pip install -r requirements-dev.txt
 python -m pytest tests -q
+python -m pyflakes hoc_tieng_anh tests main.py
 ```
+
+Nên chạy cả `pyflakes`: kiểm thử không đụng tới mọi nhánh giao diện nên một tên
+bị thiếu import trong nhánh ít dùng vẫn có thể lọt qua pytest.
 
 ## Thêm từ vựng mới
 
@@ -195,6 +215,11 @@ cả từ vựng lẫn ngữ pháp, không phải viết lại lần hai.
 **Chỉ ghi công một lần.** Màn tổng kết có thể bị vẽ lại (ví dụ người học bấm
 Enter thêm lần nữa), nên `_hien_tong_ket` có cờ `_da_tong_ket` chặn việc cộng XP
 và đánh dấu hoàn thành nhiều lần cho cùng một lượt học.
+
+**Một phiên học, nhiều luật chơi.** `PhienHoc` nhận `so_tim` (``None`` là không
+giới hạn) và `hoi_lai_cau_sai`. Nhờ hai tham số này, bài kiểm tra dùng chung máy
+trạng thái với bài học thường: chỉ khác ở chỗ không có tim và câu sai không bị
+hỏi lại.
 
 **Lưu tiến độ an toàn.** `KhoDuLieu._ghi_json` ghi ra tệp tạm rồi mới
 `os.replace`, dùng chung cho cả tiến độ lẫn giáo trình, nên tắt máy giữa chừng
